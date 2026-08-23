@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bwtavl3purj71"]
 
 [ext_resource type="Texture2D" uid="uid://cjrjm7bg53piu" path="res://assets/images/bg.png" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://cxo0qo545exx1" path="res://assets/images/fg.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://h2rxhgqlt3u" path="res://assets/images/fg.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cioaxeqrxi2tg" path="res://scenes/objects/heart_rate_detector.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://smppy1iqms45" path="res://scenes/objects/tv.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bvo714udmqaqw" path="res://scenes/objects/paper.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cqbksjfi86dqh" path="res://scenes/objects/rule.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://ccwqilakya26o" path="res://scenes/objects/phone.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" uid="uid://cq7l2ff0kkbfc" path="res://scenes/objects/papers.tscn" id="8_0tnpc"]
 
 [node name="Game" type="Node2D" unique_id=21264269]
 
@@ -19,13 +22,22 @@ texture = ExtResource("1_uwrxv")
 texture = ExtResource("2_yqjtg")
 
 [node name="HeartRateDetector" parent="World" unique_id=425908746 instance=ExtResource("3_lnu2h")]
-position = Vector2(-609, 205)
+position = Vector2(-576, 145)
 
 [node name="TV" parent="World" unique_id=330125472 instance=ExtResource("4_lbhrr")]
 position = Vector2(-856, -211)
 
-[node name="TV2" parent="World" unique_id=885389089 instance=ExtResource("5_iywne")]
-position = Vector2(0, 339)
+[node name="Paper" parent="World" unique_id=885389089 instance=ExtResource("5_iywne")]
+position = Vector2(-21, 314)
+
+[node name="Rule" parent="World" unique_id=1107970536 instance=ExtResource("6_p57ef")]
+position = Vector2(800, -336)
+
+[node name="Phone" parent="World" unique_id=1908071067 instance=ExtResource("7_gee14")]
+position = Vector2(779, 3)
+
+[node name="Papers" parent="World" unique_id=1839744645 instance=ExtResource("8_0tnpc")]
+position = Vector2(649, 285)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=70683275]
 

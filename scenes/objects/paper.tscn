@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bvo714udmqaqw"]
+
+[ext_resource type="Shader" uid="uid://bw5ewe3knewbx" path="res://assets/shaders/outline.gdshader" id="1_45wan"]
+[ext_resource type="PackedScene" uid="uid://hc02c5uwjpoi" path="res://scenes/components/selectable_component.tscn" id="2_7jphx"]
+[ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="3_d5hb7"]
+[ext_resource type="PackedScene" uid="uid://cawt112f72j2j" path="res://scenes/popup_ui/paper_popup.tscn" id="4_45wan"]
+[ext_resource type="PackedScene" uid="uid://pgwfcdoksmc5" path="res://scenes/components/selectable_popup_component.tscn" id="5_mkyos"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
+shader = ExtResource("1_45wan")
+shader_parameter/show = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 2.000000095
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_l6lbw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nlo56"]
+gradient = SubResource("Gradient_l6lbw")
+width = 664
+height = 216
+
+[node name="Paper" type="Node2D" unique_id=425908746]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=304575131]
+material = SubResource("ShaderMaterial_puc5w")
+texture = SubResource("GradientTexture2D_nlo56")
+
+[node name="SelectableComponent" parent="." unique_id=650134341 node_paths=PackedStringArray("sprite") instance=ExtResource("2_7jphx")]
+sprite = NodePath("../Sprite2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SelectableComponent" unique_id=114513031]
+position = Vector2(1, 14)
+polygon = PackedVector2Array(-154, -121, 147, -123, 333, 96, -330, 95)
+
+[node name="PopupUiComponent" parent="." unique_id=1021774612 instance=ExtResource("3_d5hb7")]
+ui = ExtResource("4_45wan")
+
+[node name="SelectablePopupComponent" parent="." unique_id=1963949682 instance=ExtResource("5_mkyos")]
+
+[connection signal="input_event" from="SelectableComponent" to="." method="_on_selectable_component_input_event"]
