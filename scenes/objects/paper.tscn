@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bvo714udmqaqw"]
 
+[ext_resource type="Script" uid="uid://d2hbeo5n4e5v7" path="res://scripts/objects/paper.gd" id="1_7jphx"]
 [ext_resource type="Shader" uid="uid://bw5ewe3knewbx" path="res://assets/shaders/outline.gdshader" id="1_45wan"]
 [ext_resource type="PackedScene" uid="uid://hc02c5uwjpoi" path="res://scenes/components/selectable_component.tscn" id="2_7jphx"]
 [ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="3_d5hb7"]
 [ext_resource type="PackedScene" uid="uid://cawt112f72j2j" path="res://scenes/popup_ui/paper_popup.tscn" id="4_45wan"]
-[ext_resource type="PackedScene" uid="uid://pgwfcdoksmc5" path="res://scenes/components/selectable_popup_component.tscn" id="5_mkyos"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_45wan")
@@ -23,7 +23,20 @@ gradient = SubResource("Gradient_l6lbw")
 width = 664
 height = 216
 
+[sub_resource type="Gradient" id="Gradient_45wan"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7jphx"]
+gradient = SubResource("Gradient_45wan")
+width = 180
+
+[sub_resource type="Gradient" id="Gradient_7jphx"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d5hb7"]
+gradient = SubResource("Gradient_7jphx")
+width = 180
+
 [node name="Paper" type="Node2D" unique_id=425908746]
+script = ExtResource("1_7jphx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304575131]
 material = SubResource("ShaderMaterial_puc5w")
@@ -39,6 +52,70 @@ polygon = PackedVector2Array(-154, -121, 147, -123, 333, 96, -330, 95)
 [node name="PopupUiComponent" parent="." unique_id=1021774612 instance=ExtResource("3_d5hb7")]
 ui = ExtResource("4_45wan")
 
-[node name="SelectablePopupComponent" parent="." unique_id=1963949682 instance=ExtResource("5_mkyos")]
+[node name="Buttons" type="Control" parent="." unique_id=1372304065]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = 130.0
+offset_right = 20.0
+offset_bottom = 170.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons" unique_id=1370943975]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -32.0
+offset_right = 182.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 115
+
+[node name="Edit" type="TextureButton" parent="Buttons/HBoxContainer" unique_id=1975369447]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_7jphx")
+
+[node name="Label" type="Label" parent="Buttons/HBoxContainer/Edit" unique_id=359612333]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Edit"
+
+[node name="Give" type="TextureButton" parent="Buttons/HBoxContainer" unique_id=269115011]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d5hb7")
+
+[node name="Label" type="Label" parent="Buttons/HBoxContainer/Give" unique_id=440563257]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -11.5
+offset_right = 17.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Give"
+
+[connection signal="clicked" from="SelectableComponent" to="." method="_on_clicked"]
 [connection signal="input_event" from="SelectableComponent" to="." method="_on_selectable_component_input_event"]
+[connection signal="pressed" from="Buttons/HBoxContainer/Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/Give" to="." method="_on_give_pressed"]

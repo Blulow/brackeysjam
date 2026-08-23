@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://h2rxhgqlt3u" path="res://assets/images/fg.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cioaxeqrxi2tg" path="res://scenes/objects/heart_rate_detector.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://smppy1iqms45" path="res://scenes/objects/tv.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://bvo714udmqaqw" path="res://scenes/objects/paper.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cqbksjfi86dqh" path="res://scenes/objects/rule.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://ccwqilakya26o" path="res://scenes/objects/phone.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://cq7l2ff0kkbfc" path="res://scenes/objects/papers.tscn" id="8_0tnpc"]
@@ -26,9 +25,6 @@ position = Vector2(-576, 145)
 
 [node name="TV" parent="World" unique_id=330125472 instance=ExtResource("4_lbhrr")]
 position = Vector2(-856, -211)
-
-[node name="Paper" parent="World" unique_id=885389089 instance=ExtResource("5_iywne")]
-position = Vector2(-21, 314)
 
 [node name="Rule" parent="World" unique_id=1107970536 instance=ExtResource("6_p57ef")]
 position = Vector2(800, -336)
