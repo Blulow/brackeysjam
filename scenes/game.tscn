@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://bwtavl3purj71"]
 
+[ext_resource type="Texture2D" uid="uid://cjrjm7bg53piu" path="res://assets/bg.png" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://cxo0qo545exx1" path="res://assets/fg.png" id="2_yqjtg"]
+
 [node name="Game" type="Node2D" unique_id=21264269]
+
+[node name="World" type="Node2D" parent="." unique_id=1913800903]
+
+[node name="Background" type="Sprite2D" parent="World" unique_id=1049320684]
+modulate = Color(0.5294118, 0.5294118, 0.5294118, 1)
+position = Vector2(0, -186)
+texture = ExtResource("1_uwrxv")
+
+[node name="Foreground" type="Sprite2D" parent="World" unique_id=1653123691]
+texture = ExtResource("2_yqjtg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=70683275]
