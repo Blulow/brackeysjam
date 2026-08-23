@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pgwfcdoksmc5"]
+
+[ext_resource type="Script" uid="uid://cc8urmbj8q7hr" path="res://scripts/components/selectable_popup_component.gd" id="1_abuel"]
+
+[node name="SelectablePopupComponent" type="Node2D" unique_id=1963949682]
+script = ExtResource("1_abuel")

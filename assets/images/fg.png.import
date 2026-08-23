@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c60tn2oxx0b3a"
-path="res://.godot/imported/heartratedetector.png-ed7f7e5246fabedb305dc1df9a761391.ctex"
+uid="uid://cxo0qo545exx1"
+path="res://.godot/imported/fg.png-96a0e85eb40dd026b9acce78c1dc674c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/heartratedetector.png"
-dest_files=["res://.godot/imported/heartratedetector.png-ed7f7e5246fabedb305dc1df9a761391.ctex"]
+source_file="res://assets/images/fg.png"
+dest_files=["res://.godot/imported/fg.png-96a0e85eb40dd026b9acce78c1dc674c.ctex"]
 
 [params]
 

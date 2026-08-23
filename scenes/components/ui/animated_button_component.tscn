@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bf6f0ro2m656y"]
+
+[ext_resource type="Script" uid="uid://dmbogiamtw54e" path="res://scripts/components/ui/animated_button_component.gd" id="1_5st1e"]
+
+[node name="AnimatedButtonComponent" type="Control" unique_id=231881551]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5st1e")

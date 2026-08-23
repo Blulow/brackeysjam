@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dqp20ijshb2ac"]
+
+[ext_resource type="Script" uid="uid://b7j4tf53gbvhh" path="res://scripts/popup_ui/close_button.gd" id="1_sep7c"]
+[ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="2_1fe5p"]
+
+[sub_resource type="Gradient" id="Gradient_rtmft"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eptdl"]
+gradient = SubResource("Gradient_rtmft")
+
+[node name="CloseButton" type="TextureButton" unique_id=1617579724]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("GradientTexture2D_eptdl")
+script = ExtResource("1_sep7c")
+
+[node name="AnimatedButtonComponent" parent="." unique_id=231881551 instance=ExtResource("2_1fe5p")]
+layout_mode = 0
+
+[connection signal="clicked" from="AnimatedButtonComponent" to="." method="_on_clicked"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://hc02c5uwjpoi"]
+
+[ext_resource type="Script" uid="uid://ctgjnxmay8xmx" path="res://scripts/components/selectable_component.gd" id="1_x07wq"]
+
+[node name="SelectableComponent" type="Area2D" unique_id=650134341]
+script = ExtResource("1_x07wq")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
