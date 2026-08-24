@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cykq57redkkhs"]
+
+[sub_resource type="Gradient" id="Gradient_u5sy4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gee14"]
+gradient = SubResource("Gradient_u5sy4")
+width = 359
+height = 637
+
+[node name="PeopleSprite" type="TextureRect" unique_id=551218619]
+size_flags_horizontal = 6
+texture = SubResource("GradientTexture2D_gee14")

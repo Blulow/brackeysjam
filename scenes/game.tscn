@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bwtavl3purj71"]
 
 [ext_resource type="Texture2D" uid="uid://cjrjm7bg53piu" path="res://assets/images/bg.png" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://xivety8lp20s" path="res://scripts/people/people.gd" id="2_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://h2rxhgqlt3u" path="res://assets/images/fg.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cioaxeqrxi2tg" path="res://scenes/objects/heart_rate_detector.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://smppy1iqms45" path="res://scenes/objects/tv.tscn" id="4_lbhrr"]
@@ -8,19 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://ccwqilakya26o" path="res://scenes/objects/phone.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://cq7l2ff0kkbfc" path="res://scenes/objects/papers.tscn" id="8_0tnpc"]
 [ext_resource type="Script" uid="uid://psq43odj5en5" path="res://scripts/managers/round_manager.gd" id="8_gee14"]
+[ext_resource type="Resource" uid="uid://bdia3nf8tf6df" path="res://assets/resources/rounds/round_1.tres" id="10_vtaks"]
 
 [sub_resource type="Curve2D" id="Curve2D_u5sy4"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1419, 0, 0, 0, 0, 0, -1375, 0)
 }
 point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_u5sy4"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gee14"]
-gradient = SubResource("Gradient_u5sy4")
-width = 359
-height = 637
 
 [node name="Game" type="Node2D" unique_id=21264269]
 
@@ -38,13 +33,26 @@ curve = SubResource("Curve2D_u5sy4")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="World/PeopleArea/PeoplePath" unique_id=2056716224]
 position = Vector2(1419, 0)
-rotation = 3.1415927
+rotates = false
 loop = false
 
 [node name="People" type="Node2D" parent="World/PeopleArea/PeoplePath/PathFollow2D" unique_id=1718939152]
+script = ExtResource("2_0tnpc")
 
-[node name="Sprite2D" type="Sprite2D" parent="World/PeopleArea/PeoplePath/PathFollow2D/People" unique_id=1923102565]
-texture = SubResource("GradientTexture2D_gee14")
+[node name="HBoxContainer" type="HBoxContainer" parent="World/PeopleArea/PeoplePath/PathFollow2D/People" unique_id=248674295]
+custom_minimum_size = Vector2(1200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.5
+offset_top = -318.5
+offset_right = 179.5
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="Foreground" type="Sprite2D" parent="World" unique_id=1653123691]
 texture = ExtResource("2_yqjtg")
@@ -72,3 +80,4 @@ position = Vector2(649, 285)
 
 [node name="RoundManager" type="Node2D" parent="." unique_id=2028876826]
 script = ExtResource("8_gee14")
+rounds = Array[Resource]([ExtResource("10_vtaks")])
