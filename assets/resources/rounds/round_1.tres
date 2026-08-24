@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://cbo8ursmeimy" path="res://scripts/people_config_values/people_config_int_value.gd" id="1_clkvy"]
 [ext_resource type="Script" uid="uid://ddkheyxoh5lgl" path="res://scripts/people/people_config.gd" id="1_spky0"]
 [ext_resource type="Script" uid="uid://b6eev2o4gsb7v" path="res://scripts/people_config_values/people_config_bool_value.gd" id="1_tr004"]
-[ext_resource type="Script" uid="uid://c4ran4w2e4xhr" path="res://scripts/people_config_values/people_config_float_value.gd" id="2_clkvy"]
+[ext_resource type="Script" uid="uid://c4ran4w2e4xhr" path="res://scripts/people_config_values/people_config_heartrate_value.gd" id="3_728il"]
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="4_a13lx"]
 [ext_resource type="Script" uid="uid://l1ku632ceix" path="res://scripts/people_config_values/people_config_identity_value.gd" id="4_c55eo"]
+[ext_resource type="Script" uid="uid://dopnqcqmflhwm" path="res://scripts/popup_ui/heart_rate.gd" id="4_fbbl2"]
 [ext_resource type="Script" uid="uid://dojjqallh3e4s" path="res://scripts/people_config_values/person_identity.gd" id="5_728il"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="5_c55eo"]
 
@@ -27,14 +28,27 @@ script = ExtResource("1_tr004")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_clkvy"]
-script = ExtResource("2_clkvy")
-value = 120.0
+[sub_resource type="Resource" id="Resource_myrmy"]
+script = ExtResource("4_fbbl2")
+bpm = 100.0
+amp = 100.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_7n82p"]
+script = ExtResource("3_728il")
+value = SubResource("Resource_myrmy")
 metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
 
-[sub_resource type="Resource" id="Resource_myrmy"]
-script = ExtResource("2_clkvy")
-value = 180.0
+[sub_resource type="Resource" id="Resource_m404k"]
+script = ExtResource("4_fbbl2")
+bpm = 100.0
+amp = 70.0
+pha = 50.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_tfwmf"]
+script = ExtResource("3_728il")
+value = SubResource("Resource_m404k")
 metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
 
 [sub_resource type="Resource" id="Resource_1obtl"]
@@ -139,6 +153,6 @@ identities = Array[ExtResource("4_c55eo")]([SubResource("Resource_jkfpe"), SubRe
 sprites = Array[ExtResource("5_c55eo")]([SubResource("Resource_h3oi3"), SubResource("Resource_h3oi3")])
 views = Array[ExtResource("1_tr004")]([SubResource("Resource_fbbl2"), SubResource("Resource_6b8q3")])
 shadows = Array[ExtResource("1_tr004")]([SubResource("Resource_a13lx"), SubResource("Resource_7kad0")])
-heart_rates = Array[ExtResource("2_clkvy")]([SubResource("Resource_clkvy"), SubResource("Resource_myrmy")])
+heart_rates = Array[ExtResource("3_728il")]([SubResource("Resource_7n82p"), SubResource("Resource_tfwmf")])
 feet_views = Array[ExtResource("1_tr004")]([SubResource("Resource_tr004"), SubResource("Resource_ttiw8")])
 speech_texts = Array[ExtResource("4_a13lx")]([SubResource("Resource_c55eo"), SubResource("Resource_yn2fd")])

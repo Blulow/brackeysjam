@@ -31,19 +31,6 @@ gradient = SubResource("Gradient_tef5t")
 width = 546
 height = 322
 
-[sub_resource type="Resource" id="Resource_5tyai"]
-script = ExtResource("3_52yvk")
-bpm = 100.0
-amp = 100.0
-metadata/_custom_type_script = "uid://dopnqcqmflhwm"
-
-[sub_resource type="Resource" id="Resource_ka4wo"]
-script = ExtResource("3_52yvk")
-bpm = 100.0
-amp = 70.0
-pha = 50.0
-metadata/_custom_type_script = "uid://dopnqcqmflhwm"
-
 [node name="HeartRatePopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
 anchors_preset = 15
@@ -118,7 +105,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
 layout_mode = 2
 texture = SubResource("GradientTexture2D_52yvk")
 script = ExtResource("2_oc362")
-heartbeats = Array[ExtResource("3_52yvk")]([SubResource("Resource_5tyai"), SubResource("Resource_ka4wo")])
+override = true
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_8a6af")]
 layout_mode = 0

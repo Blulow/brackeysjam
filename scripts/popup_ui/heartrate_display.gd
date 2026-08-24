@@ -9,8 +9,13 @@ const ECG_COLOR := Color("#39ff88")
 const GRID_COLOR := Color(0.08, 0.25, 0.15, 0.5)
 
 @export var heartbeats: Array[Heartrate]
+@export var override: bool
 
 func _ready():
+	if override:
+		for e in GameManager.round_manager.people.people:
+			heartbeats.append(e.heart_rate)
+	
 	for x in range(0, int(size.x) + 20, 4):
 		points.append(Vector2(x, size.y / 2.0))
 

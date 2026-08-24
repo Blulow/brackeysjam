@@ -10,7 +10,7 @@ var identities: Array[PersonIdentity]
 var sprites: Array[Texture2D]
 var views: Array[bool]
 var shadows: Array[bool]
-var heart_rates: Array[float]
+var heart_rates: Array[Heartrate]
 var feet_views: Array[bool]
 var speech_texts: Array[String]
 var singular: bool
@@ -70,7 +70,7 @@ func set_people(config: PeopleConfig) -> void:
 				
 				person_config.view = true
 				person_config.shadow = false
-				person_config.heart_rate = 0
+				person_config.heart_rate = Heartrate.new()
 				person_config.feet_view = false
 				
 			PersonIdentity.Identity.CLONE:
@@ -87,7 +87,7 @@ func set_people(config: PeopleConfig) -> void:
 				people_sprite.texture = sprites[i]
 				
 				person_config.shadow = true
-				person_config.heart_rate = 0
+				person_config.heart_rate = Heartrate.new()
 				person_config.feet_view = false
 				
 		people_sprite.visible = views[i]

@@ -6,7 +6,7 @@ class_name PeopleConfig
 @export var sprites: Array[PeopleConfigSpriteValue]
 @export var views: Array[PeopleConfigBoolValue]
 @export var shadows: Array[PeopleConfigBoolValue]
-@export var heart_rates: Array[PeopleConfigFloatValue]
+@export var heart_rates: Array[PeopleConfigHeartrateValue]
 @export var feet_views: Array[PeopleConfigBoolValue]
 @export var speech_texts: Array[PeopleConfigSpeechValue]
 
@@ -28,8 +28,8 @@ func get_shadows() -> Array[bool]:
 	var array: Array[bool] = []
 	array.assign(get_values(shadows))
 	return array
-func get_heart_rates() -> Array[float]:
-	var array: Array[float] = []
+func get_heart_rates() -> Array[Heartrate]:
+	var array: Array[Heartrate] = []
 	array.assign(get_values(heart_rates))
 	return array
 func get_feet_views() -> Array[bool]:
