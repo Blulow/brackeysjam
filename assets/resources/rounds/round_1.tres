@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://b6eev2o4gsb7v" path="res://scripts/people_config_values/people_config_bool_value.gd" id="1_tr004"]
 [ext_resource type="Script" uid="uid://c4ran4w2e4xhr" path="res://scripts/people_config_values/people_config_float_value.gd" id="2_clkvy"]
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="4_a13lx"]
+[ext_resource type="Script" uid="uid://l1ku632ceix" path="res://scripts/people_config_values/people_config_identity_value.gd" id="4_c55eo"]
+[ext_resource type="Script" uid="uid://dojjqallh3e4s" path="res://scripts/people_config_values/person_identity.gd" id="5_728il"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="5_c55eo"]
 
 [sub_resource type="Resource" id="Resource_728il"]
@@ -22,6 +24,7 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_ttiw8"]
 script = ExtResource("1_tr004")
+value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_clkvy"]
@@ -31,7 +34,37 @@ metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
 
 [sub_resource type="Resource" id="Resource_myrmy"]
 script = ExtResource("2_clkvy")
+value = 180.0
 metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_1obtl"]
+script = ExtResource("5_728il")
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_jkfpe"]
+script = ExtResource("4_c55eo")
+value = SubResource("Resource_1obtl")
+metadata/_custom_type_script = "uid://l1ku632ceix"
+
+[sub_resource type="Resource" id="Resource_potff"]
+script = ExtResource("5_728il")
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_6vj62"]
+script = ExtResource("5_728il")
+identity = 1
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_fsm5x"]
+script = ExtResource("5_728il")
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_kw2p0"]
+script = ExtResource("4_c55eo")
+type = 1
+value = SubResource("Resource_fsm5x")
+identities = Array[ExtResource("5_728il")]([SubResource("Resource_potff"), SubResource("Resource_6vj62")])
+metadata/_custom_type_script = "uid://l1ku632ceix"
 
 [sub_resource type="Resource" id="Resource_a13lx"]
 script = ExtResource("1_tr004")
@@ -102,6 +135,7 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 [resource]
 script = ExtResource("1_spky0")
 count = SubResource("Resource_728il")
+identities = Array[ExtResource("4_c55eo")]([SubResource("Resource_jkfpe"), SubResource("Resource_kw2p0")])
 sprites = Array[ExtResource("5_c55eo")]([SubResource("Resource_h3oi3"), SubResource("Resource_h3oi3")])
 views = Array[ExtResource("1_tr004")]([SubResource("Resource_fbbl2"), SubResource("Resource_6b8q3")])
 shadows = Array[ExtResource("1_tr004")]([SubResource("Resource_a13lx"), SubResource("Resource_7kad0")])

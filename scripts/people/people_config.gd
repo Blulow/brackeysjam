@@ -2,6 +2,7 @@ extends Resource
 class_name PeopleConfig
 
 @export var count: PeopleConfigIntValue
+@export var identities: Array[PeopleConfigIdentityValue]
 @export var sprites: Array[PeopleConfigSpriteValue]
 @export var views: Array[PeopleConfigBoolValue]
 @export var shadows: Array[PeopleConfigBoolValue]
@@ -11,6 +12,10 @@ class_name PeopleConfig
 
 func get_count() -> int:
 	return count.get_value()
+func get_identities() -> Array[PersonIdentity]:
+	var array: Array[PersonIdentity] = []
+	array.assign(get_values(identities))
+	return array
 func get_sprites() -> Array[Texture2D]:
 	var array: Array[Texture2D] = []
 	array.assign(get_values(sprites))
