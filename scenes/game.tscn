@@ -81,3 +81,9 @@ position = Vector2(649, 285)
 [node name="RoundManager" type="Node2D" parent="." unique_id=2028876826]
 script = ExtResource("8_gee14")
 rounds = Array[Resource]([ExtResource("10_vtaks")])
+
+[node name="TextureButton" type="TextureButton" parent="RoundManager" unique_id=502440612]
+offset_left = 1096.6084
+offset_top = 112.23836
+offset_right = 1096.6084
+offset_bottom = 112.23836

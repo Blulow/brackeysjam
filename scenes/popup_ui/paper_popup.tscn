@@ -10,11 +10,41 @@ content_margin_right = 10.0
 content_margin_bottom = 10.0
 
 [sub_resource type="Gradient" id="Gradient_tef5t"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8a6af"]
 gradient = SubResource("Gradient_tef5t")
 width = 292
 height = 274
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o16k"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7en8x"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl03r"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="PaperPopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
@@ -57,8 +87,153 @@ offset_bottom = 340.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
 
 [node name="TextureRect" type="TextureRect" parent="UI/PanelContainer" unique_id=1098372172]
+modulate = Color(0.76953125, 0.76953125, 0.76953125, 1)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_8a6af")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/TextureRect" unique_id=793368463]
+layout_mode = 0
+offset_right = 498.0
+offset_bottom = 620.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer" unique_id=583560515]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1686001424]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "ENTITIY INTAKE
+FORM"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1423085506]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1436127035]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=3172618]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "NUMBER OF ENTITIES: "
+
+[node name="LineEdit" type="LineEdit" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1927148306]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.26171875, 0.26171875, 0.26171875, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1o16k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7en8x")
+
+[node name="Label3" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=2044380600]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "ENTITIES:"
+
+[node name="ColorRect2" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=519628321]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1876558971]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1982192624]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=959565624]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="Label4" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=707582979]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "NON-ENTITIES:"
+
+[node name="ColorRect4" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=70073210]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=788196709]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1874273325]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=595801993]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=587064940]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bl03r")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer" unique_id=1674200073]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1086982215]
+layout_mode = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1522307574]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21533203, 0.57421875, 0.21533203, 1)
+theme_override_font_sizes/font_size = 53
+text = "ACCEPT"
+
+[node name="Control" type="Control" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2046049222]
+custom_minimum_size = Vector2(14.755, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=249004237]
+custom_minimum_size = Vector2(65.76, 2)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 71.0
+offset_right = 4.0
+offset_bottom = 73.0
+rotation = -1.4713125
+size_flags_vertical = 10
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1477133103]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.890625, 0.03479004, 0.03479004, 1)
+theme_override_font_sizes/font_size = 53
+text = "REJECT"
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_bl03r")]
 layout_mode = 0
