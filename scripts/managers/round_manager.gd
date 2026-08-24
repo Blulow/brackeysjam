@@ -41,11 +41,7 @@ func _process(delta: float) -> void:
 func start_round(idx: int) -> void:
 	round_state = RoundStates.START
 	
-	if current_round < rounds.size():
-		people.set_people(rounds[current_round])
-	else:
-		print("game end")
-	
+	people.set_people(rounds[current_round])
 	round_start.emit()
 
 func stay_current_round() -> void:
@@ -60,4 +56,7 @@ func end_current_round() -> void:
 	round_state = -1
 	current_round += 1
 	
-	start_round(current_round)
+	if current_round < rounds.size():
+		start_round(current_round)
+	else:
+		print("game end")

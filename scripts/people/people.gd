@@ -25,9 +25,7 @@ func set_people(config: PeopleConfig) -> void:
 	speech_texts = config.get_speech_texts()
 	
 	people.clear()
-	print("c ", config.get_count())
 	for i: int in range(config.get_count()):
-		print("id ", i)
 		var people_sprite: TextureRect = people_sprite_scene.instantiate()
 		
 		if i >= min(
@@ -96,11 +94,5 @@ func set_people(config: PeopleConfig) -> void:
 		container.add_child(people_sprite)
 		
 		people.append(person_config)
-		print("i ", person_config.identity.identity)
-		print("v ", person_config.view)
-		print("sh ", person_config.shadow)
-		print("h ", person_config.heart_rate)
-		print("f ", person_config.feet_view)
 	
 	singular = identities.filter(func(e: PersonIdentity): return e.identity == PersonIdentity.Identity.ENTITY or e.identity == PersonIdentity.Identity.TWIN).size() <= 1
-	print("s ", singular)

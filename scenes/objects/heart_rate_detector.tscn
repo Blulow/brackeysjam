@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cioaxeqrxi2tg"]
 
 [ext_resource type="Shader" uid="uid://bw5ewe3knewbx" path="res://assets/shaders/outline.gdshader" id="2_7o2px"]
-[ext_resource type="Texture2D" uid="uid://c60tn2oxx0b3a" path="res://assets/images/heartratedetector.png" id="2_p2hnl"]
+[ext_resource type="Texture2D" uid="uid://c60tn2oxx0b3a" path="res://assets/images/objects/heartratedetector.png" id="2_p2hnl"]
 [ext_resource type="PackedScene" uid="uid://hc02c5uwjpoi" path="res://scenes/components/selectable_component.tscn" id="3_7o2px"]
 [ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="5_puc5w"]
 [ext_resource type="PackedScene" uid="uid://pgwfcdoksmc5" path="res://scenes/components/selectable_popup_component.tscn" id="6_tqews"]

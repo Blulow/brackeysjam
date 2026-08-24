@@ -2,19 +2,47 @@
 
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_tef5t"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_8a6af"]
+[ext_resource type="Script" uid="uid://xesbt8yo1boe" path="res://scripts/popup_ui/heartrate_display.gd" id="2_oc362"]
+[ext_resource type="Script" uid="uid://dopnqcqmflhwm" path="res://scripts/popup_ui/heart_rate.gd" id="3_52yvk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tef5t"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
+bg_color = Color(0.105882354, 0.21568628, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_tef5t"]
+colors = PackedColorArray(0.8039216, 0.81960785, 0.7882353, 1, 0.8039216, 0.81960785, 0.7882353, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8a6af"]
 gradient = SubResource("Gradient_tef5t")
-width = 1006
-height = 274
+width = 546
+height = 109
+
+[sub_resource type="Resource" id="Resource_52yvk"]
+script = ExtResource("3_52yvk")
+bpm = 80.0
+amp = 50.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52yvk"]
+gradient = SubResource("Gradient_tef5t")
+width = 546
+height = 322
+
+[sub_resource type="Resource" id="Resource_5tyai"]
+script = ExtResource("3_52yvk")
+bpm = 100.0
+amp = 100.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_ka4wo"]
+script = ExtResource("3_52yvk")
+bpm = 100.0
+amp = 70.0
+pha = 50.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
 
 [node name="HeartRatePopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
@@ -48,23 +76,55 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="UI" unique_id=92300388]
+layout_mode = 0
+offset_left = -480.0
+offset_top = -382.0
+offset_right = -423.0
+offset_bottom = -359.0
+text = "Sample: 80 BPM"
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI" unique_id=1612450774]
+layout_mode = 0
+offset_left = -491.0
+offset_top = -345.0
+offset_right = -169.0
+offset_bottom = -236.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
+
+[node name="Display" type="TextureRect" parent="UI/PanelContainer2" unique_id=850729063]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_8a6af")
+script = ExtResource("2_oc362")
+heartbeats = Array[ExtResource("3_52yvk")]([SubResource("Resource_52yvk")])
+
+[node name="Label2" type="Label" parent="UI" unique_id=1023925209]
+layout_mode = 0
+offset_left = -479.0
+offset_top = -163.0
+offset_right = -417.0
+offset_bottom = -140.0
+text = "Actual: ??? BPM(s)"
+
 [node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1237385849]
 layout_mode = 0
 offset_left = -493.0
 offset_top = -127.0
-offset_right = 533.0
-offset_bottom = 167.0
+offset_right = 573.0
+offset_bottom = -7.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
 
-[node name="TextureRect" type="TextureRect" parent="UI/PanelContainer" unique_id=1098372172]
+[node name="Display" type="TextureRect" parent="UI/PanelContainer" unique_id=909504524]
 layout_mode = 2
-texture = SubResource("GradientTexture2D_8a6af")
+texture = SubResource("GradientTexture2D_52yvk")
+script = ExtResource("2_oc362")
+heartbeats = Array[ExtResource("3_52yvk")]([SubResource("Resource_5tyai"), SubResource("Resource_ka4wo")])
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_8a6af")]
 layout_mode = 0
-offset_left = 533.0
+offset_left = 573.0
 offset_top = -127.0
-offset_right = 597.0
+offset_right = 637.0
 offset_bottom = -63.0
 
 [connection signal="mouse_entered" from="UI/CloseButton" to="UI/CloseButton" method="_on_mouse_entered"]
