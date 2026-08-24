@@ -1,14 +1,37 @@
 [gd_scene format=3 uid="uid://de0krbf0p6jmi"]
 
+[ext_resource type="Script" uid="uid://bfyitx5okx0lm" path="res://scripts/popup_ui/tv_display.gd" id="1_5qc8h"]
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_rtmft"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_eptdl"]
 [ext_resource type="PackedScene" uid="uid://cabn6k3mebemq" path="res://scenes/popup_ui/ui/security_camera.tscn" id="2_kb2g4"]
+[ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="3_teyo4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tef5t"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
+
+[sub_resource type="Gradient" id="Gradient_5qc8h"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_teyo4"]
+gradient = SubResource("Gradient_5qc8h")
+height = 256
+
+[sub_resource type="Gradient" id="Gradient_ntikx"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mtuw5"]
+gradient = SubResource("Gradient_ntikx")
+width = 1202
+height = 750
+
+[sub_resource type="Gradient" id="Gradient_q2au0"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_devuh"]
+gradient = SubResource("Gradient_q2au0")
+height = 256
 
 [node name="TVPopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
@@ -17,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5qc8h")
 
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("1_rtmft")]
 layout_mode = 0
@@ -43,17 +67,37 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1237385849]
-layout_mode = 0
-offset_left = -601.0
-offset_top = -370.0
-offset_right = 641.0
-offset_bottom = 410.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -689.0
+offset_top = -390.0
+offset_right = 689.0
+offset_bottom = 390.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
 
-[node name="TextureRect" type="TextureRect" parent="UI/PanelContainer" unique_id=1098372172]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer" unique_id=122129040]
 layout_mode = 2
+theme_override_constants/separation = 14
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/PanelContainer/TextureRect" unique_id=547843674]
+[node name="LeftButton" type="TextureButton" parent="UI/PanelContainer/HBoxContainer" unique_id=227863324]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = SubResource("GradientTexture2D_teyo4")
+
+[node name="AnimatedButtonComponent" parent="UI/PanelContainer/HBoxContainer/LeftButton" unique_id=231881551 instance=ExtResource("3_teyo4")]
+layout_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/PanelContainer/HBoxContainer" unique_id=1098372172]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_mtuw5")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/PanelContainer/HBoxContainer/TextureRect" unique_id=547843674]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,16 +106,27 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="UI/PanelContainer/TextureRect/SubViewportContainer" unique_id=15294461]
+[node name="SubViewport" type="SubViewport" parent="UI/PanelContainer/HBoxContainer/TextureRect/SubViewportContainer" unique_id=15294461]
 handle_input_locally = false
-size = Vector2i(1222, 760)
+size = Vector2i(1202, 760)
 render_target_update_mode = 4
 
-[node name="SecurityCamera" parent="UI/PanelContainer/TextureRect/SubViewportContainer/SubViewport" unique_id=614481693 instance=ExtResource("2_kb2g4")]
+[node name="SecurityCamera" parent="UI/PanelContainer/HBoxContainer/TextureRect/SubViewportContainer/SubViewport" unique_id=614481693 instance=ExtResource("2_kb2g4")]
+
+[node name="RightButton" type="TextureButton" parent="UI/PanelContainer/HBoxContainer" unique_id=1095833913]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = SubResource("GradientTexture2D_devuh")
+
+[node name="AnimatedButtonComponent" parent="UI/PanelContainer/HBoxContainer/RightButton" unique_id=1129492573 instance=ExtResource("3_teyo4")]
+layout_mode = 0
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_eptdl")]
 layout_mode = 0
-offset_left = 641.0
+offset_left = 709.0
 offset_top = -370.0
-offset_right = 705.0
+offset_right = 773.0
 offset_bottom = -306.0
+
+[connection signal="pressed" from="UI/PanelContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]

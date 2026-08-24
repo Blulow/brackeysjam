@@ -24,13 +24,3 @@ func switch_cam(idx: int) -> void:
 	
 	current_cam_idx = idx
 	if current_camera: current_camera.make_current()
-
-func _input(event: InputEvent):
-	if event is InputEventKey:
-		if event.pressed and not event.is_echo():
-			if event.keycode == KEY_0:
-				switch_cam(0)
-			elif event.keycode == KEY_1:
-				switch_cam(1)
-			elif event.keycode == KEY_2:
-				switch_cam(2)
