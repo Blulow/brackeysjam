@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cphoptrbu6b5l"]
+
+[ext_resource type="Script" uid="uid://rkjcbr54185k" path="res://scripts/components/3d/aligning_container_3d.gd" id="1_w2y2s"]
+
+[node name="AligningContainer3D" type="Node3D" unique_id=1191472738]
+script = ExtResource("1_w2y2s")

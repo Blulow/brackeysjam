@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://0ct6mkjijivk"]
+
+[ext_resource type="Script" uid="uid://b6ieydm15dwqm" path="res://scripts/people/cam/cam_person.gd" id="1_rqlvd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0we6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqlvd"]
+resource_local_to_scene = true
+transparency = 4
+
+[node name="Person" type="MeshInstance3D" unique_id=1515487243]
+mesh = SubResource("CapsuleMesh_0we6e")
+surface_material_override/0 = SubResource("StandardMaterial3D_rqlvd")
+script = ExtResource("1_rqlvd")

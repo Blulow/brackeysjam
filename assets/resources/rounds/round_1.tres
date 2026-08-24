@@ -71,11 +71,11 @@ metadata/_custom_type_script = "uid://dojjqallh3e4s"
 
 [sub_resource type="Resource" id="Resource_fsm5x"]
 script = ExtResource("5_728il")
+identity = 2
 metadata/_custom_type_script = "uid://dojjqallh3e4s"
 
 [sub_resource type="Resource" id="Resource_kw2p0"]
 script = ExtResource("4_c55eo")
-type = 1
 value = SubResource("Resource_fsm5x")
 identities = Array[ExtResource("5_728il")]([SubResource("Resource_potff"), SubResource("Resource_6vj62")])
 metadata/_custom_type_script = "uid://l1ku632ceix"

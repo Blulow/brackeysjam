@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cabn6k3mebemq"]
+
+[ext_resource type="Script" uid="uid://du27wyff0c4jx" path="res://scripts/popup_ui/security_camera.gd" id="1_53a5h"]
+[ext_resource type="Script" uid="uid://kacxv2mpucah" path="res://scripts/people/cam/cam_people.gd" id="1_fp0dp"]
+[ext_resource type="PackedScene" uid="uid://cphoptrbu6b5l" path="res://scenes/components/3d/aligning_container_3d.tscn" id="2_wbbhj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0we6e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fp0dp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0we6e"]
+sky_top_color = Color(0.056003094, 0.015106201, 0.12890625, 1)
+ground_bottom_color = Color(0.07421875, 0.012176514, 0.025263548, 1)
+
+[sub_resource type="Sky" id="Sky_fp0dp"]
+sky_material = SubResource("ProceduralSkyMaterial_0we6e")
+
+[sub_resource type="Environment" id="Environment_wbbhj"]
+background_mode = 2
+sky = SubResource("Sky_fp0dp")
+ambient_light_color = Color(0.41015625, 0.33305168, 0.18585205, 1)
+
+[sub_resource type="Gradient" id="Gradient_53a5h"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pklln"]
+gradient = SubResource("Gradient_53a5h")
+
+[node name="SecurityCamera" type="Node3D" unique_id=614481693]
+script = ExtResource("1_53a5h")
+
+[node name="World" type="Node3D" parent="." unique_id=106676778]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World" unique_id=1974437215]
+transform = Transform3D(28.31922, 0, 0, 0, 1, 0, 0, 0, 44.97864, -22.446663, 0, -15.111972)
+mesh = SubResource("PlaneMesh_0we6e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World" unique_id=1486769936]
+transform = Transform3D(1.9499989, 0, 0, 0, 4.351521, 0, 0, 0, 10.873369, 4.4966936, 2.1693368, 0)
+mesh = SubResource("BoxMesh_fp0dp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="World" unique_id=182189008]
+transform = Transform3D(-0.22827195, 0.9648292, 0.13037032, 0.11752551, -0.10561946, 0.98743725, 0.96647793, 0.24072601, -0.089282095, 1.6678276, 4.100061, -2.6155872)
+light_energy = 6.44
+spot_angle = 50.05
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="World" unique_id=1604219565]
+transform = Transform3D(0.72018, -0.6869742, 0.09699091, -0.09218099, 0.043811776, 0.99477816, -0.68763626, -0.7253599, -0.03177359, 1.6864152, 4.1000614, 2.6488962)
+light_energy = 6.44
+spot_angle = 50.05
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="World" unique_id=1792680752]
+transform = Transform3D(0.5296268, -0.53105545, 0.66141933, -0.4966405, 0.43798774, 0.7493429, -0.6876363, -0.7253598, -0.03177359, 3.3470213, 3.7454152, 0.40438485)
+light_energy = 9.16
+shadow_enabled = true
+spot_range = 5.434
+spot_angle = 61.2
+
+[node name="People" type="Node3D" parent="World" unique_id=471835800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.877405, 1.0038072, 0)
+script = ExtResource("1_fp0dp")
+
+[node name="AligningContainer3D" parent="World/People" unique_id=1191472738 instance=ExtResource("2_wbbhj")]
+sort_axis = 2
+reverse_order = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=115149669]
+transform = Transform3D(0.91173756, -0.26716056, 0.31202543, 0.016689608, 0.7830705, 0.621709, -0.410434, -0.56162786, 0.7184136, 3.325589, 3.1710806, 4.2438846)
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=501403154]
+transform = Transform3D(-0.9633502, -0.15390143, 0.21970668, 0.016689597, 0.7830705, 0.621709, -0.26772773, 0.6025902, -0.7518026, 3.325589, 3.1710806, -3.345531)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1152686909]
+environment = SubResource("Environment_wbbhj")
+
+[node name="FeetCamLayer" type="CanvasLayer" parent="." unique_id=609669820]
+
+[node name="FeetCam" type="Control" parent="FeetCamLayer" unique_id=1427918205]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="FeetCamLayer/FeetCam" unique_id=484910898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_pklln")
