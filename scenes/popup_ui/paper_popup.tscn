@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cawt112f72j2j"]
 
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_1o16k"]
+[ext_resource type="Script" uid="uid://cxvoga8trt63q" path="res://scripts/popup_ui/entity_intake_form.gd" id="1_bl03r"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_bl03r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tef5t"]
@@ -46,6 +47,22 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_bl03r"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7en8x"]
+gradient = SubResource("Gradient_bl03r")
+width = 173
+height = 72
+
+[sub_resource type="Gradient" id="Gradient_gqu7n"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_37gce"]
+gradient = SubResource("Gradient_gqu7n")
+width = 173
+height = 72
+
 [node name="PaperPopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
 anchors_preset = 15
@@ -53,6 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bl03r")
 
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("1_1o16k")]
 layout_mode = 0
@@ -79,11 +97,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1237385849]
-layout_mode = 0
-offset_left = -239.0
-offset_top = -300.0
-offset_right = 279.0
-offset_bottom = 340.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -175.0
+offset_right = 260.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
 
 [node name="TextureRect" type="TextureRect" parent="UI/PanelContainer" unique_id=1098372172]
@@ -93,8 +118,8 @@ texture = SubResource("GradientTexture2D_8a6af")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/TextureRect" unique_id=793368463]
 layout_mode = 0
-offset_right = 498.0
-offset_bottom = 620.0
+offset_right = 500.0
+offset_bottom = 330.0
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
@@ -106,9 +131,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1686001424]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "ENTITIY INTAKE
-FORM"
+theme_override_font_sizes/font_size = 45
+text = "ENTITY INTAKE FORM"
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1423085506]
@@ -121,6 +145,7 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=3172618]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 37
 text = "NUMBER OF ENTITIES: "
@@ -132,59 +157,22 @@ theme_override_colors/caret_color = Color(0.26171875, 0.26171875, 0.26171875, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_1o16k")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7en8x")
 
-[node name="Label3" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=2044380600]
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1711507892]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1385835564]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "NUMBER OF PEOPLE: "
+
+[node name="LineEdit" type="LineEdit" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=706398105]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "ENTITIES:"
-
-[node name="ColorRect2" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=519628321]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1876558971]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1982192624]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect8" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=959565624]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
-
-[node name="Label4" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=707582979]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "NON-ENTITIES:"
-
-[node name="ColorRect4" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=70073210]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=788196709]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1874273325]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.26171875, 0.26171875, 0.26171875, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1o16k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7en8x")
 
 [node name="ColorRect9" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=595801993]
 custom_minimum_size = Vector2(0, 2)
@@ -208,11 +196,9 @@ layout_mode = 2
 theme_override_constants/separation = 17
 alignment = 1
 
-[node name="Label" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1522307574]
+[node name="TextureButton" type="TextureButton" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=83728889]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.21533203, 0.57421875, 0.21533203, 1)
-theme_override_font_sizes/font_size = 53
-text = "ACCEPT"
+texture_normal = SubResource("GradientTexture2D_7en8x")
 
 [node name="Control" type="Control" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2046049222]
 custom_minimum_size = Vector2(14.755, 0)
@@ -229,15 +215,21 @@ rotation = -1.4713125
 size_flags_vertical = 10
 color = Color(0, 0, 0, 1)
 
-[node name="Label2" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1477133103]
+[node name="TextureButton2" type="TextureButton" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1989386841]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.890625, 0.03479004, 0.03479004, 1)
-theme_override_font_sizes/font_size = 53
-text = "REJECT"
+texture_normal = SubResource("GradientTexture2D_37gce")
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_bl03r")]
 layout_mode = 0
-offset_left = 279.0
-offset_top = -300.0
-offset_right = 343.0
-offset_bottom = -236.0
+offset_left = 280.0
+offset_top = -155.0
+offset_right = 344.0
+offset_bottom = -91.0
+
+[node name="Indicator" type="ColorRect" parent="UI" unique_id=1790492604]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/TextureButton" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/TextureButton2" to="." method="_on_reject_pressed"]

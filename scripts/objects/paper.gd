@@ -1,11 +1,15 @@
 extends Node2D
 
 @onready var buttons: Control = $Buttons
+@onready var give_btn: TextureButton = $Buttons/HBoxContainer/Give
 
 var button_show: bool = false
 
 func _ready() -> void:
+	GameManager.round_manager.concluded.connect(_on_concluded)
 	buttons.scale = Vector2.ZERO
+	give_btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	give_btn.modulate = Color(Color.WHITE, 0.5)
 
 func _on_clicked() -> void:
 	if button_show: hide_buttons()
@@ -32,3 +36,8 @@ func _on_give_pressed() -> void:
 	await hide_buttons()
 	GameManager.round_manager.end_current_round()
 	queue_free()
+
+func _on_concluded(conc: bool) -> void:
+	if conc:
+		give_btn.mouse_filter = Control.MOUSE_FILTER_STOP
+		give_btn.modulate = Color.WHITE

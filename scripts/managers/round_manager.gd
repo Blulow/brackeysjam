@@ -17,6 +17,7 @@ signal round_start
 signal round_stay
 signal round_end
 signal round_done
+signal concluded(conc: bool)
 
 func _ready() -> void:
 	GameManager.round_manager = self
