@@ -148,6 +148,7 @@ text = "NUMBER OF ENTITIES: "
 layout_mode = 2
 size_flags_vertical = 4
 script = ExtResource("3_7en8x")
+min = 0
 
 [node name="TextureButton" type="TextureButton" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1337514150]
 layout_mode = 2
