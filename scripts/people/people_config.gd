@@ -36,8 +36,8 @@ func get_feet_views() -> Array[bool]:
 	var array: Array[bool] = []
 	array.assign(get_values(feet_views))
 	return array
-func get_speech_texts() -> Array[String]:
-	var array: Array[String] = []
+func get_speech_texts() -> Array[Speech]:
+	var array: Array[Speech] = []
 	array.assign(get_values(speech_texts))
 	return array
 

@@ -54,6 +54,21 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="World/PeopleArea/PeoplePath/PathFollow2D/People" unique_id=1394044583]
+custom_minimum_size = Vector2(1200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -490.0
+offset_right = 600.0
+offset_bottom = -51.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
 [node name="Foreground" type="Sprite2D" parent="World" unique_id=1653123691]
 texture = ExtResource("2_yqjtg")
 
@@ -87,3 +102,7 @@ offset_left = 1096.6084
 offset_top = 112.23836
 offset_right = 1096.6084
 offset_bottom = 112.23836
+
+[connection signal="round_done" from="RoundManager" to="RoundManager" method="_on_round_done"]
+[connection signal="round_end" from="RoundManager" to="RoundManager" method="_on_round_end"]
+[connection signal="round_stay" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_round_stay"]

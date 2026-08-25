@@ -2,7 +2,9 @@ extends Node2D
 class_name People
 
 @onready var container: HBoxContainer = $HBoxContainer
+@onready var speech_container: HBoxContainer = $HBoxContainer2
 var people_sprite_scene: PackedScene = preload("res://scenes/people/people_sprite.tscn")
+var speech_text_scene: PackedScene = preload("res://scenes/people/speech_text.tscn")
 
 var people: Array[PersonConfig] = []
 
@@ -12,7 +14,7 @@ var views: Array[bool]
 var shadows: Array[bool]
 var heart_rates: Array[Heartrate]
 var feet_views: Array[bool]
-var speech_texts: Array[String]
+var speech_texts: Array[Speech]
 var singular: bool
 
 func set_people(config: PeopleConfig) -> void:
@@ -96,3 +98,10 @@ func set_people(config: PeopleConfig) -> void:
 		people.append(person_config)
 	
 	singular = identities.filter(func(e: PersonIdentity): return e.identity == PersonIdentity.Identity.ENTITY or e.identity == PersonIdentity.Identity.TWIN).size() <= 1
+
+func _on_round_stay() -> void:
+	for i in people.size():
+		var speech_text: Control = speech_text_scene.instantiate()
+		speech_container.add_child(speech_text)
+		speech_text.set_speaker(speech_texts[i].speaker)
+		speech_text.set_text(speech_texts[i].text)

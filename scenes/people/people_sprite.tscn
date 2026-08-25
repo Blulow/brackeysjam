@@ -4,7 +4,7 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gee14"]
 gradient = SubResource("Gradient_u5sy4")
-width = 359
+width = 304
 height = 637
 
 [node name="PeopleSprite" type="TextureRect" unique_id=551218619]

@@ -61,3 +61,11 @@ func end_current_round() -> void:
 		start_round(current_round)
 	else:
 		print("game end")
+
+func _on_round_end() -> void:
+	for e in people.get_child(1).get_children():
+		e.queue_free()
+
+func _on_round_done() -> void:
+	for e in people.get_child(0).get_children():
+		e.queue_free()

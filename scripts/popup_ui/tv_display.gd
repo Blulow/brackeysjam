@@ -6,7 +6,6 @@ var cams: Array[int] = [0, 1, 2]
 
 func _on_left_button_pressed() -> void:
 	var i: int = cams.find(cam.current_cam_idx)
-	print(i)
 	if i <= 0:
 		cam.switch_cam(cams[-1])
 	else:
@@ -14,7 +13,6 @@ func _on_left_button_pressed() -> void:
 
 func _on_right_button_pressed() -> void:
 	var i: int = cams.find(cam.current_cam_idx)
-	print(i)
 	if i >= cams.size() - 1:
 		cam.switch_cam(cams[0])
 	else:
