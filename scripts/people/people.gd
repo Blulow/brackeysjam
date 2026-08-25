@@ -103,6 +103,7 @@ func set_people(config: PeopleConfig) -> void:
 
 func _on_round_stay() -> void:
 	for i in people.size():
+		if speech_texts[i].speaker == "" and speech_texts[i].text == "": return
 		var speech_text: Control = speech_text_scene.instantiate()
 		speech_container.add_child(speech_text)
 		speech_text.set_speaker(speech_texts[i].speaker)
