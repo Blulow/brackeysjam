@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ccwqilakya26o"]
 
+[ext_resource type="Script" uid="uid://ek7buv36usdg" path="res://scripts/objects/phone.gd" id="1_1ue43"]
 [ext_resource type="Shader" uid="uid://bw5ewe3knewbx" path="res://assets/shaders/outline.gdshader" id="1_rmfap"]
+[ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="3_rmfap"]
+[ext_resource type="PackedScene" uid="uid://h7adbwq7gxch" path="res://scenes/popup_ui/phone_popup.tscn" id="4_4edv8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_rmfap")
@@ -20,7 +23,12 @@ width = 247
 height = 241
 
 [node name="Phone" type="Node2D" unique_id=425908746]
+process_mode = 3
+script = ExtResource("1_1ue43")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304575131]
 material = SubResource("ShaderMaterial_puc5w")
 texture = SubResource("GradientTexture2D_nlo56")
+
+[node name="PopupUiComponent" parent="." unique_id=1180603586 instance=ExtResource("3_rmfap")]
+ui = ExtResource("4_4edv8")

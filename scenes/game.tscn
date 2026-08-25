@@ -105,4 +105,5 @@ offset_bottom = 112.23836
 
 [connection signal="round_done" from="RoundManager" to="RoundManager" method="_on_round_done"]
 [connection signal="round_end" from="RoundManager" to="RoundManager" method="_on_round_end"]
+[connection signal="round_start" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_round_start"]
 [connection signal="round_stay" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_round_stay"]

@@ -19,6 +19,8 @@ signal round_end
 signal round_done
 signal concluded(conc: bool)
 
+signal dialogue_set(dialogue: Array[String])
+
 func _ready() -> void:
 	GameManager.round_manager = self
 	start_round(current_round)

@@ -15,6 +15,7 @@ var shadows: Array[bool]
 var heart_rates: Array[Heartrate]
 var feet_views: Array[bool]
 var speech_texts: Array[Speech]
+var dialogue: Array[String]
 var singular: bool
 
 func set_people(config: PeopleConfig) -> void:
@@ -25,6 +26,7 @@ func set_people(config: PeopleConfig) -> void:
 	heart_rates = config.get_heart_rates()
 	feet_views = config.get_feet_views()
 	speech_texts = config.get_speech_texts()
+	dialogue = config.dialogue
 	
 	people.clear()
 	for i: int in range(config.get_count()):
@@ -105,3 +107,6 @@ func _on_round_stay() -> void:
 		speech_container.add_child(speech_text)
 		speech_text.set_speaker(speech_texts[i].speaker)
 		speech_text.set_text(speech_texts[i].text)
+
+func _on_round_start() -> void:
+	$"../../../../Objects/Phone".show_dialogue(dialogue)
