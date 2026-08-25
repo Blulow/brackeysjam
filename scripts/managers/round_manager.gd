@@ -10,8 +10,13 @@ const PATH_SPEED: float = 0.01
 
 var current_round: int = 0
 var round_state: int = -1
-
 enum RoundStates { START, STAY, END }
+
+var form_data: Dictionary = {
+	"entity_count": 0,
+	"conc": -1
+}
+enum Conc { ACCEPT, REJECT }
 
 signal round_start
 signal round_stay

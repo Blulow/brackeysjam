@@ -14,4 +14,7 @@ func _ready() -> void:
 		container.add_child(person)
 		person.apply_config(config)
 	
-	if GameManager.round_manager.people.singular: feet_tex.modulate = Color.RED
+	var total_feet: int = 0
+	for e in GameManager.round_manager.people.people:
+		if e.feet_view: total_feet += 1
+	if total_feet == 1: feet_tex.modulate = Color.RED
