@@ -1,11 +1,9 @@
 extends Control
 
-@onready var entity_count_input: LineEdit = $UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/LineEdit
-@onready var people_count_input: LineEdit = $UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/LineEdit
-@onready var indicator: ColorRect = $UI/Indicator
-@onready var accept_btn: TextureButton = $UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/TextureButton
-@onready var reject_btn: TextureButton = $UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/TextureButton2
-@onready var number_selector: NumberSelector = $UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector
+@onready var indicator: TextureRect = $UI/Indicator
+@onready var accept_btn: TextureButton = $UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TextureButton
+@onready var reject_btn: TextureButton = $UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TextureButton2
+@onready var number_selector: NumberSelector = $UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector
 
 var entity_count: int = 0
 
@@ -41,11 +39,11 @@ func _on_reject_pressed() -> void:
 
 func accept_indicator() -> void:
 	indicator.visible = true
-	indicator.global_position = accept_btn.global_position
+	indicator.global_position = accept_btn.global_position + accept_btn.size / 2 - indicator.size / 2
 
 func reject_indicator() -> void:
 	indicator.visible = true
-	indicator.global_position = reject_btn.global_position
+	indicator.global_position = reject_btn.global_position + reject_btn.size / 2 - indicator.size / 2
 
 func _on_number_update(num: int) -> void:
 	entity_count = num

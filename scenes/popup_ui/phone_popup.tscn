@@ -2,15 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_0yn1p"]
 [ext_resource type="Script" uid="uid://ds88kycgi2chh" path="res://scripts/popup_ui/phone_popup.gd" id="1_w4sjb"]
+[ext_resource type="PackedScene" uid="uid://co642745b7vsm" path="res://scenes/components/ui/animated_texture_rect.tscn" id="3_80ewv"]
 [ext_resource type="Shader" uid="uid://bw5ewe3knewbx" path="res://assets/shaders/outline.gdshader" id="3_w4sjb"]
+[ext_resource type="Texture2D" uid="uid://4jvvv7su7qd7" path="res://assets/images/ui/speech_text_bubble.png" id="4_sgcqt"]
+[ext_resource type="Texture2D" uid="uid://cvmhytsrknmgi" path="res://assets/images/objects/phone.png" id="4_whmaq"]
 
-[sub_resource type="Gradient" id="Gradient_1m8tj"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e71jm"]
+atlas = ExtResource("4_sgcqt")
+region = Rect2(0, 0, 466, 186)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0yn1p"]
-gradient = SubResource("Gradient_1m8tj")
-width = 466
-height = 186
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c4dt"]
+atlas = ExtResource("4_sgcqt")
+region = Rect2(466, 0, 466, 186)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sgcqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e71jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c4dt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_whmaq"]
 shader = ExtResource("3_w4sjb")
@@ -21,13 +38,6 @@ shader_parameter/pattern = 0
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="Gradient" id="Gradient_l6lbw"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kfvqb"]
-gradient = SubResource("Gradient_l6lbw")
-width = 247
-height = 241
 
 [node name="PhonePopup" type="Control" unique_id=1802960549 groups=["popup"]]
 process_mode = 3
@@ -63,29 +73,37 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="UI" unique_id=291500506]
-modulate = Color(0.81640625, 0.81640625, 0.81640625, 1)
+[node name="AnimatedTextureRect" parent="UI" unique_id=1326480437 instance=ExtResource("3_80ewv")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 202.0
-offset_top = -168.0
-offset_right = 668.0
-offset_bottom = 18.0
-texture = SubResource("GradientTexture2D_0yn1p")
+offset_top = -167.0
+offset_right = 202.0
+offset_bottom = -167.0
+grow_horizontal = 1
+grow_vertical = 1
+sprite_frames = SubResource("SpriteFrames_sgcqt")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/TextureRect" unique_id=541587051]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/AnimatedTextureRect" unique_id=541587051]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 18.0
-offset_right = -21.0
-offset_bottom = -21.0
+offset_left = 65.0
+offset_top = 38.0
+offset_right = 66.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/TextureRect" unique_id=157167834]
+[node name="TextureRect2" type="TextureRect" parent="UI" unique_id=1351519619]
 material = SubResource("ShaderMaterial_whmaq")
-position = Vector2(597, 189)
-texture = SubResource("GradientTexture2D_kfvqb")
+layout_mode = 0
+offset_left = 677.0
+offset_top = -98.0
+offset_right = 921.0
+offset_bottom = 149.0
+texture = ExtResource("4_whmaq")

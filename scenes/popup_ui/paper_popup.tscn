@@ -4,58 +4,25 @@
 [ext_resource type="Script" uid="uid://cxvoga8trt63q" path="res://scripts/popup_ui/entity_intake_form.gd" id="1_bl03r"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_bl03r"]
 [ext_resource type="Script" uid="uid://dqyyx3iqqr7ko" path="res://scripts/popup_ui/ui/number_selector.gd" id="3_7en8x"]
+[ext_resource type="Texture2D" uid="uid://ip0dppoxpugv" path="res://assets/images/ui/paper_form/paper_form.png" id="3_rrwus"]
+[ext_resource type="Texture2D" uid="uid://dcs5weo0jqtxx" path="res://assets/images/ui/paper_form/arrows/arrow_left.png" id="5_rrwus"]
+[ext_resource type="Texture2D" uid="uid://bk1e5es34mjo7" path="res://assets/images/ui/paper_form/arrows/arrow_left_pressed.png" id="6_da1ou"]
+[ext_resource type="Texture2D" uid="uid://dtgo3ckus2wj" path="res://assets/images/ui/paper_form/arrows/arrow_left_hover.png" id="7_rrsrw"]
+[ext_resource type="Texture2D" uid="uid://djisx8rvj0g28" path="res://assets/images/ui/paper_form/arrows/arrow_right.png" id="8_h7ej5"]
+[ext_resource type="Texture2D" uid="uid://c11gj5kjhha7k" path="res://assets/images/ui/paper_form/arrows/arrow_right_pressed.png" id="9_4xurw"]
+[ext_resource type="Texture2D" uid="uid://33ssgsna74g6" path="res://assets/images/ui/paper_form/arrows/arrow_right_hover.png" id="10_21lk4"]
+[ext_resource type="Texture2D" uid="uid://c07lpx0t27l8y" path="res://assets/images/ui/paper_form/accept.png" id="11_da1ou"]
+[ext_resource type="Texture2D" uid="uid://cq0063is38isy" path="res://assets/images/ui/paper_form/accept_hover.png" id="12_h7ej5"]
+[ext_resource type="Texture2D" uid="uid://dnen5uksp8ft7" path="res://assets/images/ui/paper_form/reject.png" id="12_rrsrw"]
+[ext_resource type="Texture2D" uid="uid://cxv6mlc6qvsmr" path="res://assets/images/ui/paper_form/reject_hover.png" id="14_4xurw"]
+[ext_resource type="Texture2D" uid="uid://diwobnlqprhr" path="res://assets/images/ui/paper_form/indicator.png" id="16_4xurw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tef5t"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-
-[sub_resource type="Gradient" id="Gradient_tef5t"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8a6af"]
-gradient = SubResource("Gradient_tef5t")
-width = 292
-height = 274
-
-[sub_resource type="Gradient" id="Gradient_vljdq"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gqu7n"]
-gradient = SubResource("Gradient_vljdq")
-width = 16
-height = 40
-
-[sub_resource type="Gradient" id="Gradient_jh6vo"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ev8k7"]
-gradient = SubResource("Gradient_jh6vo")
-width = 16
-height = 40
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl03r"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Gradient" id="Gradient_bl03r"]
-colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7en8x"]
-gradient = SubResource("Gradient_bl03r")
-width = 173
-height = 72
-
-[sub_resource type="Gradient" id="Gradient_gqu7n"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_37gce"]
-gradient = SubResource("Gradient_gqu7n")
-width = 173
-height = 72
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="PaperPopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
@@ -105,97 +72,99 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
 
-[node name="TextureRect" type="TextureRect" parent="UI/PanelContainer" unique_id=1098372172]
-modulate = Color(0.76953125, 0.76953125, 0.76953125, 1)
+[node name="Control" type="Control" parent="UI/PanelContainer" unique_id=1656378849]
 layout_mode = 2
-texture = SubResource("GradientTexture2D_8a6af")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/TextureRect" unique_id=793368463]
+[node name="TextureRect" type="TextureRect" parent="UI/PanelContainer/Control" unique_id=1110520039]
 layout_mode = 0
-offset_right = 500.0
-offset_bottom = 274.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 510.0
+offset_bottom = 284.0
+texture = ExtResource("3_rrwus")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer" unique_id=793368463]
+layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer" unique_id=583560515]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/MarginContainer" unique_id=583560515]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1686001424]
+[node name="Label" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1686001424]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 text = "ENTITY INTAKE FORM"
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1423085506]
+[node name="Control" type="Control" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1269876917]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
-color = Color(0, 0, 0, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1436127035]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1436127035]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=3172618]
+[node name="Label2" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=3172618]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "NUMBER OF ENTITIES: "
 
-[node name="NumberSelector" type="HBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1980995043]
+[node name="NumberSelector" type="HBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1980995043]
 layout_mode = 2
 size_flags_vertical = 4
 script = ExtResource("3_7en8x")
 min = 0
 
-[node name="TextureButton" type="TextureButton" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1337514150]
+[node name="TextureButton" type="TextureButton" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1337514150]
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_gqu7n")
+texture_normal = ExtResource("5_rrwus")
+texture_pressed = ExtResource("6_da1ou")
+texture_hover = ExtResource("7_rrsrw")
 
-[node name="Label" type="Label" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1111133508]
+[node name="Label" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1111133508]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 29
 horizontal_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1225899652]
+[node name="TextureButton2" type="TextureButton" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1225899652]
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_ev8k7")
+texture_normal = ExtResource("8_h7ej5")
+texture_pressed = ExtResource("9_4xurw")
+texture_hover = ExtResource("10_21lk4")
 
-[node name="ColorRect9" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=595801993]
+[node name="Control2" type="Control" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1770170101]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
-size_flags_vertical = 10
-color = Color(0, 0, 0, 1)
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=587064940]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bl03r")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer" unique_id=1674200073]
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1674200073]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1086982215]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1086982215]
 layout_mode = 2
 theme_override_constants/separation = 17
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=83728889]
+[node name="TextureButton" type="TextureButton" parent="UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=83728889]
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_7en8x")
+texture_normal = ExtResource("11_da1ou")
+texture_hover = ExtResource("12_h7ej5")
 
-[node name="Control" type="Control" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2046049222]
+[node name="Control" type="Control" parent="UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=2046049222]
 custom_minimum_size = Vector2(14.755, 0)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=249004237]
+[node name="ColorRect" type="ColorRect" parent="UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control" unique_id=249004237]
 custom_minimum_size = Vector2(65.76, 2)
 layout_mode = 0
 offset_left = 4.0
@@ -206,9 +175,10 @@ rotation = -1.4713125
 size_flags_vertical = 10
 color = Color(0, 0, 0, 1)
 
-[node name="TextureButton2" type="TextureButton" parent="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1989386841]
+[node name="TextureButton2" type="TextureButton" parent="UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1989386841]
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_37gce")
+texture_normal = ExtResource("12_rrsrw")
+texture_hover = ExtResource("14_4xurw")
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_bl03r")]
 layout_mode = 0
@@ -217,15 +187,16 @@ offset_top = -127.0
 offset_right = 344.0
 offset_bottom = -63.0
 
-[node name="Indicator" type="ColorRect" parent="UI" unique_id=1790492604]
+[node name="Indicator" type="TextureRect" parent="UI" unique_id=259648735]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("16_4xurw")
 
-[connection signal="number_update" from="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" to="." method="_on_number_update"]
-[connection signal="pressed" from="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector/TextureButton" to="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" method="_on_texture_button_pressed"]
-[connection signal="pressed" from="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector/TextureButton2" to="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/TextureButton" to="." method="_on_accept_pressed"]
-[connection signal="pressed" from="UI/PanelContainer/TextureRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/TextureButton2" to="." method="_on_reject_pressed"]
+[connection signal="number_update" from="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" to="." method="_on_number_update"]
+[connection signal="pressed" from="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector/TextureButton" to="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector/TextureButton2" to="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TextureButton" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TextureButton2" to="." method="_on_reject_pressed"]
 [connection signal="pressed" from="UI/CloseButton" to="." method="_on_close_button_pressed"]

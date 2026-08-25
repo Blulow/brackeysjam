@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://dlkhotnhf1aqa"]
 
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_tef5t"]
+[ext_resource type="Texture2D" uid="uid://c58apiiws14f" path="res://assets/images/ui/heart_rate_panel.png" id="2_5tyai"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_8a6af"]
 [ext_resource type="Script" uid="uid://xesbt8yo1boe" path="res://scripts/popup_ui/heartrate_display.gd" id="2_oc362"]
 [ext_resource type="Script" uid="uid://dopnqcqmflhwm" path="res://scripts/popup_ui/heart_rate.gd" id="3_52yvk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tef5t"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka4wo"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0.105882354, 0.21568628, 0, 1)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Gradient" id="Gradient_tef5t"]
 colors = PackedColorArray(0.8039216, 0.81960785, 0.7882353, 1, 0.8039216, 0.81960785, 0.7882353, 1)
@@ -25,6 +26,13 @@ script = ExtResource("3_52yvk")
 bpm = 80.0
 amp = 50.0
 metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tef5t"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.105882354, 0.21568628, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_52yvk"]
 gradient = SubResource("Gradient_tef5t")
@@ -77,7 +85,18 @@ offset_left = -491.0
 offset_top = -345.0
 offset_right = -169.0
 offset_bottom = -236.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ka4wo")
+
+[node name="Control" type="Control" parent="UI/PanelContainer2" unique_id=76518976]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/PanelContainer2/Control" unique_id=1668223596]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 556.0
+offset_bottom = 119.0
+texture = ExtResource("2_5tyai")
 
 [node name="Display" type="TextureRect" parent="UI/PanelContainer2" unique_id=850729063]
 layout_mode = 2
@@ -100,6 +119,22 @@ offset_top = -127.0
 offset_right = 573.0
 offset_bottom = -7.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tef5t")
+
+[node name="Control" type="Control" parent="UI/PanelContainer" unique_id=1638260432]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/PanelContainer/Control" unique_id=2082602472]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 1056.0
+offset_bottom = 332.0
+texture = ExtResource("2_5tyai")
+region_rect = Rect2(0, 0, 566, 129)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
 
 [node name="Display" type="TextureRect" parent="UI/PanelContainer" unique_id=909504524]
 layout_mode = 2

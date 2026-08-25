@@ -1,6 +1,6 @@
 extends Control
 
-@onready var label: RichTextLabel = $UI/TextureRect/RichTextLabel
+@onready var label: RichTextLabel = $UI/AnimatedTextureRect/RichTextLabel
 
 var dialogue: Array[String]
 var idx: int = 0

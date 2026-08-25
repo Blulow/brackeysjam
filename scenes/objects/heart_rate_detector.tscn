@@ -10,7 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("2_7o2px")
 shader_parameter/show = false
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color = Color(1, 1, 0, 1)
 shader_parameter/width = 2.000000095
 shader_parameter/pattern = 0
 shader_parameter/inside = false
@@ -21,6 +21,7 @@ shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304575131]
 material = SubResource("ShaderMaterial_puc5w")
+position = Vector2(-14, 30)
 texture = ExtResource("2_p2hnl")
 
 [node name="SelectableComponent" parent="." unique_id=650134341 node_paths=PackedStringArray("sprite") instance=ExtResource("3_7o2px")]
