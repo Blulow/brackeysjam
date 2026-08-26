@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://be7dw8ag0gem3"]
+
+[node name="RuleLabel" type="Label" unique_id=483372000]
+custom_minimum_size = Vector2(438, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 2
