@@ -25,15 +25,31 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("2_xm8h5")
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_ogmq2"]
+[sub_resource type="Resource" id="Resource_p0sw6"]
+script = ExtResource("4_ihyeg")
+bpm = 70.0
+amp = 50.0
+pha = 30.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_y1okk"]
+script = ExtResource("4_ihyeg")
+bpm = 80.0
+amp = 50.0
+pha = 30.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_crksb"]
 script = ExtResource("4_ihyeg")
 bpm = 69.0
 amp = 30.0
 metadata/_custom_type_script = "uid://dopnqcqmflhwm"
 
-[sub_resource type="Resource" id="Resource_naokj"]
+[sub_resource type="Resource" id="Resource_m2vlq"]
 script = ExtResource("3_b3nbt")
-value = SubResource("Resource_ogmq2")
+type = 1
+value = SubResource("Resource_crksb")
+heartrates = Array[ExtResource("4_ihyeg")]([SubResource("Resource_p0sw6"), SubResource("Resource_y1okk")])
 metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
 
 [sub_resource type="Resource" id="Resource_myrmy"]
@@ -112,7 +128,8 @@ identities = Array[ExtResource("5_jj5ue")]([SubResource("Resource_b3nbt"), SubRe
 sprites = Array[ExtResource("10_p0sw6")]([SubResource("Resource_42g2f"), SubResource("Resource_42g2f")])
 views = Array[ExtResource("2_xm8h5")]([SubResource("Resource_7unpq"), SubResource("Resource_phoqk")])
 shadows = Array[ExtResource("2_xm8h5")]([SubResource("Resource_8022p"), SubResource("Resource_sngiy")])
-heart_rates = Array[ExtResource("3_b3nbt")]([SubResource("Resource_naokj"), SubResource("Resource_naokj")])
+heart_rates = Array[ExtResource("3_b3nbt")]([SubResource("Resource_m2vlq"), SubResource("Resource_m2vlq")])
 feet_views = Array[ExtResource("2_xm8h5")]([SubResource("Resource_v0dwx"), SubResource("Resource_xm8h5")])
 speech_texts = Array[ExtResource("8_gx2xa")]([SubResource("Resource_g4lof"), SubResource("Resource_gx2xa")])
-dialogue = Array[String](["one way", "lamo"])
+dialogue = Array[String](["Alright, just seeing if you’re doing good, but anyways, entities might be out of sight, so make sure to check the devices."])
+increment_rules = 1

@@ -85,3 +85,4 @@ heart_rates = Array[ExtResource("3_728il")]([SubResource("Resource_ttiw8")])
 feet_views = Array[ExtResource("1_tr004")]([SubResource("Resource_fbbl2")])
 speech_texts = Array[ExtResource("4_a13lx")]([SubResource("Resource_jkfpe")])
 dialogue = Array[String](["You see the stack of papers there? Those are gonna be your way of saying yes or no.", "Good luck! I’ll be calling you again when things happen."])
+increment_rules = 1

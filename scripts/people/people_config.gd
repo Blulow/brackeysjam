@@ -10,6 +10,7 @@ class_name PeopleConfig
 @export var feet_views: Array[PeopleConfigBoolValue]
 @export var speech_texts: Array[PeopleConfigSpeechValue]
 @export var dialogue: Array[String]
+@export var increment_rules: int
 
 func get_count() -> int:
 	return count.get_value()

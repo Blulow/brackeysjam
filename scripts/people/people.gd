@@ -16,6 +16,7 @@ var heart_rates: Array[Heartrate]
 var feet_views: Array[bool]
 var speech_texts: Array[Speech]
 var dialogue: Array[String]
+var increment_rules: int
 var singular: bool
 
 func set_people(config: PeopleConfig) -> void:
@@ -27,6 +28,7 @@ func set_people(config: PeopleConfig) -> void:
 	feet_views = config.get_feet_views()
 	speech_texts = config.get_speech_texts()
 	dialogue = config.dialogue
+	increment_rules = config.increment_rules
 	
 	people.clear()
 	for i: int in range(config.get_count()):
@@ -110,4 +112,7 @@ func _on_round_stay() -> void:
 		speech_text.set_text(speech_texts[i].text)
 
 func _on_round_start() -> void:
-	$"../../../../Objects/Phone".show_dialogue(dialogue)
+	if increment_rules > 0:
+		GameManager.round_manager.rule_shown.emit(increment_rules)
+	if dialogue.size() > 0:
+		$"../../../../Objects/Phone".show_dialogue(dialogue)

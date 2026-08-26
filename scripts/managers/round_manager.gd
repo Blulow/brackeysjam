@@ -18,6 +18,7 @@ var form_data: Dictionary = {
 }
 enum Conc { ACCEPT, REJECT }
 var last_cam: int = 0
+var shown_rules: int = 0
 
 signal round_start
 signal round_stay
@@ -26,6 +27,7 @@ signal round_done
 signal concluded(conc: bool)
 
 signal dialogue_set(dialogue: Array[String])
+signal rule_shown(count: int)
 
 func _ready() -> void:
 	GameManager.round_manager = self
@@ -77,3 +79,6 @@ func _on_round_end() -> void:
 func _on_round_done() -> void:
 	for e in people.get_child(0).get_children():
 		e.queue_free()
+
+func _on_rule_shown(count: int) -> void:
+	shown_rules += count
