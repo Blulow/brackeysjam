@@ -17,6 +17,7 @@ var form_data: Dictionary = {
 	"conc": -1
 }
 enum Conc { ACCEPT, REJECT }
+var last_cam: int = 0
 
 signal round_start
 signal round_stay

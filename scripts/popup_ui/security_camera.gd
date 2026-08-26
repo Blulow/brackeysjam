@@ -8,6 +8,7 @@ var current_camera: Camera3D
 var current_cam_idx: int = 0
 
 func _ready() -> void:
+	current_cam_idx = GameManager.round_manager.last_cam
 	switch_cam(current_cam_idx)
 
 func switch_cam(idx: int) -> void:
@@ -23,4 +24,5 @@ func switch_cam(idx: int) -> void:
 			feet_cam.visible = true
 	
 	current_cam_idx = idx
+	GameManager.round_manager.last_cam = idx
 	if current_camera: current_camera.make_current()
