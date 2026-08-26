@@ -8,8 +8,7 @@ var button_show: bool = false
 func _ready() -> void:
 	GameManager.round_manager.concluded.connect(_on_concluded)
 	buttons.scale = Vector2.ZERO
-	give_btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	give_btn.modulate = Color(Color.WHITE, 0.5)
+	give_btn.disabled = true
 
 func _on_clicked() -> void:
 	if button_show: hide_buttons()
@@ -41,5 +40,4 @@ func _on_give_pressed() -> void:
 
 func _on_concluded(conc: bool) -> void:
 	if conc:
-		give_btn.mouse_filter = Control.MOUSE_FILTER_STOP
-		give_btn.modulate = Color.WHITE
+		give_btn.disabled = false

@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bh3o1rqvbcast" path="res://assets/images/objects/paper.png" id="3_7jphx"]
 [ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="3_d5hb7"]
 [ext_resource type="PackedScene" uid="uid://cawt112f72j2j" path="res://scenes/popup_ui/paper_popup.tscn" id="4_45wan"]
+[ext_resource type="Texture2D" uid="uid://csct3rcinkpdb" path="res://assets/images/objects/paper_btn/edit.png" id="7_wok52"]
+[ext_resource type="Texture2D" uid="uid://ctf30mtall8ln" path="res://assets/images/objects/paper_btn/edit_hover.png" id="8_ghtyu"]
+[ext_resource type="Texture2D" uid="uid://ci2cqbasedysu" path="res://assets/images/objects/paper_btn/give.png" id="9_0khs3"]
+[ext_resource type="Texture2D" uid="uid://7pa0yx1dpq0g" path="res://assets/images/objects/paper_btn/give_hover.png" id="10_m81iq"]
+[ext_resource type="Texture2D" uid="uid://jph1x1jnrog5" path="res://assets/images/objects/paper_btn/give_disabled.png" id="11_ghtyu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_45wan")
@@ -16,18 +21,6 @@ shader_parameter/pattern = 0
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="Gradient" id="Gradient_45wan"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7jphx"]
-gradient = SubResource("Gradient_45wan")
-width = 180
-
-[sub_resource type="Gradient" id="Gradient_7jphx"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_d5hb7"]
-gradient = SubResource("Gradient_7jphx")
-width = 180
 
 [node name="Paper" type="Node2D" unique_id=425908746]
 script = ExtResource("1_7jphx")
@@ -72,43 +65,14 @@ theme_override_constants/separation = 115
 
 [node name="Edit" type="TextureButton" parent="Buttons/HBoxContainer" unique_id=1975369447]
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_7jphx")
-
-[node name="Label" type="Label" parent="Buttons/HBoxContainer/Edit" unique_id=359612333]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "Edit"
+texture_normal = ExtResource("7_wok52")
+texture_hover = ExtResource("8_ghtyu")
 
 [node name="Give" type="TextureButton" parent="Buttons/HBoxContainer" unique_id=269115011]
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_d5hb7")
-
-[node name="Label" type="Label" parent="Buttons/HBoxContainer/Give" unique_id=440563257]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -11.5
-offset_right = 17.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "Give"
+texture_normal = ExtResource("9_0khs3")
+texture_hover = ExtResource("10_m81iq")
+texture_disabled = ExtResource("11_ghtyu")
 
 [connection signal="clicked" from="SelectableComponent" to="." method="_on_clicked"]
 [connection signal="input_event" from="SelectableComponent" to="." method="_on_selectable_component_input_event"]
