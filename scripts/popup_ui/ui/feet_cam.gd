@@ -1,6 +1,6 @@
 extends TextureRect
 
-@export var feet_count: int
+var feet_count: int
 
 const MAX_POINT_RADIUS: float = 150
 const MIN_FEET_GAP: float = 120
@@ -63,6 +63,7 @@ var pressure_points: Array[Vector2]
 var pressure_radii: Array[float]
 
 func _ready() -> void:
+	feet_count = GameManager.round_manager.people.people.filter(func(e): return e.feet_view).size()
 	show_feet(feet_count)
 
 func show_feet(count: int) -> void:
