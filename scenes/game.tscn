@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://ct5lckjf44wcf" path="res://assets/resources/rounds/round_3.tres" id="12_dinhu"]
 [ext_resource type="Resource" uid="uid://b5jrlm4h3rxi3" path="res://assets/resources/rounds/round_4.tres" id="13_trtic"]
 [ext_resource type="Resource" uid="uid://cx6kaxsgm3hjs" path="res://assets/resources/rounds/round_5.tres" id="14_ir15t"]
+[ext_resource type="Resource" uid="uid://b1r2obl38ml1q" path="res://assets/resources/rounds/round_6.tres" id="15_ir15t"]
 
 [sub_resource type="Curve2D" id="Curve2D_u5sy4"]
 _data = {
@@ -100,7 +101,7 @@ position = Vector2(649, 285)
 [node name="RoundManager" type="Node2D" parent="." unique_id=2028876826]
 position = Vector2(685, -376)
 script = ExtResource("8_gee14")
-rounds = Array[Resource]([ExtResource("10_vtaks"), ExtResource("11_kvpfn"), ExtResource("12_dinhu"), ExtResource("13_trtic"), ExtResource("14_ir15t")])
+rounds = Array[Resource]([ExtResource("10_vtaks"), ExtResource("11_kvpfn"), ExtResource("12_dinhu"), ExtResource("13_trtic"), ExtResource("14_ir15t"), ExtResource("15_ir15t")])
 
 [node name="TextureButton" type="TextureButton" parent="RoundManager" unique_id=502440612]
 offset_left = 1096.6084
