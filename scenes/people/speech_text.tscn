@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cq5hbf40p3ec2"]
 
 [ext_resource type="Script" uid="uid://c2r873t22f1hj" path="res://scripts/people/speech_text.gd" id="1_xfk38"]
+[ext_resource type="PackedScene" uid="uid://ccxw87oqfu1he" path="res://scenes/components/ui/animated_text_component.tscn" id="2_eb1x0"]
 
 [node name="SpeechText" type="Control" unique_id=1703869231]
 custom_minimum_size = Vector2(304, 0)
@@ -40,3 +41,6 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.5
 mouse_filter = 1
 bbcode_enabled = true
+
+[node name="AnimatedTextComponent" parent="MarginContainer/HBoxContainer/RichTextLabel2" unique_id=2094081059 instance=ExtResource("2_eb1x0")]
+layout_mode = 0

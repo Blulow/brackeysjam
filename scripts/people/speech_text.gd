@@ -1,7 +1,7 @@
 extends Control
 
 @onready var speaker_label: RichTextLabel = $MarginContainer/HBoxContainer/RichTextLabel
-@onready var text_label: RichTextLabel = $MarginContainer/HBoxContainer/RichTextLabel2
+@onready var text_animator: AnimatedTextComponent = $MarginContainer/HBoxContainer/RichTextLabel2/AnimatedTextComponent
 
 func set_speaker(speaker: String) -> void:
 	speaker_label.push_bold()
@@ -9,4 +9,4 @@ func set_speaker(speaker: String) -> void:
 	speaker_label.pop()
 
 func set_text(text: String) -> void:
-	text_label.append_text(text)
+	text_animator.animate(text)
