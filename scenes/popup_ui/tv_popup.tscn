@@ -24,7 +24,7 @@ bg_color = Color(0.12423706, 0.1536951, 0.1796875, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mtuw5"]
 gradient = SubResource("Gradient_ntikx")
 width = 1017
-height = 590
+height = 572
 
 [node name="TVPopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
@@ -103,7 +103,9 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="UI/PanelContainer/HBoxContainer/TextureRect/SubViewportContainer" unique_id=15294461]
 handle_input_locally = false
-size = Vector2i(1017, 590)
+size = Vector2i(1017, 572)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="SecurityCamera" parent="UI/PanelContainer/HBoxContainer/TextureRect/SubViewportContainer/SubViewport" unique_id=614481693 instance=ExtResource("2_kb2g4")]

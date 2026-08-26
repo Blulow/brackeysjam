@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://du27wyff0c4jx" path="res://scripts/popup_ui/security_camera.gd" id="1_53a5h"]
 [ext_resource type="Script" uid="uid://kacxv2mpucah" path="res://scripts/people/cam/cam_people.gd" id="1_fp0dp"]
 [ext_resource type="PackedScene" uid="uid://cphoptrbu6b5l" path="res://scenes/components/3d/aligning_container_3d.tscn" id="2_wbbhj"]
+[ext_resource type="Shader" uid="uid://cu4dhcietnljx" path="res://assets/shaders/feet_cam.gdshader" id="4_pklln"]
+[ext_resource type="Script" uid="uid://bfhepj1ahu7ot" path="res://scripts/popup_ui/ui/feet_cam.gd" id="5_o2yef"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0we6e"]
 
@@ -20,10 +22,17 @@ background_mode = 2
 sky = SubResource("Sky_fp0dp")
 ambient_light_color = Color(0.41015625, 0.33305168, 0.18585205, 1)
 
-[sub_resource type="Gradient" id="Gradient_53a5h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o2yef"]
+shader = ExtResource("4_pklln")
+shader_parameter/pressure_points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/pressure_radii = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_pklln"]
-gradient = SubResource("Gradient_53a5h")
+[sub_resource type="Gradient" id="Gradient_pjdel"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u0rn1"]
+gradient = SubResource("Gradient_pjdel")
+width = 1920
+height = 1080
 
 [node name="SecurityCamera" type="Node3D" unique_id=614481693]
 script = ExtResource("1_53a5h")
@@ -83,10 +92,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="FeetCamLayer/FeetCam" unique_id=484910898]
+material = SubResource("ShaderMaterial_o2yef")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture1D_pklln")
+texture = SubResource("GradientTexture2D_u0rn1")
+script = ExtResource("5_o2yef")
