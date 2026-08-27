@@ -14,6 +14,7 @@ func _on_dialogue_set(_dialogue: Array[String]) -> void:
 	dialogue = _dialogue
 	animating = true
 	animator.animate(dialogue[idx])
+	get_tree().get_root().find_child("PhoneLayer", true, false).layer = 2
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -30,6 +31,7 @@ func advance_dialogue() -> void:
 	if idx >= dialogue.size():
 		get_tree().paused = false
 		GameManager.round_manager.dialogue_finish.emit()
+		get_tree().get_root().find_child("PhoneLayer", true, false).layer = 1
 		queue_free()
 		return
 	
