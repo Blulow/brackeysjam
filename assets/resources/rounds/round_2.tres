@@ -28,13 +28,24 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_ogmq2"]
 script = ExtResource("4_ogmq2")
-bpm = 69.0
+bpm = 70.0
 amp = 30.0
 metadata/_custom_type_script = "uid://dopnqcqmflhwm"
 
 [sub_resource type="Resource" id="Resource_naokj"]
 script = ExtResource("3_vu2og")
 value = SubResource("Resource_ogmq2")
+metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_42g2f"]
+script = ExtResource("4_ogmq2")
+bpm = 100.0
+amp = 60.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_kpnje"]
+script = ExtResource("3_vu2og")
+value = SubResource("Resource_42g2f")
 metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
 
 [sub_resource type="Resource" id="Resource_myrmy"]
@@ -129,6 +140,6 @@ identities = Array[ExtResource("5_naokj")]([SubResource("Resource_lc4ci"), SubRe
 sprites = Array[ExtResource("10_sngiy")]([SubResource("Resource_xhtcr"), SubResource("Resource_c6vxq")])
 views = Array[ExtResource("2_v0dwx")]([SubResource("Resource_7unpq"), SubResource("Resource_5qu0d")])
 shadows = Array[ExtResource("2_v0dwx")]([SubResource("Resource_8022p"), SubResource("Resource_sngiy")])
-heart_rates = Array[ExtResource("3_vu2og")]([SubResource("Resource_naokj"), SubResource("Resource_naokj")])
+heart_rates = Array[ExtResource("3_vu2og")]([SubResource("Resource_naokj"), SubResource("Resource_kpnje")])
 feet_views = Array[ExtResource("2_v0dwx")]([SubResource("Resource_v0dwx"), SubResource("Resource_vu2og")])
 speech_texts = Array[ExtResource("8_fic7n")]([SubResource("Resource_8j006"), SubResource("Resource_ww4wq")])
