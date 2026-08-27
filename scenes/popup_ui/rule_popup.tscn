@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ysap")
-rules = Array[String](["Only accept encounters with more than 2 entities.", "Entities can be out of sight, check the devices.", "Reflections are not an entity, no body, no heartbeat."])
+rules = Array[String](["Only accept encounters with more than 2 entities.", "Entities can be out of sight, check the devices.", "Reflections are not an entity, no body, no heartbeat.", "Dolls are not an entity, they have a body, but no heartbeat, and are not heavy.", "Twins count as 2 entities, they always have different heartbeats.", "Clones are not an entity, which copies every detail exactly of anything next to it."])
 
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("1_438jn")]
 layout_mode = 0

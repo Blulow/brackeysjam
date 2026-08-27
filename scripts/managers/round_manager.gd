@@ -9,7 +9,7 @@ class_name RoundManager
 
 const PATH_SPEED: float = 0.01
 
-var current_round: int = 5
+var current_round: int = 10
 var round_state: int = -1
 enum RoundStates { START, STAY, END }
 
