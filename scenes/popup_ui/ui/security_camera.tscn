@@ -50,11 +50,13 @@ mesh = SubResource("BoxMesh_fp0dp")
 [node name="SpotLight3D" type="SpotLight3D" parent="World" unique_id=182189008]
 transform = Transform3D(-0.22827195, 0.9648292, 0.13037032, 0.11752551, -0.10561946, 0.98743725, 0.96647793, 0.24072601, -0.089282095, 1.6678276, 4.100061, -2.6155872)
 light_energy = 6.44
+shadow_enabled = true
 spot_angle = 50.05
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="World" unique_id=1604219565]
 transform = Transform3D(0.72018, -0.6869742, 0.09699091, -0.09218099, 0.043811776, 0.99477816, -0.68763626, -0.7253599, -0.03177359, 1.6864152, 4.1000614, 2.6488962)
 light_energy = 6.44
+shadow_enabled = true
 spot_angle = 50.05
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="World" unique_id=1792680752]
