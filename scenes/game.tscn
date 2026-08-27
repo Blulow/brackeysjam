@@ -257,7 +257,7 @@ position = Vector2(685, -376)
 script = ExtResource("8_gee14")
 rounds = Array[Resource]([ExtResource("10_vtaks"), ExtResource("11_kvpfn"), ExtResource("12_dinhu"), ExtResource("13_trtic"), ExtResource("14_ir15t"), ExtResource("15_ir15t"), ExtResource("18_bt5mj"), ExtResource("19_e1j6l"), ExtResource("20_pl11u"), ExtResource("21_bhx41"), ExtResource("22_qnb83"), ExtResource("23_sww3w")])
 penalty_speeches = Array[String](["Hey! You just made a mistake, but luckily the guards handled it. Be careful next time.", "Once again! You let someone slip again! It caused some big trouble. We can’t handle any more mistakes, okay?", "Hey new guy, it’s nice seeing you. And this world… wasn’t really that beautiful anyway. I hope you saw the opposite though."])
-ending_dialogue = Array[String](["It is break time now, so take some rest, gotta get comfortable for this job, even when you can’t, haha. Well… hello? Are you there? Hello?"])
+ending_dialogue = Array[Array]([Array[String](["It is break time now, so take some rest, gotta get comfortable for this job, even when you can’t, haha.", "Well, let's meet back here in a few hours then, maybe grab some coffee now."]), Array[String](["And… Don't you think the world is so… beautiful? Despite everything that’s happening… Haha… hello? Are you there? Hello?? Hello???"])])
 
 [node name="TextureButton" type="TextureButton" parent="RoundManager" unique_id=502440612]
 offset_left = 1096.6084

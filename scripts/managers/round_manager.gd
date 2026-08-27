@@ -23,7 +23,7 @@ var shown_rules: int = 0
 
 var penalties: int = 0
 @export var penalty_speeches: Array[String]
-@export var ending_dialogue: Array[String]
+@export var ending_dialogue: Array[Array]
 
 signal round_start
 signal round_stay
@@ -78,7 +78,10 @@ func end_current_round() -> void:
 	if current_round < rounds.size():
 		start_round(current_round)
 	else:
-		$"../World/Objects/Phone".show_dialogue(ending_dialogue)
+		$"../World/Objects/Phone".show_dialogue(ending_dialogue[0])
+		await dialogue_finish
+		await get_tree().process_frame
+		$"../World/Objects/Phone".show_dialogue(ending_dialogue[1])
 		$"../FXLayer/VictoryEnding".visible = true
 		$"../FXLayer/GlitchEffect".visible = true
 		anim_player.play("victory_ending")
