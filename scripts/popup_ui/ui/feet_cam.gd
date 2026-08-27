@@ -63,10 +63,14 @@ var pressure_points: Array[Vector2]
 var pressure_radii: Array[float]
 
 func _ready() -> void:
-	feet_count = GameManager.round_manager.people.people.filter(func(e): return e.feet_view).size()
+	feet_count = GameManager.round_manager.people.people.filter(func(e): return e.feet_view and e.view).size()
 	show_feet(feet_count)
 
 func show_feet(count: int) -> void:
+	if count == 0:
+		material.set_shader_parameter("pressure_points", [])
+		material.set_shader_parameter("pressure_radii", [])
+		return
 	var foot_dim: Vector2 = Vector2(min(1080 / count - MIN_FEET_GAP, 400), 900)
 	
 	for i in count:
