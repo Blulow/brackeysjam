@@ -120,6 +120,7 @@ func _on_round_start() -> void:
 		pending_penalization = false
 	
 	if pending_game_over:
+		dialogue.resize(1)
 		$"../../../../../VignetteLayer/PenaltyEnding".visible = true
 	
 	if increment_rules > 0:
