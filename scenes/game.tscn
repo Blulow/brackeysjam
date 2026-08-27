@@ -215,15 +215,18 @@ position = Vector2(-856, -211)
 [node name="Rule" parent="World/Objects" unique_id=1107970536 instance=ExtResource("6_p57ef")]
 position = Vector2(800, -336)
 
-[node name="Phone" parent="World/Objects" unique_id=1908071067 instance=ExtResource("7_gee14")]
-position = Vector2(779, 3)
-
 [node name="Papers" parent="World/Objects" unique_id=1839744645 instance=ExtResource("8_0tnpc")]
 position = Vector2(649, 285)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=70683275]
 
 [node name="PopupUILayer" type="CanvasLayer" parent="." unique_id=828918225]
+
+[node name="PhoneLayer" type="CanvasLayer" parent="." unique_id=148038039]
+layer = 2
+
+[node name="Phone" parent="PhoneLayer" unique_id=1908071067 instance=ExtResource("7_gee14")]
+position = Vector2(1749, 535)
 
 [node name="FXLayer" type="CanvasLayer" parent="." unique_id=1756561581]
 

@@ -115,16 +115,17 @@ func _on_round_stay() -> void:
 func _on_round_start() -> void:
 	if pending_penalization:
 		dialogue.insert(0, GameManager.round_manager.penalty_speeches[GameManager.round_manager.penalties - 1])
+		$"../../../../../PhoneLayer/Phone".break_lamp()
 		pending_penalization = false
 	
 	if pending_game_over:
 		dialogue.resize(1)
-		$"../../../../../VignetteLayer/PenaltyEnding".visible = true
+		$"../../../../../FXLayer/PenaltyEnding".visible = true
 	
 	if increment_rules > 0:
 		GameManager.round_manager.rule_shown.emit(increment_rules)
 	if dialogue.size() > 0:
-		$"../../../../Objects/Phone".show_dialogue(dialogue)
+		$"../../../../../PhoneLayer/Phone".show_dialogue(dialogue)
 		await GameManager.round_manager.dialogue_finish
 		if pending_game_over: get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 

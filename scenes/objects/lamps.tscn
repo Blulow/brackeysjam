@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bdhu4p14nsqbi"]
+
+[ext_resource type="Script" uid="uid://tq5kbxjaot0k" path="res://scripts/objects/lamps.gd" id="1_ev43w"]
+[ext_resource type="Texture2D" uid="uid://cs4kyuca8qc3d" path="res://assets/images/objects/life_lamp.png" id="1_iknai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ffd"]
+atlas = ExtResource("1_iknai")
+region = Rect2(0, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7vxd"]
+atlas = ExtResource("1_iknai")
+region = Rect2(109, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fo32"]
+atlas = ExtResource("1_iknai")
+region = Rect2(218, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g15fi"]
+atlas = ExtResource("1_iknai")
+region = Rect2(327, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cst4"]
+atlas = ExtResource("1_iknai")
+region = Rect2(436, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pivsm"]
+atlas = ExtResource("1_iknai")
+region = Rect2(545, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7obw"]
+atlas = ExtResource("1_iknai")
+region = Rect2(654, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o57ip"]
+atlas = ExtResource("1_iknai")
+region = Rect2(654, 0, 109, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0jp6"]
+atlas = ExtResource("1_iknai")
+region = Rect2(0, 0, 109, 106)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cpwlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ffd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7vxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fo32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g15fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cst4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pivsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7obw")
+}],
+"loop": false,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o57ip")
+}],
+"loop": false,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0jp6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lamps" type="Node2D" unique_id=259102660]
+script = ExtResource("1_ev43w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1370688656]
+position = Vector2(36, -82)
+sprite_frames = SubResource("SpriteFrames_cpwlr")
+animation = &"break"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1754538241]
+position = Vector2(36, -12)
+sprite_frames = SubResource("SpriteFrames_cpwlr")
+animation = &"break"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1655692355]
+position = Vector2(36, 58)
+sprite_frames = SubResource("SpriteFrames_cpwlr")
+animation = &"break"

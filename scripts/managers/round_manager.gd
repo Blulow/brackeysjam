@@ -9,7 +9,7 @@ class_name RoundManager
 
 const PATH_SPEED: float = 0.01
 
-var current_round: int = 23
+var current_round: int = 0
 var round_state: int = -1
 enum RoundStates { START, STAY, END }
 
@@ -82,15 +82,15 @@ func end_current_round() -> void:
 			$"../FXLayer/PenaltyEnding".visible = true
 			var d: Array[String]
 			d.assign([penalty_speeches[penalties - 1]])
-			$"../World/Objects/Phone".show_dialogue(d)
+			$"../PhoneLayer/Phone".show_dialogue(d)
 			await dialogue_finish
 			if people.pending_game_over: get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 			return
 			
-		$"../World/Objects/Phone".show_dialogue(ending_dialogue[0])
+		$"../PhoneLayer/Phone".show_dialogue(ending_dialogue[0])
 		await dialogue_finish
 		await get_tree().process_frame
-		$"../World/Objects/Phone".show_dialogue(ending_dialogue[1])
+		$"../PhoneLayer/Phone".show_dialogue(ending_dialogue[1])
 		$"../FXLayer/VictoryEnding".visible = true
 		$"../FXLayer/GlitchEffect".visible = true
 		anim_player.play("victory_ending")
