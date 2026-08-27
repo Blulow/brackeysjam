@@ -1,0 +1,219 @@
+[gd_resource type="Resource" script_class="PeopleConfig" format=3 uid="uid://cw5kh38gg226"]
+
+[ext_resource type="Script" uid="uid://cbo8ursmeimy" path="res://scripts/people_config_values/people_config_int_value.gd" id="1_hupld"]
+[ext_resource type="Script" uid="uid://b6eev2o4gsb7v" path="res://scripts/people_config_values/people_config_bool_value.gd" id="2_cln3b"]
+[ext_resource type="Script" uid="uid://c4ran4w2e4xhr" path="res://scripts/people_config_values/people_config_heartrate_value.gd" id="3_23tl0"]
+[ext_resource type="Script" uid="uid://dopnqcqmflhwm" path="res://scripts/popup_ui/heart_rate.gd" id="4_61i84"]
+[ext_resource type="Script" uid="uid://l1ku632ceix" path="res://scripts/people_config_values/people_config_identity_value.gd" id="5_we3d8"]
+[ext_resource type="Script" uid="uid://dojjqallh3e4s" path="res://scripts/people_config_values/person_identity.gd" id="6_ali2l"]
+[ext_resource type="Script" uid="uid://ddkheyxoh5lgl" path="res://scripts/people/people_config.gd" id="7_gos03"]
+[ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_uq7os"]
+[ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_fh0ak"]
+[ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_1din5"]
+
+[sub_resource type="Resource" id="Resource_hupld"]
+script = ExtResource("1_hupld")
+value = 3
+metadata/_custom_type_script = "uid://cbo8ursmeimy"
+
+[sub_resource type="Resource" id="Resource_2g637"]
+script = ExtResource("2_cln3b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_j45p6"]
+script = ExtResource("2_cln3b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_cln3b"]
+script = ExtResource("2_cln3b")
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_23tl0"]
+script = ExtResource("4_61i84")
+bpm = 109.0
+amp = 50.0
+pha = 20.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_61i84"]
+script = ExtResource("4_61i84")
+bpm = 115.0
+amp = 50.0
+pha = 20.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_we3d8"]
+script = ExtResource("4_61i84")
+bpm = 106.0
+amp = 50.0
+pha = 20.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_ali2l"]
+script = ExtResource("4_61i84")
+bpm = 89.0
+amp = 45.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_gos03"]
+script = ExtResource("3_23tl0")
+type = 1
+value = SubResource("Resource_ali2l")
+heartrates = Array[ExtResource("4_61i84")]([SubResource("Resource_23tl0"), SubResource("Resource_61i84"), SubResource("Resource_we3d8")])
+metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_uq7os"]
+script = ExtResource("4_61i84")
+bpm = 68.0
+amp = 87.0
+pha = 40.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_fh0ak"]
+script = ExtResource("4_61i84")
+bpm = 57.0
+amp = 87.0
+pha = 40.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_1din5"]
+script = ExtResource("4_61i84")
+bpm = 79.0
+amp = 87.0
+pha = 40.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_knded"]
+script = ExtResource("4_61i84")
+bpm = 89.0
+amp = 45.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_4an6q"]
+script = ExtResource("3_23tl0")
+type = 1
+value = SubResource("Resource_knded")
+heartrates = Array[ExtResource("4_61i84")]([SubResource("Resource_uq7os"), SubResource("Resource_fh0ak"), SubResource("Resource_1din5")])
+metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_m4rrd"]
+script = ExtResource("4_61i84")
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_y1nec"]
+script = ExtResource("3_23tl0")
+value = SubResource("Resource_m4rrd")
+metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_1mouj"]
+script = ExtResource("6_ali2l")
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_seb6j"]
+script = ExtResource("5_we3d8")
+value = SubResource("Resource_1mouj")
+metadata/_custom_type_script = "uid://l1ku632ceix"
+
+[sub_resource type="Resource" id="Resource_48u4u"]
+script = ExtResource("6_ali2l")
+identity = 1
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_be5on"]
+script = ExtResource("5_we3d8")
+value = SubResource("Resource_48u4u")
+metadata/_custom_type_script = "uid://l1ku632ceix"
+
+[sub_resource type="Resource" id="Resource_g771e"]
+script = ExtResource("6_ali2l")
+identity = 2
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_3lhfm"]
+script = ExtResource("5_we3d8")
+value = SubResource("Resource_g771e")
+metadata/_custom_type_script = "uid://l1ku632ceix"
+
+[sub_resource type="Resource" id="Resource_0qrna"]
+script = ExtResource("2_cln3b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_ltd3k"]
+script = ExtResource("2_cln3b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_4hvmb"]
+script = ExtResource("2_cln3b")
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_xx8ov"]
+script = ExtResource("9_fh0ak")
+speaker = "[color=#0f0]Zane Doe[/color]"
+text = "Sit bro"
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_h8ywi"]
+script = ExtResource("8_uq7os")
+value = SubResource("Resource_xx8ov")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_qsw57"]
+script = ExtResource("9_fh0ak")
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_yro27"]
+script = ExtResource("8_uq7os")
+value = SubResource("Resource_qsw57")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_c0bx4"]
+script = ExtResource("9_fh0ak")
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_2t7yj"]
+script = ExtResource("8_uq7os")
+value = SubResource("Resource_c0bx4")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Gradient" id="Gradient_c0bx4"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2t7yj"]
+gradient = SubResource("Gradient_c0bx4")
+width = 304
+height = 480
+
+[sub_resource type="Resource" id="Resource_w1og4"]
+script = ExtResource("10_1din5")
+value = SubResource("GradientTexture2D_2t7yj")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Resource" id="Resource_rxoik"]
+script = ExtResource("2_cln3b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_5kf1s"]
+script = ExtResource("2_cln3b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_anahw"]
+script = ExtResource("2_cln3b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[resource]
+script = ExtResource("7_gos03")
+count = SubResource("Resource_hupld")
+identities = Array[ExtResource("5_we3d8")]([SubResource("Resource_seb6j"), SubResource("Resource_be5on"), SubResource("Resource_3lhfm")])
+sprites = Array[ExtResource("10_1din5")]([SubResource("Resource_w1og4"), SubResource("Resource_w1og4"), SubResource("Resource_w1og4")])
+views = Array[ExtResource("2_cln3b")]([SubResource("Resource_rxoik"), SubResource("Resource_5kf1s"), SubResource("Resource_anahw")])
+shadows = Array[ExtResource("2_cln3b")]([SubResource("Resource_0qrna"), SubResource("Resource_ltd3k"), SubResource("Resource_4hvmb")])
+heart_rates = Array[ExtResource("3_23tl0")]([SubResource("Resource_gos03"), SubResource("Resource_4an6q"), SubResource("Resource_y1nec")])
+feet_views = Array[ExtResource("2_cln3b")]([SubResource("Resource_2g637"), SubResource("Resource_j45p6"), SubResource("Resource_cln3b")])
+speech_texts = Array[ExtResource("8_uq7os")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27"), SubResource("Resource_2t7yj")])

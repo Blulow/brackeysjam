@@ -23,6 +23,12 @@
 [ext_resource type="Resource" uid="uid://ccygeuaq2v156" path="res://assets/resources/rounds/round_10.tres" id="21_bhx41"]
 [ext_resource type="Resource" uid="uid://bgbbgxsjen8ns" path="res://assets/resources/rounds/round_11.tres" id="22_qnb83"]
 [ext_resource type="Resource" uid="uid://djys3t7iicwpt" path="res://assets/resources/rounds/round_12.tres" id="23_sww3w"]
+[ext_resource type="Resource" uid="uid://7fuop0knwv5q" path="res://assets/resources/rounds/round_13.tres" id="24_suyxu"]
+[ext_resource type="Resource" uid="uid://cls1uw6okdok7" path="res://assets/resources/rounds/round_14.tres" id="25_sgl2t"]
+[ext_resource type="Resource" uid="uid://cw5kh38gg226" path="res://assets/resources/rounds/round_15.tres" id="26_qouja"]
+[ext_resource type="Resource" uid="uid://iy3j5iyscmu8" path="res://assets/resources/rounds/round_16.tres" id="27_wljb1"]
+[ext_resource type="Resource" uid="uid://btpt33dscw8af" path="res://assets/resources/rounds/round_17.tres" id="28_v2yb1"]
+[ext_resource type="Resource" uid="uid://bbaj3byc3v45f" path="res://assets/resources/rounds/round_18.tres" id="29_js0lu"]
 
 [sub_resource type="Curve2D" id="Curve2D_u5sy4"]
 _data = {
@@ -255,7 +261,7 @@ grow_vertical = 2
 [node name="RoundManager" type="Node2D" parent="." unique_id=2028876826]
 position = Vector2(685, -376)
 script = ExtResource("8_gee14")
-rounds = Array[Resource]([ExtResource("10_vtaks"), ExtResource("11_kvpfn"), ExtResource("12_dinhu"), ExtResource("13_trtic"), ExtResource("14_ir15t"), ExtResource("15_ir15t"), ExtResource("18_bt5mj"), ExtResource("19_e1j6l"), ExtResource("20_pl11u"), ExtResource("21_bhx41"), ExtResource("22_qnb83"), ExtResource("23_sww3w")])
+rounds = Array[Resource]([ExtResource("10_vtaks"), ExtResource("11_kvpfn"), ExtResource("12_dinhu"), ExtResource("13_trtic"), ExtResource("14_ir15t"), ExtResource("15_ir15t"), ExtResource("18_bt5mj"), ExtResource("19_e1j6l"), ExtResource("20_pl11u"), ExtResource("21_bhx41"), ExtResource("22_qnb83"), ExtResource("23_sww3w"), ExtResource("24_suyxu"), ExtResource("25_sgl2t"), ExtResource("26_qouja"), ExtResource("27_wljb1"), ExtResource("28_v2yb1"), ExtResource("29_js0lu")])
 penalty_speeches = Array[String](["Hey! You just made a mistake, but luckily the guards handled it. Be careful next time.", "Once again! You let someone slip again! It caused some big trouble. We can’t handle any more mistakes, okay?", "Hey new guy, it’s nice seeing you. And this world… wasn’t really that beautiful anyway. I hope you saw the opposite though."])
 ending_dialogue = Array[Array]([Array[String](["It is break time now, so take some rest, gotta get comfortable for this job, even when you can’t, haha.", "Well, let's meet back here in a few hours then, maybe grab some coffee now."]), Array[String](["And… Don't you think the world is so… beautiful? Despite everything that’s happening… Haha… hello? Are you there? Hello?? Hello???"])])
 

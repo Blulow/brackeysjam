@@ -1,0 +1,290 @@
+[gd_resource type="Resource" script_class="PeopleConfig" format=3 uid="uid://bbaj3byc3v45f"]
+
+[ext_resource type="Script" uid="uid://cbo8ursmeimy" path="res://scripts/people_config_values/people_config_int_value.gd" id="1_glr5p"]
+[ext_resource type="Script" uid="uid://b6eev2o4gsb7v" path="res://scripts/people_config_values/people_config_bool_value.gd" id="2_h2e0b"]
+[ext_resource type="Script" uid="uid://c4ran4w2e4xhr" path="res://scripts/people_config_values/people_config_heartrate_value.gd" id="3_r6s8y"]
+[ext_resource type="Script" uid="uid://dopnqcqmflhwm" path="res://scripts/popup_ui/heart_rate.gd" id="4_l5pce"]
+[ext_resource type="Script" uid="uid://l1ku632ceix" path="res://scripts/people_config_values/people_config_identity_value.gd" id="5_065vp"]
+[ext_resource type="Script" uid="uid://dojjqallh3e4s" path="res://scripts/people_config_values/person_identity.gd" id="6_fg2t4"]
+[ext_resource type="Script" uid="uid://ddkheyxoh5lgl" path="res://scripts/people/people_config.gd" id="7_yofnx"]
+[ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_5o3c6"]
+[ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_5tr58"]
+[ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_nitvq"]
+
+[sub_resource type="Resource" id="Resource_glr5p"]
+script = ExtResource("1_glr5p")
+value = 3
+metadata/_custom_type_script = "uid://cbo8ursmeimy"
+
+[sub_resource type="Resource" id="Resource_h2e0b"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_r6s8y"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_l5pce"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_cwlqi"]
+script = ExtResource("4_l5pce")
+bpm = 84.0
+amp = 77.0
+pha = 20.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_ba58x"]
+script = ExtResource("4_l5pce")
+bpm = 75.0
+amp = 77.0
+pha = 20.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_sqjm3"]
+script = ExtResource("4_l5pce")
+bpm = 82.0
+amp = 77.0
+pha = 20.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_26fbn"]
+script = ExtResource("4_l5pce")
+bpm = 89.0
+amp = 45.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_065vp"]
+script = ExtResource("3_r6s8y")
+type = 1
+value = SubResource("Resource_26fbn")
+heartrates = Array[ExtResource("4_l5pce")]([SubResource("Resource_cwlqi"), SubResource("Resource_ba58x"), SubResource("Resource_sqjm3")])
+metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_1tyin"]
+script = ExtResource("4_l5pce")
+bpm = 90.0
+amp = 41.0
+pha = 40.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_mypf7"]
+script = ExtResource("4_l5pce")
+bpm = 101.0
+amp = 41.0
+pha = 40.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_brprw"]
+script = ExtResource("4_l5pce")
+bpm = 94.0
+amp = 41.0
+pha = 40.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_fg2t4"]
+script = ExtResource("4_l5pce")
+bpm = 89.0
+amp = 45.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_yofnx"]
+script = ExtResource("3_r6s8y")
+type = 1
+value = SubResource("Resource_fg2t4")
+heartrates = Array[ExtResource("4_l5pce")]([SubResource("Resource_1tyin"), SubResource("Resource_mypf7"), SubResource("Resource_brprw")])
+metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_5o3c6"]
+script = ExtResource("4_l5pce")
+bpm = 121.0
+amp = 89.0
+pha = 60.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_5tr58"]
+script = ExtResource("4_l5pce")
+bpm = 125.0
+amp = 89.0
+pha = 60.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_nitvq"]
+script = ExtResource("4_l5pce")
+bpm = 130.0
+amp = 89.0
+pha = 60.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_epcc5"]
+script = ExtResource("4_l5pce")
+bpm = 89.0
+amp = 45.0
+metadata/_custom_type_script = "uid://dopnqcqmflhwm"
+
+[sub_resource type="Resource" id="Resource_hgdn3"]
+script = ExtResource("3_r6s8y")
+type = 1
+value = SubResource("Resource_epcc5")
+heartrates = Array[ExtResource("4_l5pce")]([SubResource("Resource_5o3c6"), SubResource("Resource_5tr58"), SubResource("Resource_nitvq")])
+metadata/_custom_type_script = "uid://c4ran4w2e4xhr"
+
+[sub_resource type="Resource" id="Resource_8u3d3"]
+script = ExtResource("6_fg2t4")
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_rmaa0"]
+script = ExtResource("5_065vp")
+value = SubResource("Resource_8u3d3")
+metadata/_custom_type_script = "uid://l1ku632ceix"
+
+[sub_resource type="Resource" id="Resource_yt0r2"]
+script = ExtResource("6_fg2t4")
+identity = 1
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_sipoa"]
+script = ExtResource("6_fg2t4")
+identity = 2
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_l4efq"]
+script = ExtResource("6_fg2t4")
+identity = 1
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_i7b1j"]
+script = ExtResource("5_065vp")
+type = 1
+value = SubResource("Resource_l4efq")
+identities = Array[ExtResource("6_fg2t4")]([SubResource("Resource_yt0r2"), SubResource("Resource_sipoa")])
+metadata/_custom_type_script = "uid://l1ku632ceix"
+
+[sub_resource type="Resource" id="Resource_wh3qp"]
+script = ExtResource("6_fg2t4")
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_xphi4"]
+script = ExtResource("6_fg2t4")
+identity = 4
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_74u51"]
+script = ExtResource("6_fg2t4")
+identity = 4
+metadata/_custom_type_script = "uid://dojjqallh3e4s"
+
+[sub_resource type="Resource" id="Resource_yphkb"]
+script = ExtResource("5_065vp")
+type = 1
+value = SubResource("Resource_74u51")
+identities = Array[ExtResource("6_fg2t4")]([SubResource("Resource_wh3qp"), SubResource("Resource_xphi4")])
+metadata/_custom_type_script = "uid://l1ku632ceix"
+
+[sub_resource type="Resource" id="Resource_3ho3p"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_xepii"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_ao4dh"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_xx8ov"]
+script = ExtResource("9_5tr58")
+speaker = "[color=#0f0]Zane Doe[/color]"
+text = "Sit bro"
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_h8ywi"]
+script = ExtResource("8_5o3c6")
+value = SubResource("Resource_xx8ov")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_qsw57"]
+script = ExtResource("9_5tr58")
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_yro27"]
+script = ExtResource("8_5o3c6")
+value = SubResource("Resource_qsw57")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_aa44l"]
+script = ExtResource("9_5tr58")
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_m7c75"]
+script = ExtResource("8_5o3c6")
+value = SubResource("Resource_aa44l")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Gradient" id="Gradient_c0bx4"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2t7yj"]
+gradient = SubResource("Gradient_c0bx4")
+width = 304
+height = 480
+
+[sub_resource type="Resource" id="Resource_nntsa"]
+script = ExtResource("10_nitvq")
+value = SubResource("GradientTexture2D_2t7yj")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Resource" id="Resource_rggar"]
+script = ExtResource("10_nitvq")
+value = SubResource("GradientTexture2D_2t7yj")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Gradient" id="Gradient_31hte"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lysxm"]
+gradient = SubResource("Gradient_31hte")
+width = 304
+height = 480
+
+[sub_resource type="Resource" id="Resource_k5aal"]
+script = ExtResource("10_nitvq")
+value = SubResource("GradientTexture2D_lysxm")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Resource" id="Resource_4146f"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_rayjg"]
+script = ExtResource("2_h2e0b")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[sub_resource type="Resource" id="Resource_pjyq2"]
+script = ExtResource("2_h2e0b")
+type = 1
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
+
+[resource]
+script = ExtResource("7_yofnx")
+count = SubResource("Resource_glr5p")
+identities = Array[ExtResource("5_065vp")]([SubResource("Resource_rmaa0"), SubResource("Resource_i7b1j"), SubResource("Resource_yphkb")])
+sprites = Array[ExtResource("10_nitvq")]([SubResource("Resource_nntsa"), SubResource("Resource_rggar"), SubResource("Resource_k5aal")])
+views = Array[ExtResource("2_h2e0b")]([SubResource("Resource_4146f"), SubResource("Resource_rayjg"), SubResource("Resource_pjyq2")])
+shadows = Array[ExtResource("2_h2e0b")]([SubResource("Resource_3ho3p"), SubResource("Resource_xepii"), SubResource("Resource_ao4dh")])
+heart_rates = Array[ExtResource("3_r6s8y")]([SubResource("Resource_065vp"), SubResource("Resource_yofnx"), SubResource("Resource_hgdn3")])
+feet_views = Array[ExtResource("2_h2e0b")]([SubResource("Resource_h2e0b"), SubResource("Resource_r6s8y"), SubResource("Resource_l5pce")])
+speech_texts = Array[ExtResource("8_5o3c6")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27"), SubResource("Resource_m7c75")])
+dialogue = Array[String](["So, there are things called clones as well, which have the same exact attributes as anything next to it. They don’t count as an entity."])
+increment_rules = 1
