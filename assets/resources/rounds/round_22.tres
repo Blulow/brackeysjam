@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_w06ui"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_gd0a7"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_mbcj2"]
+[ext_resource type="Texture2D" uid="uid://iajpa8kliojg" path="res://assets/images/people_sprites/people_sprite_8.png" id="11_cpo2y"]
 
 [sub_resource type="Resource" id="Resource_dqjrg"]
 script = ExtResource("1_dqjrg")
@@ -152,17 +153,19 @@ script = ExtResource("8_w06ui")
 value = SubResource("Resource_c0bx4")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Gradient" id="Gradient_6yxyf"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+[sub_resource type="Resource" id="Resource_6yxyf"]
+script = ExtResource("10_mbcj2")
+value = ExtResource("11_cpo2y")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nlrnw"]
-gradient = SubResource("Gradient_6yxyf")
-width = 304
-height = 480
+[sub_resource type="Resource" id="Resource_nlrnw"]
+script = ExtResource("10_mbcj2")
+value = ExtResource("11_cpo2y")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_q1ww8"]
 script = ExtResource("10_mbcj2")
-value = SubResource("GradientTexture2D_nlrnw")
+value = ExtResource("11_cpo2y")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_7mik2"]
@@ -184,7 +187,7 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("7_dlsk2")
 count = SubResource("Resource_dqjrg")
 identities = Array[ExtResource("5_1vsjy")]([SubResource("Resource_1ih5o"), SubResource("Resource_iwefq"), SubResource("Resource_7h1ai")])
-sprites = Array[ExtResource("10_mbcj2")]([SubResource("Resource_q1ww8"), SubResource("Resource_q1ww8"), SubResource("Resource_q1ww8")])
+sprites = Array[ExtResource("10_mbcj2")]([SubResource("Resource_6yxyf"), SubResource("Resource_nlrnw"), SubResource("Resource_q1ww8")])
 views = Array[ExtResource("2_cpo2y")]([SubResource("Resource_7mik2"), SubResource("Resource_4gwan"), SubResource("Resource_tahi8")])
 shadows = Array[ExtResource("2_cpo2y")]([SubResource("Resource_i65n5"), SubResource("Resource_mxjlc"), SubResource("Resource_knb06")])
 heart_rates = Array[ExtResource("3_e0d3p")]([SubResource("Resource_sc1uk"), SubResource("Resource_w06ui"), SubResource("Resource_gd0a7")])

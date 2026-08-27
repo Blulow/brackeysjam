@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_lk3pi"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_afium"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_yjvd8"]
+[ext_resource type="Texture2D" uid="uid://iajpa8kliojg" path="res://assets/images/people_sprites/people_sprite_8.png" id="11_68q4s"]
+[ext_resource type="Texture2D" uid="uid://dntixaes6g08p" path="res://assets/images/people_sprites/people_sprite_7.png" id="12_p2j5p"]
 
 [sub_resource type="Resource" id="Resource_wmmjt"]
 script = ExtResource("1_wmmjt")
@@ -156,30 +158,19 @@ script = ExtResource("8_lk3pi")
 value = SubResource("Resource_qsw57")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Gradient" id="Gradient_rfm35"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ha4ex"]
-gradient = SubResource("Gradient_rfm35")
-width = 304
-height = 480
-
 [sub_resource type="Resource" id="Resource_yjvd8"]
 script = ExtResource("10_yjvd8")
-value = SubResource("GradientTexture2D_ha4ex")
+value = ExtResource("11_68q4s")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
-
-[sub_resource type="Gradient" id="Gradient_o4gi6"]
-colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_yfcc2"]
-gradient = SubResource("Gradient_o4gi6")
-width = 304
-height = 480
 
 [sub_resource type="Resource" id="Resource_64fdy"]
 script = ExtResource("10_yjvd8")
-value = SubResource("GradientTexture2D_yfcc2")
+value = ExtResource("12_p2j5p")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Resource" id="Resource_byl08"]
+script = ExtResource("10_yjvd8")
+value = ExtResource("12_p2j5p")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_hf1ya"]
@@ -201,7 +192,7 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("7_pn6p5")
 count = SubResource("Resource_wmmjt")
 identities = Array[ExtResource("5_w5p6n")]([SubResource("Resource_w5p6n"), SubResource("Resource_muiyg"), SubResource("Resource_lk3pi")])
-sprites = Array[ExtResource("10_yjvd8")]([SubResource("Resource_yjvd8"), SubResource("Resource_64fdy"), SubResource("Resource_64fdy")])
+sprites = Array[ExtResource("10_yjvd8")]([SubResource("Resource_yjvd8"), SubResource("Resource_64fdy"), SubResource("Resource_byl08")])
 views = Array[ExtResource("2_38wog")]([SubResource("Resource_hf1ya"), SubResource("Resource_6d8cy"), SubResource("Resource_lm2ba")])
 shadows = Array[ExtResource("2_38wog")]([SubResource("Resource_tad2f"), SubResource("Resource_wu421"), SubResource("Resource_afium")])
 heart_rates = Array[ExtResource("3_68q4s")]([SubResource("Resource_0vedy"), SubResource("Resource_n4vws"), SubResource("Resource_4xq6s")])

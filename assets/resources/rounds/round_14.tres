@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_j2jfh"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_48u4u"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_be5on"]
+[ext_resource type="Texture2D" uid="uid://clal7kfh4d1td" path="res://assets/images/people_sprites/people_sprite_9.png" id="11_2g637"]
 
 [sub_resource type="Resource" id="Resource_w5svl"]
 script = ExtResource("1_w5svl")
@@ -140,17 +141,14 @@ script = ExtResource("8_j2jfh")
 value = SubResource("Resource_qsw57")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Gradient" id="Gradient_5hb7u"]
-colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_67qw8"]
-gradient = SubResource("Gradient_5hb7u")
-width = 304
-height = 480
-
 [sub_resource type="Resource" id="Resource_4563y"]
 script = ExtResource("10_be5on")
-value = SubResource("GradientTexture2D_67qw8")
+value = ExtResource("11_2g637")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Resource" id="Resource_pvokx"]
+script = ExtResource("10_be5on")
+value = ExtResource("11_2g637")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_rxoik"]
@@ -167,7 +165,7 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("7_1h6np")
 count = SubResource("Resource_w5svl")
 identities = Array[ExtResource("5_ja1tq")]([SubResource("Resource_seb6j"), SubResource("Resource_be5on")])
-sprites = Array[ExtResource("10_be5on")]([SubResource("Resource_4563y"), SubResource("Resource_4563y")])
+sprites = Array[ExtResource("10_be5on")]([SubResource("Resource_4563y"), SubResource("Resource_pvokx")])
 views = Array[ExtResource("2_2g637")]([SubResource("Resource_rxoik"), SubResource("Resource_5kf1s")])
 shadows = Array[ExtResource("2_2g637")]([SubResource("Resource_0qrna"), SubResource("Resource_ltd3k")])
 heart_rates = Array[ExtResource("3_j45p6")]([SubResource("Resource_j2jfh"), SubResource("Resource_ovycg")])

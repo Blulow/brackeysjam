@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_mf170"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_l3b51"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_l2m2f"]
+[ext_resource type="Texture2D" uid="uid://c1ovv7e2di8ox" path="res://assets/images/people_sprites/people_sprite_6.png" id="11_128vo"]
 
 [sub_resource type="Resource" id="Resource_t26pk"]
 script = ExtResource("1_t26pk")
@@ -106,22 +107,14 @@ script = ExtResource("8_mf170")
 value = SubResource("Resource_qsw57")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Gradient" id="Gradient_5hb7u"]
-colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_67qw8"]
-gradient = SubResource("Gradient_5hb7u")
-width = 304
-height = 480
-
 [sub_resource type="Resource" id="Resource_1thcw"]
 script = ExtResource("10_l2m2f")
-value = SubResource("GradientTexture2D_67qw8")
+value = ExtResource("11_128vo")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_oio27"]
 script = ExtResource("10_l2m2f")
-value = SubResource("GradientTexture2D_67qw8")
+value = ExtResource("11_128vo")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_gxg8u"]

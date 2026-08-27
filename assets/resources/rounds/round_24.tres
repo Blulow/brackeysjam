@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_0wh37"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_tr0cg"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_ad4ho"]
+[ext_resource type="Texture2D" uid="uid://d4f8qfxu7vah6" path="res://assets/images/people_sprites/people_sprite_4.png" id="11_cb0o8"]
+[ext_resource type="Texture2D" uid="uid://4lcos0oa6sax" path="res://assets/images/people_sprites/people_sprite_5.png" id="12_c06fi"]
 
 [sub_resource type="Resource" id="Resource_rgbgp"]
 script = ExtResource("1_rgbgp")
@@ -226,45 +228,33 @@ script = ExtResource("8_0wh37")
 value = SubResource("Resource_aa44l")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Gradient" id="Gradient_max53"]
-colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
+[sub_resource type="Resource" id="Resource_max53"]
+script = ExtResource("10_ad4ho")
+value = ExtResource("11_cb0o8")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wghyc"]
-gradient = SubResource("Gradient_max53")
-width = 304
-height = 480
+[sub_resource type="Resource" id="Resource_wghyc"]
+script = ExtResource("10_ad4ho")
+value = ExtResource("11_cb0o8")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_u7i01"]
 script = ExtResource("10_ad4ho")
-value = SubResource("GradientTexture2D_wghyc")
+value = ExtResource("12_c06fi")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
-[sub_resource type="Gradient" id="Gradient_yaex4"]
-colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
+[sub_resource type="Resource" id="Resource_yaex4"]
+script = ExtResource("2_2f5su")
+type = 1
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4cmee"]
-gradient = SubResource("Gradient_yaex4")
-width = 304
-height = 480
+[sub_resource type="Resource" id="Resource_4cmee"]
+script = ExtResource("2_2f5su")
+value = true
+metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_uh73y"]
-script = ExtResource("10_ad4ho")
-value = SubResource("GradientTexture2D_4cmee")
-metadata/_custom_type_script = "uid://q82q187cc1ki"
-
-[sub_resource type="Resource" id="Resource_gxxqi"]
-script = ExtResource("2_2f5su")
-type = 1
-value = true
-metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
-
-[sub_resource type="Resource" id="Resource_dmdh6"]
-script = ExtResource("2_2f5su")
-type = 1
-value = true
-metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
-
-[sub_resource type="Resource" id="Resource_cbvcl"]
 script = ExtResource("2_2f5su")
 type = 1
 value = true
@@ -274,8 +264,8 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("7_yainr")
 count = SubResource("Resource_rgbgp")
 identities = Array[ExtResource("5_qnm5n")]([SubResource("Resource_1d3br"), SubResource("Resource_gj286"), SubResource("Resource_eti4l")])
-sprites = Array[ExtResource("10_ad4ho")]([SubResource("Resource_u7i01"), SubResource("Resource_u7i01"), SubResource("Resource_uh73y")])
-views = Array[ExtResource("2_2f5su")]([SubResource("Resource_gxxqi"), SubResource("Resource_dmdh6"), SubResource("Resource_cbvcl")])
+sprites = Array[ExtResource("10_ad4ho")]([SubResource("Resource_max53"), SubResource("Resource_wghyc"), SubResource("Resource_u7i01")])
+views = Array[ExtResource("2_2f5su")]([SubResource("Resource_yaex4"), SubResource("Resource_4cmee"), SubResource("Resource_uh73y")])
 shadows = Array[ExtResource("2_2f5su")]([SubResource("Resource_61lk0"), SubResource("Resource_r1o8i"), SubResource("Resource_ry138")])
 heart_rates = Array[ExtResource("3_cb0o8")]([SubResource("Resource_tr0cg"), SubResource("Resource_npifc"), SubResource("Resource_prrwl")])
 feet_views = Array[ExtResource("2_2f5su")]([SubResource("Resource_2f5su"), SubResource("Resource_cb0o8"), SubResource("Resource_c06fi")])

@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_u5ds2"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_1tyin"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_mypf7"]
+[ext_resource type="Texture2D" uid="uid://by6c8bqibn7lr" path="res://assets/images/people_sprites/people_sprite_1.png" id="11_fbp2w"]
+[ext_resource type="Texture2D" uid="uid://u8qkoowdj5lj" path="res://assets/images/people_sprites/people_sprite_2.png" id="12_cwlqi"]
 
 [sub_resource type="Resource" id="Resource_hupld"]
 script = ExtResource("1_it6lp")
@@ -180,35 +182,19 @@ script = ExtResource("8_u5ds2")
 value = SubResource("Resource_aa44l")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Gradient" id="Gradient_c0bx4"]
-colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2t7yj"]
-gradient = SubResource("Gradient_c0bx4")
-width = 304
-height = 480
-
 [sub_resource type="Resource" id="Resource_4nra3"]
 script = ExtResource("10_mypf7")
-value = SubResource("GradientTexture2D_2t7yj")
+value = ExtResource("11_fbp2w")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_df2ni"]
 script = ExtResource("10_mypf7")
-value = SubResource("GradientTexture2D_2t7yj")
+value = ExtResource("11_fbp2w")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
-
-[sub_resource type="Gradient" id="Gradient_31hte"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lysxm"]
-gradient = SubResource("Gradient_31hte")
-width = 304
-height = 480
 
 [sub_resource type="Resource" id="Resource_ytrdq"]
 script = ExtResource("10_mypf7")
-value = SubResource("GradientTexture2D_lysxm")
+value = ExtResource("12_cwlqi")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_o57r5"]

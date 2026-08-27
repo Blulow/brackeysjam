@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_gx2xa"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_phoqk"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_p0sw6"]
+[ext_resource type="Texture2D" uid="uid://d4f8qfxu7vah6" path="res://assets/images/people_sprites/people_sprite_4.png" id="11_b3nbt"]
+[ext_resource type="Texture2D" uid="uid://by6c8bqibn7lr" path="res://assets/images/people_sprites/people_sprite_1.png" id="12_ihyeg"]
 
 [sub_resource type="Resource" id="Resource_wfdvw"]
 script = ExtResource("1_wfdvw")
@@ -100,16 +102,14 @@ script = ExtResource("8_gx2xa")
 value = SubResource("Resource_6m1pc")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Gradient" id="Gradient_1obtl"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xhtcr"]
-gradient = SubResource("Gradient_1obtl")
-width = 304
-height = 480
-
-[sub_resource type="Resource" id="Resource_42g2f"]
+[sub_resource type="Resource" id="Resource_ewymh"]
 script = ExtResource("10_p0sw6")
-value = SubResource("GradientTexture2D_xhtcr")
+value = ExtResource("11_b3nbt")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Resource" id="Resource_kdpng"]
+script = ExtResource("10_p0sw6")
+value = ExtResource("12_ihyeg")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_7unpq"]
@@ -125,7 +125,7 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("7_6m1pc")
 count = SubResource("Resource_wfdvw")
 identities = Array[ExtResource("5_jj5ue")]([SubResource("Resource_b3nbt"), SubResource("Resource_ihyeg")])
-sprites = Array[ExtResource("10_p0sw6")]([SubResource("Resource_42g2f"), SubResource("Resource_42g2f")])
+sprites = Array[ExtResource("10_p0sw6")]([SubResource("Resource_ewymh"), SubResource("Resource_kdpng")])
 views = Array[ExtResource("2_xm8h5")]([SubResource("Resource_7unpq"), SubResource("Resource_phoqk")])
 shadows = Array[ExtResource("2_xm8h5")]([SubResource("Resource_8022p"), SubResource("Resource_sngiy")])
 heart_rates = Array[ExtResource("3_b3nbt")]([SubResource("Resource_m2vlq"), SubResource("Resource_m2vlq")])
