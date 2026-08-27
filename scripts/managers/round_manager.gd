@@ -5,10 +5,11 @@ class_name RoundManager
 
 @onready var people_path: PathFollow2D = $"../World/PeopleArea/PeoplePath/PathFollow2D"
 @onready var people: People = $"../World/PeopleArea/PeoplePath/PathFollow2D/People"
+@onready var anim_player: AnimationPlayer = $"../AnimationPlayer"
 
 const PATH_SPEED: float = 0.01
 
-var current_round: int = 0
+var current_round: int = 5
 var round_state: int = -1
 enum RoundStates { START, STAY, END }
 
@@ -22,6 +23,7 @@ var shown_rules: int = 0
 
 var penalties: int = 0
 @export var penalty_speeches: Array[String]
+@export var ending_dialogue: Array[String]
 
 signal round_start
 signal round_stay
@@ -76,7 +78,12 @@ func end_current_round() -> void:
 	if current_round < rounds.size():
 		start_round(current_round)
 	else:
-		print("game end")
+		$"../World/Objects/Phone".show_dialogue(ending_dialogue)
+		$"../FXLayer/VictoryEnding".visible = true
+		$"../FXLayer/GlitchEffect".visible = true
+		anim_player.play("victory_ending")
+		await anim_player.animation_finished
+		get_tree().change_scene_to_file("res://scenes/game_finished_screen.tscn")
 
 func _on_round_end() -> void:
 	for e in people.get_child(1).get_children():

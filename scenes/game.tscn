@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cq7l2ff0kkbfc" path="res://scenes/objects/papers.tscn" id="8_0tnpc"]
 [ext_resource type="Script" uid="uid://psq43odj5en5" path="res://scripts/managers/round_manager.gd" id="8_gee14"]
 [ext_resource type="Shader" uid="uid://cq0tcgxkv75eg" path="res://assets/shaders/vignette.gdshader" id="9_ca42v"]
+[ext_resource type="Shader" uid="uid://wv8u0mhqcgeu" path="res://assets/shaders/glitch_effect.gdshader" id="10_rysoc"]
 [ext_resource type="Resource" uid="uid://bdia3nf8tf6df" path="res://assets/resources/rounds/round_1.tres" id="10_vtaks"]
 [ext_resource type="Resource" uid="uid://cpkldwrl3yq5a" path="res://assets/resources/rounds/round_2.tres" id="11_kvpfn"]
 [ext_resource type="Resource" uid="uid://ct5lckjf44wcf" path="res://assets/resources/rounds/round_3.tres" id="12_dinhu"]
@@ -30,6 +31,8 @@ shader_parameter/inner_radius = 0.145
 shader_parameter/outer_radius = 2.98
 shader_parameter/pos = Vector2(960, 540)
 shader_parameter/size = Vector2(1920, 1080)
+shader_parameter/horizontal_radius = 1.0
+shader_parameter/vertical_radius = 1.0
 shader_parameter/resize = false
 shader_parameter/color = Color(0.047058802, 0.061642133, 0.18039216, 1)
 
@@ -41,8 +44,92 @@ shader_parameter/inner_radius = 0.855
 shader_parameter/outer_radius = 0.51
 shader_parameter/pos = Vector2(1500, 500)
 shader_parameter/size = Vector2(1920, 1080)
+shader_parameter/horizontal_radius = 1.0
+shader_parameter/vertical_radius = 1.0
 shader_parameter/resize = false
 shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssvqc"]
+resource_local_to_scene = true
+shader = ExtResource("9_ca42v")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.81
+shader_parameter/outer_radius = 1.7650000000000001
+shader_parameter/pos = Vector2(960, 540)
+shader_parameter/size = Vector2(1920, 1080)
+shader_parameter/horizontal_radius = 1.0
+shader_parameter/vertical_radius = 1.0
+shader_parameter/resize = false
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_264po"]
+shader = ExtResource("10_rysoc")
+shader_parameter/shake_power = 0.01
+shader_parameter/shake_rate = 0.50000002375
+shader_parameter/shake_speed = 1.0
+shader_parameter/shake_block_size = 10.0
+shader_parameter/shake_color_rate = 0.0
+
+[sub_resource type="Animation" id="Animation_1kice"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VictoryEnding:material:shader_parameter/horizontal_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VictoryEnding:material:shader_parameter/vertical_radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_5newe"]
+resource_name = "victory_ending"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VictoryEnding:material:shader_parameter/horizontal_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 1.1, 2.2333333, 2.7666667, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.59, 0.55, 0.55, 0.465, 0.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VictoryEnding:material:shader_parameter/vertical_radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 1.1, 1.8333334, 2.8, 2.9666667, 3.2333333, 3.3666666, 3.6, 4.7333326, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.57, 0.385, 0.545, 0.195, 0.0, 0.195, 0.0, 0.33, 0.415, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37s47"]
+_data = {
+&"RESET": SubResource("Animation_1kice"),
+&"victory_ending": SubResource("Animation_5newe")
+}
 
 [node name="Game" type="Node2D" unique_id=21264269]
 
@@ -120,9 +207,9 @@ position = Vector2(649, 285)
 
 [node name="PopupUILayer" type="CanvasLayer" parent="." unique_id=828918225]
 
-[node name="VignetteLayer" type="CanvasLayer" parent="." unique_id=1756561581]
+[node name="FXLayer" type="CanvasLayer" parent="." unique_id=1756561581]
 
-[node name="Vignette" type="ColorRect" parent="VignetteLayer" unique_id=615500399]
+[node name="Vignette" type="ColorRect" parent="FXLayer" unique_id=615500399]
 material = SubResource("ShaderMaterial_rysoc")
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,9 +218,28 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PenaltyEnding" type="ColorRect" parent="VignetteLayer" unique_id=751111713]
+[node name="PenaltyEnding" type="ColorRect" parent="FXLayer" unique_id=751111713]
 visible = false
 material = SubResource("ShaderMaterial_ca42v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VictoryEnding" type="ColorRect" parent="FXLayer" unique_id=649256191]
+visible = false
+material = SubResource("ShaderMaterial_ssvqc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GlitchEffect" type="ColorRect" parent="FXLayer" unique_id=1220443739]
+visible = false
+material = SubResource("ShaderMaterial_264po")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -145,12 +251,18 @@ position = Vector2(685, -376)
 script = ExtResource("8_gee14")
 rounds = Array[Resource]([ExtResource("10_vtaks"), ExtResource("11_kvpfn"), ExtResource("12_dinhu"), ExtResource("13_trtic"), ExtResource("14_ir15t"), ExtResource("15_ir15t")])
 penalty_speeches = Array[String](["Hey! You just made a mistake, but luckily the guards handled it. Be careful next time.", "Once again! You let someone slip again! It caused some big trouble. We can’t handle any more mistakes, okay?", "Hey new guy, it’s nice seeing you. And this world… wasn’t really that beautiful anyway. I hope you saw the opposite though."])
+ending_dialogue = Array[String](["It is break time now, so take some rest, gotta get comfortable for this job, even when you can’t, haha. Well… hello? Are you there? Hello?"])
 
 [node name="TextureButton" type="TextureButton" parent="RoundManager" unique_id=502440612]
 offset_left = 1096.6084
 offset_top = 112.23836
 offset_right = 1096.6084
 offset_bottom = 112.23836
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=198773718]
+process_mode = 3
+root_node = NodePath("../FXLayer")
+libraries/ = SubResource("AnimationLibrary_37s47")
 
 [connection signal="game_over" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_game_over"]
 [connection signal="penalized" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_penalized"]
