@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cqbksjfi86dqh"]
 
+[ext_resource type="Script" uid="uid://ctnya2at36tca" path="res://scripts/objects/rule.gd" id="1_m2xwo"]
 [ext_resource type="Shader" uid="uid://bw5ewe3knewbx" path="res://assets/shaders/outline.gdshader" id="1_ouf7d"]
 [ext_resource type="PackedScene" uid="uid://hc02c5uwjpoi" path="res://scenes/components/selectable_component.tscn" id="2_cv43s"]
 [ext_resource type="Texture2D" uid="uid://c7cnndw4dqdva" path="res://assets/images/objects/rules.png" id="2_m2xwo"]
 [ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="3_m2xwo"]
 [ext_resource type="PackedScene" uid="uid://qlgh5flxcovm" path="res://scenes/popup_ui/rule_popup.tscn" id="4_ouf7d"]
 [ext_resource type="PackedScene" uid="uid://pgwfcdoksmc5" path="res://scenes/components/selectable_popup_component.tscn" id="5_j7dvy"]
+[ext_resource type="Texture2D" uid="uid://8m2vq526houy" path="res://assets/images/objects/alert.png" id="8_xn3jo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_ouf7d")
@@ -17,7 +19,30 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn3jo"]
+atlas = ExtResource("8_xn3jo")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7dvy"]
+atlas = ExtResource("8_xn3jo")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pr7ml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn3jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7dvy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Rule" type="Node2D" unique_id=425908746]
+script = ExtResource("1_m2xwo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304575131]
 material = SubResource("ShaderMaterial_puc5w")
@@ -35,4 +60,10 @@ ui = ExtResource("4_ouf7d")
 
 [node name="SelectablePopupComponent" parent="." unique_id=1963949682 instance=ExtResource("5_j7dvy")]
 
+[node name="Alert" type="AnimatedSprite2D" parent="." unique_id=687608509]
+position = Vector2(-161, -164)
+sprite_frames = SubResource("SpriteFrames_pr7ml")
+autoplay = "default"
+
+[connection signal="clicked" from="SelectableComponent" to="." method="_on_clicked"]
 [connection signal="input_event" from="SelectableComponent" to="." method="_on_selectable_component_input_event"]
