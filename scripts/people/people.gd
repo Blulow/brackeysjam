@@ -66,9 +66,7 @@ func set_people(config: PeopleConfig) -> void:
 					person_config.identity.identity = PersonIdentity.Identity.ENTITY
 					people_sprite.texture = sprites[i]
 				
-				person_config.view = true
 				person_config.shadow = true
-				person_config.feet_view = true
 				
 			PersonIdentity.Identity.REFLECTION:
 				if i >= 1:
