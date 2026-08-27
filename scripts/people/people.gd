@@ -19,6 +19,9 @@ var dialogue: Array[String]
 var increment_rules: int
 var singular: bool
 
+var pending_penalization: bool = false
+var pending_game_over: bool = false
+
 func set_people(config: PeopleConfig) -> void:
 	identities = config.get_identities()
 	sprites = config.get_sprites()
@@ -112,7 +115,22 @@ func _on_round_stay() -> void:
 		speech_text.set_text(speech_texts[i].text)
 
 func _on_round_start() -> void:
+	if pending_penalization:
+		dialogue.insert(0, GameManager.round_manager.penalty_speeches[GameManager.round_manager.penalties - 1])
+		pending_penalization = false
+	
+	if pending_game_over:
+		$"../../../../../VignetteLayer/PenaltyEnding".visible = true
+	
 	if increment_rules > 0:
 		GameManager.round_manager.rule_shown.emit(increment_rules)
 	if dialogue.size() > 0:
 		$"../../../../Objects/Phone".show_dialogue(dialogue)
+		await GameManager.round_manager.dialogue_finish
+		if pending_game_over: get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+
+func _on_penalized() -> void:
+	pending_penalization = true
+
+func _on_game_over() -> void:
+	pending_game_over = true

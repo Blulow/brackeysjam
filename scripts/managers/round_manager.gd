@@ -30,8 +30,10 @@ signal round_done
 signal concluded(conc: bool)
 
 signal dialogue_set(dialogue: Array[String])
+signal dialogue_finish
 signal rule_shown(count: int)
 signal penalized
+signal game_over
 
 func _ready() -> void:
 	GameManager.round_manager = self
@@ -89,19 +91,10 @@ func _on_rule_shown(count: int) -> void:
 
 func penalize(_form_data: Dictionary) -> void:
 	var result = (_form_data.conc == Conc.REJECT) == people.singular
-	print(result)
 	
 	if result: return
-	if penalties + 1 >= 3:
-		print("ded")
-		return
-	
 	penalties += 1
-	await round_done
 	penalized.emit()
-
-func _on_penalized() -> void:
-	var d: Array[String]
-	print([penalty_speeches[penalties - 1]]) # TODO: fix penalties 2 and 3 not showing
-	d.assign([penalty_speeches[penalties - 1]])
-	$"../World/Objects/Phone".show_dialogue(d)
+	
+	if penalties >= 3:
+		game_over.emit()
