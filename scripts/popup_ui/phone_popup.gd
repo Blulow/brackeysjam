@@ -13,7 +13,6 @@ func _ready() -> void:
 func _on_dialogue_set(_dialogue: Array[String]) -> void:
 	dialogue = _dialogue
 	animating = true
-	label.clear()
 	animator.animate(dialogue[idx])
 
 func _input(event: InputEvent) -> void:
@@ -33,7 +32,6 @@ func advance_dialogue() -> void:
 		queue_free()
 		return
 	
-	label.clear()
 	animator.animate(dialogue[idx])
 
 func _on_animator_animated() -> void:

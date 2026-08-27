@@ -102,6 +102,7 @@ position = Vector2(649, 285)
 position = Vector2(685, -376)
 script = ExtResource("8_gee14")
 rounds = Array[Resource]([ExtResource("10_vtaks"), ExtResource("11_kvpfn"), ExtResource("12_dinhu"), ExtResource("13_trtic"), ExtResource("14_ir15t"), ExtResource("15_ir15t")])
+penalty_speeches = Array[String](["Hey! You just made a mistake, but luckily the guards handled it. Be careful next time.", "Once again! You let someone slip again! It caused some big trouble. We can’t handle any more mistakes, okay?", "Hey new guy, it’s nice seeing you. And this world… wasn’t really that beautiful anyway. I hope you saw the opposite though."])
 
 [node name="TextureButton" type="TextureButton" parent="RoundManager" unique_id=502440612]
 offset_left = 1096.6084
@@ -109,6 +110,7 @@ offset_top = 112.23836
 offset_right = 1096.6084
 offset_bottom = 112.23836
 
+[connection signal="penalized" from="RoundManager" to="RoundManager" method="_on_penalized"]
 [connection signal="round_done" from="RoundManager" to="RoundManager" method="_on_round_done"]
 [connection signal="round_end" from="RoundManager" to="RoundManager" method="_on_round_end"]
 [connection signal="round_start" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_round_start"]

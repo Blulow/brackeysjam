@@ -20,6 +20,9 @@ enum Conc { ACCEPT, REJECT }
 var last_cam: int = 0
 var shown_rules: int = 0
 
+var penalties: int = 0
+@export var penalty_speeches: Array[String]
+
 signal round_start
 signal round_stay
 signal round_end
@@ -28,6 +31,7 @@ signal concluded(conc: bool)
 
 signal dialogue_set(dialogue: Array[String])
 signal rule_shown(count: int)
+signal penalized
 
 func _ready() -> void:
 	GameManager.round_manager = self
@@ -82,3 +86,22 @@ func _on_round_done() -> void:
 
 func _on_rule_shown(count: int) -> void:
 	shown_rules += count
+
+func penalize(_form_data: Dictionary) -> void:
+	var result = (_form_data.conc == Conc.REJECT) == people.singular
+	print(result)
+	
+	if result: return
+	if penalties + 1 >= 3:
+		print("ded")
+		return
+	
+	penalties += 1
+	await round_done
+	penalized.emit()
+
+func _on_penalized() -> void:
+	var d: Array[String]
+	print([penalty_speeches[penalties - 1]]) # TODO: fix penalties 2 and 3 not showing
+	d.assign([penalty_speeches[penalties - 1]])
+	$"../World/Objects/Phone".show_dialogue(d)

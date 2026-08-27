@@ -33,6 +33,7 @@ func _on_edit_pressed() -> void:
 
 func _on_give_pressed() -> void:
 	await hide_buttons()
+	GameManager.round_manager.penalize(GameManager.round_manager.form_data)
 	GameManager.round_manager.form_data.entity_count = 0
 	GameManager.round_manager.form_data.conc = -1
 	GameManager.round_manager.end_current_round()
