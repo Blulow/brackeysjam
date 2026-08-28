@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_8a6af"]
 [ext_resource type="Script" uid="uid://xesbt8yo1boe" path="res://scripts/popup_ui/heartrate_display.gd" id="2_oc362"]
 [ext_resource type="Script" uid="uid://dopnqcqmflhwm" path="res://scripts/popup_ui/heart_rate.gd" id="3_52yvk"]
+[ext_resource type="Texture2D" uid="uid://ynu7qsxn3d3k" path="res://assets/images/ui/note.png" id="5_ka4wo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka4wo"]
 content_margin_left = 10.0
@@ -141,6 +142,47 @@ layout_mode = 2
 texture = SubResource("GradientTexture2D_52yvk")
 script = ExtResource("2_oc362")
 override = true
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=1006262371]
+layout_mode = 0
+offset_left = 326.0
+offset_top = -361.0
+offset_right = 582.0
+offset_bottom = -91.0
+scale = Vector2(-1, 1)
+texture = ExtResource("5_ka4wo")
+
+[node name="Label2" type="Label" parent="UI/TextureRect" unique_id=1348118953]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 47.0
+offset_right = 388.0
+offset_bottom = 238.0
+scale = Vector2(-1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sample heart rate monitor, 80 BPM"
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="UI" unique_id=1469547947]
+layout_mode = 0
+offset_left = -743.0
+offset_top = -113.0
+offset_right = -487.0
+offset_bottom = 157.0
+texture = ExtResource("5_ka4wo")
+
+[node name="Label" type="Label" parent="UI/TextureRect2" unique_id=1104589511]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 44.0
+offset_right = 223.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Can detect in very wide range
+
+
+Entities can't have more than 180 BPM"
+autowrap_mode = 2
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_8a6af")]
 layout_mode = 0
