@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://b7ug7sya2ct4f"]
 
+[ext_resource type="Script" uid="uid://d17bbkh6gw76t" path="res://scripts/popup_ui/settings_popup.gd" id="1_d3eop"]
 [ext_resource type="Texture2D" uid="uid://c58apiiws14f" path="res://assets/images/ui/heart_rate_panel.png" id="2_86ock"]
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="2_d3eop"]
+[ext_resource type="Texture2D" uid="uid://bt16pnfrlr3u0" path="res://assets/images/ui/grabber.png" id="3_mosn2"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="4_nhri7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysap"]
@@ -11,6 +13,18 @@ content_margin_right = 20.0
 content_margin_bottom = 40.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5s5kt"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mosn2"]
+bg_color = Color(1, 0.6796875, 0.6796875, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3eop"]
+bg_color = Color(1, 0.859375, 0.859375, 1)
+
 [node name="SettingsPopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d3eop")
 
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("2_d3eop")]
 layout_mode = 0
@@ -43,6 +58,26 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Control" type="Control" parent="UI" unique_id=1464769459]
+anchors_preset = 0
+offset_left = -219.0
+offset_top = -260.0
+offset_right = 259.0
+offset_bottom = 276.6667
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Control" unique_id=363456326]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 498.0
+offset_bottom = 577.0
+texture = ExtResource("2_86ock")
+region_rect = Rect2(0, 0, 566, 129)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
 [node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=791925971]
 layout_mode = 1
 anchors_preset = 15
@@ -59,21 +94,51 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5ysap")
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer" unique_id=329542259]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="UI/PanelContainer" unique_id=1464769459]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/VBoxContainer" unique_id=1162196567]
 layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/PanelContainer/Control" unique_id=363456326]
-layout_mode = 0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 498.0
-offset_bottom = 577.0
-texture = ExtResource("2_86ock")
-region_rect = Rect2(0, 0, 566, 129)
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
+[node name="Label" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer" unique_id=916492337]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="UI/PanelContainer/VBoxContainer/HBoxContainer" unique_id=103642380]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("3_mosn2")
+theme_override_icons/grabber_highlight = ExtResource("3_mosn2")
+theme_override_icons/grabber_disabled = ExtResource("3_mosn2")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5s5kt")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_mosn2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_d3eop")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/PanelContainer/VBoxContainer" unique_id=26780417]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1864671132]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="UI/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1293004868]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("3_mosn2")
+theme_override_icons/grabber_highlight = ExtResource("3_mosn2")
+theme_override_icons/grabber_disabled = ExtResource("3_mosn2")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5s5kt")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_mosn2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_d3eop")
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("4_nhri7")]
 layout_mode = 0
@@ -81,3 +146,7 @@ offset_left = 279.0
 offset_top = -300.0
 offset_right = 343.0
 offset_bottom = -236.0
+
+[connection signal="drag_ended" from="UI/PanelContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_music_drag_ended"]
+[connection signal="value_changed" from="UI/PanelContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_music_value_changed"]
+[connection signal="drag_ended" from="UI/PanelContainer/VBoxContainer/HBoxContainer2/HSlider" to="." method="_on_sfx_drag_ended"]
