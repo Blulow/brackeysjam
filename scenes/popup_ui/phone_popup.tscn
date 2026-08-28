@@ -88,6 +88,7 @@ offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
 
 [node name="AnimatedTextComponent" parent="UI/AnimatedTextureRect/RichTextLabel" unique_id=2094081059 instance=ExtResource("5_sgcqt")]
 layout_mode = 0
