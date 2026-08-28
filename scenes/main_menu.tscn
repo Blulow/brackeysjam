@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bpr7ol0gocjdd"]
+
+[ext_resource type="Script" uid="uid://b7qqu5gja2mjd" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://b7ug7sya2ct4f" path="res://scenes/popup_ui/settings_popup.tscn" id="4_wu84c"]
+
+[sub_resource type="Gradient" id="Gradient_ekxnf"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bqqt6"]
+gradient = SubResource("Gradient_ekxnf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MainMenu" type="Control" unique_id=477935441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1892074433]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 189.0
+offset_right = 580.0
+offset_bottom = 366.0
+texture = SubResource("GradientTexture2D_bqqt6")
+
+[node name="Button" type="Button" parent="." unique_id=1900340344]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -723.0
+offset_top = -52.0
+offset_right = -503.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Play"
+
+[node name="AnimatedButtonComponent" parent="Button" unique_id=231881551 instance=ExtResource("1_l6cm7")]
+layout_mode = 0
+
+[node name="Button2" type="Button" parent="." unique_id=693846972]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -723.0
+offset_top = 118.0
+offset_right = -503.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Settings"
+
+[node name="AnimatedButtonComponent" parent="Button2" unique_id=825621790 instance=ExtResource("1_l6cm7")]
+layout_mode = 0
+
+[node name="Button3" type="Button" parent="." unique_id=1075302696]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -723.0
+offset_top = 285.0
+offset_right = -503.0
+offset_bottom = 358.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Quit"
+
+[node name="AnimatedButtonComponent" parent="Button3" unique_id=464146716 instance=ExtResource("1_l6cm7")]
+layout_mode = 0
+
+[node name="PopupUILayer" type="CanvasLayer" parent="." unique_id=1093440866]
+
+[node name="PopupUiComponent" parent="." unique_id=1180603586 instance=ExtResource("3_bqqt6")]
+ui = ExtResource("4_wu84c")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

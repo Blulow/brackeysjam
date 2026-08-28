@@ -88,6 +88,42 @@ shader_parameter/shake_speed = 1.0
 shader_parameter/shake_block_size = 10.0
 shader_parameter/shake_color_rate = 0.0
 
+[sub_resource type="Shader" id="Shader_gxtfn"]
+code = "shader_type canvas_item;
+
+uniform float alpha = 1.0;
+uniform float inner_radius = 0.0;
+uniform float outer_radius = 1.0;
+uniform vec2 pos;
+uniform vec2 size = vec2(1920.0, 1080.0);
+uniform float horizontal_radius = 1.0;
+uniform float vertical_radius = 1.0;
+uniform bool resize = false;
+uniform vec4 color: source_color;
+
+void fragment() {
+	vec2 mapped_uv = UV - pos / size;
+	float x = abs(mapped_uv.x) * 2.0;
+	float y = abs(mapped_uv.y) * 2.0;
+	if (resize) x *= size.x / size.y;
+	float dx = x / horizontal_radius;
+	float dy = y / vertical_radius;
+	float q = 1.0 - (1.0 - sqrt(dx * dx + dy * dy) / outer_radius) / (1.0 - inner_radius);
+	COLOR = vec4(color.rgb, q * alpha);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twgab"]
+shader = SubResource("Shader_gxtfn")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.455
+shader_parameter/outer_radius = 1.0
+shader_parameter/pos = Vector2(960, 540)
+shader_parameter/size = Vector2(1920, 1080)
+shader_parameter/horizontal_radius = 1.0
+shader_parameter/vertical_radius = 1.0
+shader_parameter/resize = false
+shader_parameter/color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_1kice"]
 length = 0.001
 tracks/0/type = "value"
@@ -113,6 +149,81 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro:material:shader_parameter/outer_radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PopupUILayer:layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PhoneLayer:layer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_gxtfn"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro:material:shader_parameter/outer_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.3186404),
+"update": 0,
+"values": [0.0, 3.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PopupUILayer:layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PhoneLayer:layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 2]
 }
 
 [sub_resource type="Animation" id="Animation_5newe"]
@@ -146,6 +257,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_37s47"]
 _data = {
 &"RESET": SubResource("Animation_1kice"),
+&"intro": SubResource("Animation_gxtfn"),
 &"victory_ending": SubResource("Animation_5newe")
 }
 
@@ -266,6 +378,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Intro" type="ColorRect" parent="FXLayer" unique_id=970780394]
+material = SubResource("ShaderMaterial_twgab")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="RoundManager" type="Node2D" parent="." unique_id=2028876826]
 position = Vector2(685, -376)
 script = ExtResource("8_gee14")
@@ -283,6 +404,7 @@ offset_bottom = 112.23836
 process_mode = 3
 root_node = NodePath("../FXLayer")
 libraries/ = SubResource("AnimationLibrary_37s47")
+autoplay = &"intro"
 
 [connection signal="game_over" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_game_over"]
 [connection signal="penalized" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_penalized"]

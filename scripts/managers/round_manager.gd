@@ -39,6 +39,7 @@ signal game_over
 
 func _ready() -> void:
 	GameManager.round_manager = self
+	
 	start_round(current_round)
 
 func _process(delta: float) -> void:

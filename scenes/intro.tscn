@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://b63isjw0etj7w"]
+
+[ext_resource type="Script" uid="uid://48d8b4tih6f6" path="res://scripts/intro.gd" id="1_yjqpq"]
+[ext_resource type="PackedScene" uid="uid://ccwqilakya26o" path="res://scenes/objects/phone.tscn" id="2_4bx60"]
+
+[sub_resource type="Animation" id="Animation_yjqpq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4bx60"]
+resource_name = "tooltip"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Label:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2l1n"]
+_data = {
+&"RESET": SubResource("Animation_yjqpq"),
+&"tooltip": SubResource("Animation_4bx60")
+}
+
+[node name="Intro" type="Node2D" unique_id=1302937530]
+process_mode = 3
+script = ExtResource("1_yjqpq")
+intro_dialogue = Array[String](["So you’re the new guy here?", "Well get comfortable… even though the world is ending, haha.", "As you know about the disease or whatever is happening now – [b][color=#f00]Singularity[/color][/b].
+Entities that are alone are corrupted.", "So your job here is to just accept the ones in groups into our facility, or else, out."])
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1978908318]
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=545154169]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="UI" unique_id=2037212830]
+offset_left = 1129.0
+offset_top = 730.0
+offset_right = 1587.0
+offset_bottom = 793.0
+theme_override_font_sizes/font_size = 45
+text = "Left Click to continue"
+
+[node name="PhoneLayer" type="CanvasLayer" parent="." unique_id=1215677118]
+
+[node name="Phone" parent="PhoneLayer" unique_id=425908746 instance=ExtResource("2_4bx60")]
+position = Vector2(1749, 535)
+
+[node name="PopupUILayer" type="CanvasLayer" parent="." unique_id=2042900674]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2119248380]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_i2l1n")
+autoplay = &"tooltip"
