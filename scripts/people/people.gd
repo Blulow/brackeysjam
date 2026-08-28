@@ -48,6 +48,7 @@ func set_people(config: PeopleConfig) -> void:
 		
 		var person_config: PersonConfig = PersonConfig.new()
 		person_config.identity = identities[i]
+		person_config.sprite_name = sprites[i].resource_path.get_file().get_basename()
 		person_config.view = views[i]
 		person_config.shadow = shadows[i]
 		person_config.heart_rate = heart_rates[i]

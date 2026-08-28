@@ -1,14 +1,47 @@
 [gd_scene format=3 uid="uid://0ct6mkjijivk"]
 
 [ext_resource type="Script" uid="uid://b6ieydm15dwqm" path="res://scripts/people/cam/cam_person.gd" id="1_rqlvd"]
+[ext_resource type="PackedScene" uid="uid://cuuh66vd1p7jp" path="res://assets/models/cam_people/cam_people.glb" id="2_d3gp6"]
+[ext_resource type="PackedScene" uid="uid://2fu6r13qsrg2" path="res://assets/models/cam_people/cam_people_2.glb" id="3_hf54f"]
+[ext_resource type="PackedScene" uid="uid://bdbjb7scd71g" path="res://assets/models/cam_people/cam_people_3.glb" id="4_dmepq"]
+[ext_resource type="PackedScene" uid="uid://bbrx7qqeh1y4a" path="res://assets/models/cam_people/cam_people_4.glb" id="5_ee81h"]
+[ext_resource type="PackedScene" uid="uid://dvb6qpkrquwo0" path="res://assets/models/cam_people/cam_people_5.glb" id="6_hvoug"]
+[ext_resource type="PackedScene" uid="uid://2lmq3alcnqnf" path="res://assets/models/cam_people/cam_people_6.glb" id="7_vinmd"]
+[ext_resource type="PackedScene" uid="uid://tb61oqep4d0j" path="res://assets/models/cam_people/cam_people_7.glb" id="8_4pouy"]
+[ext_resource type="PackedScene" uid="uid://dobm53qvo8p1i" path="res://assets/models/cam_people/cam_people_8.glb" id="9_dfed4"]
+[ext_resource type="PackedScene" uid="uid://c7lbhh8otia5d" path="res://assets/models/cam_people/cam_people_9.glb" id="10_5hlvt"]
+[ext_resource type="PackedScene" uid="uid://fq3woogfb1h" path="res://assets/models/cam_people/cam_people_39.glb" id="11_ioxt6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0we6e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqlvd"]
 resource_local_to_scene = true
 transparency = 4
+albedo_color = Color(1, 1, 1, 0)
 
 [node name="Person" type="MeshInstance3D" unique_id=1515487243]
 mesh = SubResource("CapsuleMesh_0we6e")
 surface_material_override/0 = SubResource("StandardMaterial3D_rqlvd")
 script = ExtResource("1_rqlvd")
+
+[node name="CamPerson" type="Node3D" parent="." unique_id=931141030]
+
+[node name="cam_people" parent="CamPerson" unique_id=1927799930 instance=ExtResource("2_d3gp6")]
+
+[node name="cam_people_2" parent="CamPerson" unique_id=1541268553 instance=ExtResource("3_hf54f")]
+
+[node name="cam_people_3" parent="CamPerson" unique_id=1459373313 instance=ExtResource("4_dmepq")]
+
+[node name="cam_people_4" parent="CamPerson" unique_id=1681038607 instance=ExtResource("5_ee81h")]
+
+[node name="cam_people_5" parent="CamPerson" unique_id=155661496 instance=ExtResource("6_hvoug")]
+
+[node name="cam_people_6" parent="CamPerson" unique_id=904336298 instance=ExtResource("7_vinmd")]
+
+[node name="cam_people_7" parent="CamPerson" unique_id=1931607159 instance=ExtResource("8_4pouy")]
+
+[node name="cam_people_8" parent="CamPerson" unique_id=1007270040 instance=ExtResource("9_dfed4")]
+
+[node name="cam_people_9" parent="CamPerson" unique_id=1983038877 instance=ExtResource("10_5hlvt")]
+
+[node name="cam_people_39" parent="CamPerson" unique_id=1129430763 instance=ExtResource("11_ioxt6")]
