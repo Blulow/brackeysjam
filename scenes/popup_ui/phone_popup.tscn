@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://ds88kycgi2chh" path="res://scripts/popup_ui/phone_popup.gd" id="1_w4sjb"]
 [ext_resource type="PackedScene" uid="uid://co642745b7vsm" path="res://scenes/components/ui/animated_texture_rect.tscn" id="3_80ewv"]
 [ext_resource type="Texture2D" uid="uid://4jvvv7su7qd7" path="res://assets/images/ui/speech_text_bubble.png" id="4_sgcqt"]
+[ext_resource type="Texture2D" uid="uid://b4ykwgcimv6kn" path="res://assets/images/ui/decrement_btn.png" id="5_e71jm"]
 [ext_resource type="PackedScene" uid="uid://ccxw87oqfu1he" path="res://scenes/components/ui/animated_text_component.tscn" id="5_sgcqt"]
+[ext_resource type="Texture2D" uid="uid://csp5qp5mkcowf" path="res://assets/images/ui/increment_btn.png" id="6_6c4dt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e71jm"]
 atlas = ExtResource("4_sgcqt")
@@ -27,6 +29,59 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ipym"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.984375, 0.8305664, 0.8305664, 0.4)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf6ws"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.984375, 0.8305664, 0.8305664, 0.4)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4uxkn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91796875, 0.77453613, 0.77453613, 0.4)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxcnm"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.2109375, 0.15490723, 0.15490723, 0.6)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo1nq"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.2109375, 0.15490723, 0.15490723, 0.6)
+corner_detail = 6
+
+[sub_resource type="Theme" id="Theme_vmkid"]
+VScrollBar/icons/decrement = ExtResource("5_e71jm")
+VScrollBar/icons/decrement_highlight = ExtResource("5_e71jm")
+VScrollBar/icons/decrement_pressed = ExtResource("5_e71jm")
+VScrollBar/icons/increment = ExtResource("6_6c4dt")
+VScrollBar/icons/increment_highlight = ExtResource("6_6c4dt")
+VScrollBar/icons/increment_pressed = ExtResource("6_6c4dt")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_3ipym")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_sf6ws")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_4uxkn")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_lxcnm")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_vo1nq")
 
 [node name="PhonePopup" type="Control" unique_id=1802960549 groups=["popup"]]
 process_mode = 3
@@ -81,12 +136,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 65.0
-offset_top = 38.0
-offset_right = -119.0
-offset_bottom = -54.0
+offset_left = 62.0
+offset_top = 32.0
+offset_right = -122.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_vmkid")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 
