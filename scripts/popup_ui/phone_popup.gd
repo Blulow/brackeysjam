@@ -30,8 +30,8 @@ func advance_dialogue() -> void:
 	idx += 1
 	if idx >= dialogue.size():
 		get_tree().paused = false
-		GameManager.round_manager.dialogue_finish.emit()
 		get_tree().get_root().find_child("PhoneLayer", true, false).layer = 1
+		GameManager.round_manager.dialogue_finish.emit()
 		queue_free()
 		return
 	

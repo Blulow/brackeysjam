@@ -122,6 +122,9 @@ func _on_round_start() -> void:
 	if pending_game_over:
 		dialogue.resize(1)
 		$"../../../../../FXLayer/PenaltyEnding".visible = true
+		$"../../../../../AudioStreamPlayer".stop()
+		$"../../../../../AudioStreamPlayer".stream = load("res://assets/sounds/music/beforethestation.ogg")
+		$"../../../../../AudioStreamPlayer".play()
 	
 	if increment_rules > 0:
 		GameManager.round_manager.rule_shown.emit(increment_rules)

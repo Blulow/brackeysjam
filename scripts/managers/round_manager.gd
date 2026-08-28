@@ -81,13 +81,20 @@ func end_current_round() -> void:
 	else:
 		if people.pending_game_over:
 			$"../FXLayer/PenaltyEnding".visible = true
+			$"../AudioStreamPlayer".stop()
+			$"../AudioStreamPlayer".stream = load("res://assets/sounds/music/beforethestation.ogg")
+			$"../AudioStreamPlayer".play()
 			var d: Array[String]
 			d.assign([penalty_speeches[penalties - 1]])
 			$"../PhoneLayer/Phone".show_dialogue(d)
 			await dialogue_finish
+			await get_tree().process_frame
 			if people.pending_game_over: get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 			return
 			
+		$"../AudioStreamPlayer".stop()
+		$"../AudioStreamPlayer".stream = load("res://assets/sounds/music/beforethestation.ogg")
+		$"../AudioStreamPlayer".play()
 		$"../PhoneLayer/Phone".show_dialogue(ending_dialogue[0])
 		await dialogue_finish
 		await get_tree().process_frame

@@ -35,6 +35,7 @@
 [ext_resource type="Resource" uid="uid://crvqlf1n8wvys" path="res://assets/resources/rounds/round_22.tres" id="33_nepv3"]
 [ext_resource type="Resource" uid="uid://dmthie23afqjt" path="res://assets/resources/rounds/round_23.tres" id="34_7025r"]
 [ext_resource type="Resource" uid="uid://d1drkrrphskw3" path="res://assets/resources/rounds/round_24.tres" id="35_m4url"]
+[ext_resource type="AudioStream" uid="uid://cvropb4vb3skq" path="res://assets/sounds/music/inthestation.ogg" id="36_twgab"]
 
 [sub_resource type="Curve2D" id="Curve2D_u5sy4"]
 _data = {
@@ -405,6 +406,12 @@ process_mode = 3
 root_node = NodePath("../FXLayer")
 libraries/ = SubResource("AnimationLibrary_37s47")
 autoplay = &"intro"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1649920621]
+process_mode = 3
+stream = ExtResource("36_twgab")
+autoplay = true
+bus = &"Music"
 
 [connection signal="game_over" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_game_over"]
 [connection signal="penalized" from="RoundManager" to="World/PeopleArea/PeoplePath/PathFollow2D/People" method="_on_penalized"]

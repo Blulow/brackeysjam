@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d2n3t6mipwpb0"]
 
+[ext_resource type="AudioStream" uid="uid://l55p1rkv0dwd" path="res://assets/sounds/music/beforethestation.ogg" id="1_3m4qj"]
+
 [node name="GameFinishedScreen" type="Control" unique_id=1252341171]
 layout_mode = 3
 anchors_preset = 15
@@ -34,3 +36,8 @@ theme_override_font_sizes/font_size = 62
 text = "game finish cutscene plays
 &
 game finish ui"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1413203431]
+stream = ExtResource("1_3m4qj")
+autoplay = true
+bus = &"Music"

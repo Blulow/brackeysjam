@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="3_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://b7ug7sya2ct4f" path="res://scenes/popup_ui/settings_popup.tscn" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://l55p1rkv0dwd" path="res://assets/sounds/music/beforethestation.ogg" id="5_8ln24"]
 
 [sub_resource type="Gradient" id="Gradient_ekxnf"]
 
@@ -99,6 +100,11 @@ layout_mode = 0
 
 [node name="PopupUiComponent" parent="." unique_id=1180603586 instance=ExtResource("3_bqqt6")]
 ui = ExtResource("4_wu84c")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=829977092]
+stream = ExtResource("5_8ln24")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

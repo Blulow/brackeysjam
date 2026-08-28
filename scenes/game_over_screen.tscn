@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://brw4nkvrwaugj"]
 
+[ext_resource type="AudioStream" uid="uid://l55p1rkv0dwd" path="res://assets/sounds/music/beforethestation.ogg" id="1_iwahs"]
+
 [node name="GameOverScreen" type="Control" unique_id=1252341171]
 layout_mode = 3
 anchors_preset = 15
@@ -34,3 +36,8 @@ theme_override_font_sizes/font_size = 62
 text = "game over cutscene plays
 &
 game over ui"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=655369084]
+stream = ExtResource("1_iwahs")
+autoplay = true
+bus = &"Music"
