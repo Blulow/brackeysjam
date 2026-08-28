@@ -44,7 +44,7 @@ point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rysoc"]
 shader = ExtResource("9_ca42v")
-shader_parameter/alpha = 0.645
+shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.145
 shader_parameter/outer_radius = 2.98
 shader_parameter/pos = Vector2(960, 540)
@@ -72,7 +72,7 @@ resource_local_to_scene = true
 shader = ExtResource("9_ca42v")
 shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.81
-shader_parameter/outer_radius = 1.7650000000000001
+shader_parameter/outer_radius = 1.765
 shader_parameter/pos = Vector2(960, 540)
 shader_parameter/size = Vector2(1920, 1080)
 shader_parameter/horizontal_radius = 1.0

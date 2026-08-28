@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dfk8ishw052va" path="res://assets/images/ui/tv_arrows/right_btn.png" id="8_7xumo"]
 [ext_resource type="Texture2D" uid="uid://bfgqaeugbwusa" path="res://assets/images/ui/tv_arrows/right_btn_pressed.png" id="9_lou6p"]
 [ext_resource type="Texture2D" uid="uid://djl1us0s1ak0y" path="res://assets/images/ui/tv_arrows/right_btn_hover.png" id="10_gq164"]
+[ext_resource type="Shader" uid="uid://w3rfui0x28af" path="res://assets/shaders/crt.gdshader" id="10_npi8o"]
 [ext_resource type="Texture2D" uid="uid://ynu7qsxn3d3k" path="res://assets/images/ui/note.png" id="11_8k7v7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tef5t"]
@@ -26,6 +27,17 @@ bg_color = Color(0.12423706, 0.1536951, 0.1796875, 1)
 gradient = SubResource("Gradient_ntikx")
 width = 1017
 height = 572
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3f6pa"]
+resource_local_to_scene = true
+shader = ExtResource("10_npi8o")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 20.0
+shader_parameter/scan_reduction = 0.02
+shader_parameter/blur = 0.20000000298024
+shader_parameter/diffusion = 0.1
+shader_parameter/vinnette_alpla = 1.0
+shader_parameter/vinnette_inner_radius = 3.5
 
 [node name="TVPopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
@@ -117,6 +129,11 @@ size_flags_vertical = 4
 texture_normal = ExtResource("8_7xumo")
 texture_pressed = ExtResource("9_lou6p")
 texture_hover = ExtResource("10_gq164")
+
+[node name="ColorRect" type="ColorRect" parent="UI/PanelContainer" unique_id=1167141063]
+material = SubResource("ShaderMaterial_3f6pa")
+layout_mode = 2
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="UI/PanelContainer" unique_id=1328098116]
 layout_mode = 2

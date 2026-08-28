@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_8a6af"]
 [ext_resource type="Script" uid="uid://xesbt8yo1boe" path="res://scripts/popup_ui/heartrate_display.gd" id="2_oc362"]
 [ext_resource type="Script" uid="uid://dopnqcqmflhwm" path="res://scripts/popup_ui/heart_rate.gd" id="3_52yvk"]
+[ext_resource type="Shader" uid="uid://w3rfui0x28af" path="res://assets/shaders/crt.gdshader" id="5_5i5wj"]
 [ext_resource type="Texture2D" uid="uid://ynu7qsxn3d3k" path="res://assets/images/ui/note.png" id="5_ka4wo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka4wo"]
@@ -39,6 +40,17 @@ bg_color = Color(0.105882354, 0.21568628, 0, 0)
 gradient = SubResource("Gradient_tef5t")
 width = 546
 height = 322
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tk8u0"]
+resource_local_to_scene = true
+shader = ExtResource("5_5i5wj")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 8.78
+shader_parameter/scan_reduction = 0.02
+shader_parameter/blur = 0.40000000596048
+shader_parameter/diffusion = 0.1
+shader_parameter/vinnette_alpla = 0.6999999843536
+shader_parameter/vinnette_inner_radius = 4.795
 
 [node name="HeartRatePopup" type="Control" unique_id=1802960549 groups=["popup"]]
 layout_mode = 3
@@ -190,5 +202,23 @@ offset_left = 573.0
 offset_top = -127.0
 offset_right = 637.0
 offset_bottom = -63.0
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=2128080598]
+material = SubResource("ShaderMaterial_tk8u0")
+layout_mode = 0
+offset_left = -481.0
+offset_top = -335.0
+offset_right = 65.0
+offset_bottom = -226.0
+mouse_filter = 2
+
+[node name="ColorRect2" type="ColorRect" parent="UI" unique_id=1683979688]
+material = SubResource("ShaderMaterial_tk8u0")
+layout_mode = 0
+offset_left = -483.0
+offset_top = -117.0
+offset_right = 563.0
+offset_bottom = 205.0
+mouse_filter = 2
 
 [connection signal="mouse_entered" from="UI/CloseButton" to="UI/CloseButton" method="_on_mouse_entered"]
