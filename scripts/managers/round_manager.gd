@@ -40,6 +40,10 @@ signal game_over
 func _ready() -> void:
 	GameManager.round_manager = self
 	
+	if GameManager.pending_load_round:
+		current_round = GameManager.round_to_load - 1
+		rule_shown.emit(rounds.map(func(e): return e.increment_rules).slice(0, current_round).count(1))
+	
 	start_round(current_round)
 
 func _process(delta: float) -> void:

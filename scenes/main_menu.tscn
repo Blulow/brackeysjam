@@ -8,6 +8,14 @@
 [ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="4_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://b7ug7sya2ct4f" path="res://scenes/popup_ui/settings_popup.tscn" id="4_wu84c"]
 [ext_resource type="AudioStream" uid="uid://l55p1rkv0dwd" path="res://assets/sounds/music/beforethestation.ogg" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://dqyyx3iqqr7ko" path="res://scripts/popup_ui/ui/number_selector.gd" id="6_5pajh"]
+[ext_resource type="Texture2D" uid="uid://c3lo7k1srvxu" path="res://assets/images/arrows/arrow_left.png" id="7_5pajh"]
+[ext_resource type="Texture2D" uid="uid://di6oql8dxghna" path="res://assets/images/arrows/arrow_left_pressed.png" id="8_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://d2smc7fie5dwg" path="res://assets/images/arrows/arrow_left_hover.png" id="9_a8gd2"]
+[ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="10_8egab"]
+[ext_resource type="Texture2D" uid="uid://bai5c3liry3ro" path="res://assets/images/arrows/arrow_right.png" id="11_hstxw"]
+[ext_resource type="Texture2D" uid="uid://c6uuuvnhjt0u" path="res://assets/images/arrows/arrow_right_pressed.png" id="12_8egab"]
+[ext_resource type="Texture2D" uid="uid://dywx41qgcsgx4" path="res://assets/images/arrows/arrow_right_hover.png" id="13_gw5y6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -111,6 +119,64 @@ text = "Quit"
 [node name="AnimatedButtonComponent" parent="Button3" unique_id=464146716 instance=ExtResource("1_l6cm7")]
 layout_mode = 0
 
+[node name="Button4" type="Button" parent="." unique_id=263002252]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 469.0
+offset_top = -50.0
+offset_right = 761.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.90625, 0.6088867, 0.6088867, 1)
+theme_override_colors/font_hover_color = Color(0.94921875, 0.84539795, 0.84539795, 1)
+theme_override_fonts/font = ExtResource("4_tbmy8")
+theme_override_font_sizes/font_size = 106
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
+text = "Play Level"
+
+[node name="AnimatedButtonComponent" parent="Button4" unique_id=2144126981 instance=ExtResource("1_l6cm7")]
+layout_mode = 0
+
+[node name="NumberSelector" type="HBoxContainer" parent="." unique_id=875669855]
+layout_mode = 0
+offset_left = 1443.0
+offset_top = 604.0
+offset_right = 1715.0
+offset_bottom = 684.0
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("6_5pajh")
+number = 1
+min = 1
+max = 24
+
+[node name="TextureButton" type="TextureButton" parent="NumberSelector" unique_id=493336172]
+layout_mode = 2
+texture_normal = ExtResource("7_5pajh")
+texture_pressed = ExtResource("8_j7ex8")
+texture_hover = ExtResource("9_a8gd2")
+
+[node name="Label" type="Label" parent="NumberSelector" unique_id=92334221]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_8egab")
+theme_override_font_sizes/font_size = 59
+text = "0"
+horizontal_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="NumberSelector" unique_id=1650063785]
+layout_mode = 2
+texture_normal = ExtResource("11_hstxw")
+texture_pressed = ExtResource("12_8egab")
+texture_hover = ExtResource("13_gw5y6")
+
 [node name="PopupUILayer" type="CanvasLayer" parent="." unique_id=1093440866]
 
 [node name="PopupUiComponent" parent="." unique_id=1180603586 instance=ExtResource("3_bqqt6")]
@@ -128,3 +194,7 @@ bus = &"Music"
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="mouse_entered" from="Button3" to="." method="_on_button_3_mouse_entered"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="mouse_entered" from="Button4" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="NumberSelector/TextureButton" to="NumberSelector" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="NumberSelector/TextureButton2" to="NumberSelector" method="_on_texture_button_2_pressed"]
