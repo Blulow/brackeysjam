@@ -1,6 +1,140 @@
 [gd_scene format=3 uid="uid://brw4nkvrwaugj"]
 
+[ext_resource type="Script" uid="uid://dauju20k7taar" path="res://scripts/game_over_screen.gd" id="1_61w2s"]
 [ext_resource type="AudioStream" uid="uid://l55p1rkv0dwd" path="res://assets/sounds/music/beforethestation.ogg" id="1_iwahs"]
+[ext_resource type="Texture2D" uid="uid://cj0i1ejgy51v5" path="res://assets/images/ui/glitch_hand/glitch_hand_1.png" id="3_wa2qn"]
+[ext_resource type="Texture2D" uid="uid://u5v05iqnrwq8" path="res://assets/images/ui/glitch_hand/glitch_hand_2.png" id="4_cyfkl"]
+[ext_resource type="Shader" uid="uid://wv8u0mhqcgeu" path="res://assets/shaders/glitch_effect.gdshader" id="5_cyfkl"]
+[ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="6_xx0b3"]
+
+[sub_resource type="Animation" id="Animation_xx0b3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_wa2qn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlitchEffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jw6e5"]
+resource_name = "game_over"
+length = 2.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_wa2qn"), ExtResource("4_cyfkl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.0666667, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlitchEffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wa2qn"]
+_data = {
+&"RESET": SubResource("Animation_xx0b3"),
+&"game_over": SubResource("Animation_jw6e5")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xx0b3"]
+shader = ExtResource("5_cyfkl")
+shader_parameter/shake_power = 0.01
+shader_parameter/shake_rate = 0.30000001425
+shader_parameter/shake_speed = 0.5
+shader_parameter/shake_block_size = 10.0
+shader_parameter/shake_color_rate = 0.00400000019
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i0af"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nh6my"]
+resource_local_to_scene = true
+shader = ExtResource("5_cyfkl")
+shader_parameter/shake_power = 0.005
+shader_parameter/shake_rate = 0.30000001425
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 39.0
+shader_parameter/shake_color_rate = 0.0030000001425
 
 [node name="GameOverScreen" type="Control" unique_id=1252341171]
 layout_mode = 3
@@ -9,6 +143,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_61w2s")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1902755144]
 layout_mode = 1
@@ -19,25 +154,119 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1675863069]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=655369084]
+stream = ExtResource("1_iwahs")
+autoplay = true
+bus = &"Music"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1904450280]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -384.5
-offset_top = -43.0
-offset_right = 384.5
-offset_bottom = 43.0
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 62
-text = "game over cutscene plays
-&
-game over ui"
+texture = ExtResource("3_wa2qn")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=655369084]
-stream = ExtResource("1_iwahs")
-autoplay = true
-bus = &"Music"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1565873862]
+libraries/ = SubResource("AnimationLibrary_wa2qn")
+autoplay = &"game_over"
+
+[node name="Fade" type="ColorRect" parent="." unique_id=504671680]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GlitchEffect" type="ColorRect" parent="." unique_id=600928156]
+material = SubResource("ShaderMaterial_xx0b3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=76366455]
+
+[node name="Label" type="Label" parent="UI" unique_id=1491027328]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -256.0
+offset_right = 272.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 153
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="UI" unique_id=455616038]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 31.0
+offset_right = 82.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_5i0af")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5i0af")
+text = "Retry"
+
+[node name="AnimatedButtonComponent" parent="UI/Button" unique_id=231881551 instance=ExtResource("6_xx0b3")]
+layout_mode = 0
+
+[node name="Button2" type="Button" parent="UI" unique_id=685513042]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = 177.0
+offset_right = 164.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_5i0af")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5i0af")
+text = "Main Menu"
+
+[node name="AnimatedButtonComponent" parent="UI/Button2" unique_id=1736664372 instance=ExtResource("6_xx0b3")]
+layout_mode = 0
+
+[node name="GlitchEffect2" type="ColorRect" parent="UI" unique_id=1227510943]
+material = SubResource("ShaderMaterial_nh6my")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="UI/Button2" to="." method="_on_main_menu_pressed"]

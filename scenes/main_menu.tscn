@@ -14,6 +14,9 @@ gradient = SubResource("Gradient_ekxnf")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="MainMenu" type="Control" unique_id=477935441]
 layout_mode = 3
 anchors_preset = 15
@@ -47,8 +50,11 @@ offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.90625, 0.6088867, 0.6088867, 1)
+theme_override_colors/font_hover_color = Color(0.94921875, 0.84539795, 0.84539795, 1)
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
 text = "Play"
 
 [node name="AnimatedButtonComponent" parent="Button" unique_id=231881551 instance=ExtResource("1_l6cm7")]
@@ -68,8 +74,11 @@ offset_bottom = 191.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.90625, 0.6088867, 0.6088867, 1)
+theme_override_colors/font_hover_color = Color(0.94921875, 0.84539795, 0.84539795, 1)
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
 text = "Settings"
 
 [node name="AnimatedButtonComponent" parent="Button2" unique_id=825621790 instance=ExtResource("1_l6cm7")]
@@ -89,8 +98,11 @@ offset_bottom = 358.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.90625, 0.6088867, 0.6088867, 1)
+theme_override_colors/font_hover_color = Color(0.94921875, 0.84539795, 0.84539795, 1)
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
 text = "Quit"
 
 [node name="AnimatedButtonComponent" parent="Button3" unique_id=464146716 instance=ExtResource("1_l6cm7")]
