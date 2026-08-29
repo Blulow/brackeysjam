@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://48d8b4tih6f6" path="res://scripts/intro.gd" id="1_yjqpq"]
 [ext_resource type="PackedScene" uid="uid://ccwqilakya26o" path="res://scenes/objects/phone.tscn" id="2_4bx60"]
 [ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="2_i2l1n"]
+[ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="3_i2l1n"]
 
 [sub_resource type="Animation" id="Animation_yjqpq"]
 length = 0.001
@@ -32,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.16666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(0.8235294, 0.8235294, 0.8235294, 0.5921569), Color(0.8235294, 0.8235294, 0.8235294, 0.5921569), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i2l1n"]
@@ -41,30 +42,27 @@ _data = {
 &"tooltip": SubResource("Animation_4bx60")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2l1n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bx60"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Intro" type="Node2D" unique_id=1302937530]
 process_mode = 3
 script = ExtResource("1_yjqpq")
 intro_dialogue = Array[String](["So you’re the new guy here?", "Well get comfortable… even though the world is ending, haha.", "As you know about the disease or whatever is happening now – [b][color=#f00]Singularity[/color][/b].
-Entities that are alone are corrupted.", "So your job here is to just accept the ones in groups into our facility, or else, out."])
+Entities that are alone are [b]corrupted[/b].", "So your job here is to just accept the ones [b]in groups[/b] into our facility, or else, [b]out[/b]."])
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1978908318]
+[node name="BUI" type="CanvasLayer" parent="." unique_id=1978908318]
 
-[node name="ColorRect" type="ColorRect" parent="UI" unique_id=545154169]
+[node name="ColorRect" type="ColorRect" parent="BUI" unique_id=545154169]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="UI" unique_id=2037212830]
-offset_left = 1109.0
-offset_top = 729.0
-offset_right = 1574.0
-offset_bottom = 792.0
-theme_override_fonts/font = ExtResource("2_i2l1n")
-theme_override_font_sizes/font_size = 49
-text = "Left Click to continue"
 
 [node name="PhoneLayer" type="CanvasLayer" parent="." unique_id=1215677118]
 
@@ -77,3 +75,33 @@ position = Vector2(1749, 535)
 process_mode = 3
 libraries/ = SubResource("AnimationLibrary_i2l1n")
 autoplay = &"tooltip"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=396069265]
+
+[node name="Label" type="Label" parent="UI" unique_id=2037212830]
+offset_left = 1109.0
+offset_top = 729.0
+offset_right = 1574.0
+offset_bottom = 792.0
+theme_override_fonts/font = ExtResource("2_i2l1n")
+theme_override_font_sizes/font_size = 49
+text = "Left Click to continue"
+
+[node name="Button" type="Button" parent="UI" unique_id=1113037100]
+offset_left = 1701.0
+offset_top = 44.0
+offset_right = 1844.0
+offset_bottom = 124.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.73046875, 0.73046875, 0.73046875, 1)
+theme_override_colors/font_hover_color = Color(0.86328125, 0.86328125, 0.86328125, 1)
+theme_override_fonts/font = ExtResource("2_i2l1n")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2l1n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4bx60")
+text = "Skip"
+
+[node name="AnimatedButtonComponent" parent="UI/Button" unique_id=231881551 instance=ExtResource("3_i2l1n")]
+layout_mode = 0
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_skip_pressed"]

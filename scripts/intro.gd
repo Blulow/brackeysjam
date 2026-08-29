@@ -28,3 +28,7 @@ func _input(event: InputEvent) -> void:
 			$UI/Label.visible = false
 			pending_input = false
 			input_timer = 0
+
+func _on_skip_pressed() -> void:
+	await get_tree().process_frame
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
