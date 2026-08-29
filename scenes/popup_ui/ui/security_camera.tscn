@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://du27wyff0c4jx" path="res://scripts/popup_ui/security_camera.gd" id="1_53a5h"]
 [ext_resource type="Script" uid="uid://kacxv2mpucah" path="res://scripts/people/cam/cam_people.gd" id="1_fp0dp"]
+[ext_resource type="PackedScene" uid="uid://u0hh4u4s228j" path="res://assets/models/ground.glb" id="2_pjdel"]
 [ext_resource type="PackedScene" uid="uid://cphoptrbu6b5l" path="res://scenes/components/3d/aligning_container_3d.tscn" id="2_wbbhj"]
+[ext_resource type="PackedScene" uid="uid://bovjqqu2deiap" path="res://assets/models/station.glb" id="3_u0rn1"]
 [ext_resource type="Shader" uid="uid://cu4dhcietnljx" path="res://assets/shaders/feet_cam.gdshader" id="4_pklln"]
 [ext_resource type="Script" uid="uid://bfhepj1ahu7ot" path="res://scripts/popup_ui/ui/feet_cam.gd" id="5_o2yef"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_0we6e"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_fp0dp"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u0rn1"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 13.4
+dof_blur_far_transition = 0.15
+dof_blur_near_distance = 39.32
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0we6e"]
 sky_top_color = Color(0.056003094, 0.015106201, 0.12890625, 1)
@@ -21,6 +25,7 @@ sky_material = SubResource("ProceduralSkyMaterial_0we6e")
 background_mode = 2
 sky = SubResource("Sky_fp0dp")
 ambient_light_color = Color(0.41015625, 0.33305168, 0.18585205, 1)
+fog_light_color = Color(0.17880249, 0.19487, 0.2109375, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2yef"]
 shader = ExtResource("4_pklln")
@@ -39,13 +44,11 @@ script = ExtResource("1_53a5h")
 
 [node name="World" type="Node3D" parent="." unique_id=106676778]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World" unique_id=1974437215]
-transform = Transform3D(28.31922, 0, 0, 0, 1, 0, 0, 0, 44.97864, -22.446663, 0, -15.111972)
-mesh = SubResource("PlaneMesh_0we6e")
+[node name="ground" parent="World" unique_id=837588533 instance=ExtResource("2_pjdel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.545417, 0, -4.851)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="World" unique_id=1486769936]
-transform = Transform3D(1.9499989, 0, 0, 0, 4.351521, 0, 0, 0, 10.873369, 4.4966936, 2.1693368, 0)
-mesh = SubResource("BoxMesh_fp0dp")
+[node name="station" parent="World" unique_id=1608497963 instance=ExtResource("3_u0rn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.712588, 0, -0.21570301)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="World" unique_id=182189008]
 transform = Transform3D(-0.22827195, 0.9648292, 0.13037032, 0.11752551, -0.10561946, 0.98743725, 0.96647793, 0.24072601, -0.089282095, 1.6678276, 4.100061, -2.6155872)
@@ -76,9 +79,11 @@ reverse_order = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=115149669]
 transform = Transform3D(0.91173756, -0.26716056, 0.31202543, 0.016689608, 0.7830705, 0.621709, -0.410434, -0.56162786, 0.7184136, 3.325589, 3.1710806, 4.2438846)
+attributes = SubResource("CameraAttributesPractical_u0rn1")
 
 [node name="Camera3D2" type="Camera3D" parent="." unique_id=501403154]
 transform = Transform3D(-0.9633502, -0.15390143, 0.21970668, 0.016689597, 0.7830705, 0.621709, -0.26772773, 0.6025902, -0.7518026, 3.325589, 3.1710806, -3.345531)
+attributes = SubResource("CameraAttributesPractical_u0rn1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1152686909]
 environment = SubResource("Environment_wbbhj")
