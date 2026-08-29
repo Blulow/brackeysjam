@@ -189,7 +189,10 @@ theme_override_fonts/font = ExtResource("13_3f6pa")
 theme_override_font_sizes/font_size = 18
 text = "Screen 1 - Left cam
 Screen 2 - Right cam
-Screen 3 - Feet cam"
+Screen 3 - Feet cam
+
+
+Pro tip: close and open window again and again to move background people!"
 autowrap_mode = 2
 
 [node name="CloseButton" parent="UI" unique_id=1617579724 instance=ExtResource("2_eptdl")]

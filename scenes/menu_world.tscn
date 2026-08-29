@@ -63,18 +63,18 @@ spot_range = 5.434
 spot_angle = 61.2
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="World" unique_id=1933423384]
-transform = Transform3D(0.08943237, -0.993624, -0.06865315, -0.017900951, -0.070521764, 0.9973496, -0.9958321, -0.08796638, -0.024093743, -14.105438, 4.438356, 5.7210474)
+transform = Transform3D(0.08943237, -0.993624, -0.06865315, -0.017900951, -0.070521764, 0.9973496, -0.9958321, -0.08796638, -0.024093743, -14.234746, 4.438356, 7.2441316)
 light_energy = 9.16
 shadow_enabled = true
 spot_range = 5.434
 spot_angle = 61.2
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="World" unique_id=632701761]
-transform = Transform3D(0.08943237, -0.993624, -0.06865315, -0.017900951, -0.070521764, 0.9973496, -0.9958321, -0.08796638, -0.024093743, -16.55187, 4.438356, -10.288428)
+transform = Transform3D(0.08943237, -0.993624, -0.06865315, -0.017900951, -0.070521764, 0.9973496, -0.9958321, -0.08796638, -0.024093743, -16.671322, 4.438356, -12.155123)
 light_energy = 9.16
 shadow_enabled = true
-spot_range = 5.434
-spot_angle = 61.2
+spot_range = 7.416
+spot_angle = 78.02
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="World" unique_id=1833312439]
 transform = Transform3D(0.08421046, -0.7853228, -0.6133325, 0.035031278, -0.6128051, 0.78945726, -0.995832, -0.08796638, -0.024093743, 1.5853434, 7.6404247, -2.9868011)
