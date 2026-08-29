@@ -334,6 +334,7 @@ position = Vector2(649, 285)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=70683275]
 
 [node name="PhoneLayer" type="CanvasLayer" parent="." unique_id=148038039]
+process_mode = 3
 
 [node name="Phone" parent="PhoneLayer" unique_id=1908071067 instance=ExtResource("7_gee14")]
 position = Vector2(1749, 535)

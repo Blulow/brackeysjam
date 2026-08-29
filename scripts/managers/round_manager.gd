@@ -81,6 +81,8 @@ func end_current_round() -> void:
 	else:
 		if people.pending_game_over:
 			$"../FXLayer/PenaltyEnding".visible = true
+			$"../../../../../PhoneLayer".layer = 3
+			$"../../../../../PopupUILayer".layer = 2
 			$"../AudioStreamPlayer".stop()
 			$"../AudioStreamPlayer".stream = load("res://assets/sounds/music/beforethestation.ogg")
 			$"../AudioStreamPlayer".play()

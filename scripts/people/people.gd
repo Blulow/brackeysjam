@@ -22,6 +22,9 @@ var singular: bool
 var pending_penalization: bool = false
 var pending_game_over: bool = false
 
+var last_identities: Array[PersonIdentity]
+var last_singular: bool
+
 func set_people(config: PeopleConfig) -> void:
 	identities = config.get_identities()
 	sprites = config.get_sprites()
@@ -119,11 +122,12 @@ func _on_round_start() -> void:
 	if pending_penalization:
 		dialogue.insert(0, GameManager.round_manager.penalty_speeches[GameManager.round_manager.penalties - 1])
 		$"../../../../../PhoneLayer/Phone".break_lamp()
-		pending_penalization = false
 	
 	if pending_game_over:
 		dialogue.resize(1)
 		$"../../../../../FXLayer/PenaltyEnding".visible = true
+		$"../../../../../PhoneLayer".layer = 3
+		$"../../../../../PopupUILayer".layer = 2
 		$"../../../../../AudioStreamPlayer".stop()
 		$"../../../../../AudioStreamPlayer".stream = load("res://assets/sounds/music/beforethestation.ogg")
 		$"../../../../../AudioStreamPlayer".play()
@@ -134,6 +138,9 @@ func _on_round_start() -> void:
 		$"../../../../../PhoneLayer/Phone".show_dialogue(dialogue)
 		await GameManager.round_manager.dialogue_finish
 		if pending_game_over: get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+	pending_penalization = false
+	last_identities = identities
+	last_singular = singular
 
 func _on_penalized() -> void:
 	pending_penalization = true
