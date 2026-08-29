@@ -9,7 +9,7 @@ class_name RoundManager
 
 const PATH_SPEED: float = 0.01
 
-var current_round: int = 0
+var current_round: int = 23
 var round_state: int = -1
 enum RoundStates { START, STAY, END }
 
@@ -103,6 +103,7 @@ func end_current_round() -> void:
 		$"../FXLayer/GlitchEffect".visible = true
 		anim_player.play("victory_ending")
 		await anim_player.animation_finished
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/game_finished_screen.tscn")
 
 func _on_round_end() -> void:
