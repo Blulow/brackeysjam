@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://d2n3t6mipwpb0"]
 
+[ext_resource type="Script" uid="uid://bqxbmtdur0u56" path="res://scripts/game_finished_screen.gd" id="1_0tp3t"]
 [ext_resource type="AudioStream" uid="uid://l55p1rkv0dwd" path="res://assets/sounds/music/beforethestation.ogg" id="1_3m4qj"]
+[ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="3_ulv47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klglp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="GameFinishedScreen" type="Control" unique_id=1252341171]
 layout_mode = 3
@@ -9,6 +14,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0tp3t")
+base_alpha = 0.3
+flicker_strength = 0.8
+rotation_strength = 32.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1902755144]
 layout_mode = 1
@@ -26,18 +35,95 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -43.0
-offset_right = 210.0
-offset_bottom = 43.0
+offset_left = -450.0
+offset_top = -199.0
+offset_right = 451.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 62
-text = "game finish cutscene plays
-&
-game finish ui"
+rotation = 0.060095247
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 115
+text = "YOU ARE ALONE"
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=1011936421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -711.0
+offset_top = 48.0
+offset_right = 708.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.07265115
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/normal_font_size = 154
+bbcode_enabled = true
+text = "YOU ARE REJECTED"
+horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1413203431]
 stream = ExtResource("1_3m4qj")
 autoplay = true
 bus = &"Music"
+
+[node name="Timer" type="Timer" parent="." unique_id=2013065109]
+one_shot = true
+autostart = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1558585766]
+
+[node name="Button" type="Button" parent="UI" unique_id=1073240607]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -127.0
+offset_right = 82.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_klglp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_klglp")
+text = "Retry"
+
+[node name="AnimatedButtonComponent" parent="UI/Button" unique_id=231881551 instance=ExtResource("3_ulv47")]
+layout_mode = 0
+
+[node name="Button2" type="Button" parent="UI" unique_id=1096270615]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = 19.0
+offset_right = 164.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_klglp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_klglp")
+text = "Main Menu"
+
+[node name="AnimatedButtonComponent" parent="UI/Button2" unique_id=1854783532 instance=ExtResource("3_ulv47")]
+layout_mode = 0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/Button" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="UI/Button2" to="." method="_on_main_menu_pressed"]
