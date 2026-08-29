@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b4ykwgcimv6kn" path="res://assets/images/ui/decrement_btn.png" id="5_e71jm"]
 [ext_resource type="PackedScene" uid="uid://ccxw87oqfu1he" path="res://scenes/components/ui/animated_text_component.tscn" id="5_sgcqt"]
 [ext_resource type="Texture2D" uid="uid://csp5qp5mkcowf" path="res://assets/images/ui/increment_btn.png" id="6_6c4dt"]
+[ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="7_e71jm"]
+[ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="8_6c4dt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e71jm"]
 atlas = ExtResource("4_sgcqt")
@@ -144,6 +146,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_vmkid")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_e71jm")
+theme_override_fonts/bold_font = ExtResource("8_6c4dt")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 
 [node name="AnimatedTextComponent" parent="UI/AnimatedTextureRect/RichTextLabel" unique_id=2094081059 instance=ExtResource("5_sgcqt")]

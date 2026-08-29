@@ -2,10 +2,50 @@
 
 [ext_resource type="Script" uid="uid://bqxbmtdur0u56" path="res://scripts/game_finished_screen.gd" id="1_0tp3t"]
 [ext_resource type="AudioStream" uid="uid://l55p1rkv0dwd" path="res://assets/sounds/music/beforethestation.ogg" id="1_3m4qj"]
+[ext_resource type="FontFile" uid="uid://d6l8035td304" path="res://assets/fonts/OnesHandwriting.ttf" id="2_klglp"]
 [ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="3_ulv47"]
+[ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="4_gvv85"]
+[ext_resource type="Texture2D" uid="uid://ruh5te66m6pd" path="res://assets/images/logo.png" id="4_gwtj5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klglp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_gwtj5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.12941177)]
+}
+
+[sub_resource type="Animation" id="Animation_f214y"]
+resource_name = "logo_loop"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.12941177), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_822xk"]
+_data = {
+&"RESET": SubResource("Animation_gwtj5"),
+&"logo_loop": SubResource("Animation_f214y")
+}
 
 [node name="GameFinishedScreen" type="Control" unique_id=1252341171]
 layout_mode = 3
@@ -43,7 +83,8 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.060095247
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 115
+theme_override_fonts/font = ExtResource("2_klglp")
+theme_override_font_sizes/font_size = 138
 text = "YOU ARE ALONE"
 horizontal_alignment = 1
 
@@ -54,15 +95,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -711.0
-offset_top = 48.0
-offset_right = 708.0
-offset_bottom = 262.0
+offset_left = -838.0
+offset_top = 48.99994
+offset_right = 855.0813
+offset_bottom = 262.99994
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.07265115
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_font_sizes/normal_font_size = 154
+theme_override_fonts/normal_font = ExtResource("2_klglp")
+theme_override_font_sizes/normal_font_size = 191
 bbcode_enabled = true
 text = "YOU ARE REJECTED"
 horizontal_alignment = 1
@@ -78,22 +120,38 @@ autostart = true
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1558585766]
 
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=1890558287]
+modulate = Color(1, 1, 1, 0.12941177)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -327.0
+offset_top = -364.0
+offset_right = 328.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gwtj5")
+
 [node name="Button" type="Button" parent="UI" unique_id=1073240607]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -127.0
-offset_right = 82.0
-offset_bottom = -36.0
+offset_left = -81.5
+offset_top = -31.0
+offset_right = 82.5
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("4_gvv85")
+theme_override_font_sizes/font_size = 115
 theme_override_styles/normal = SubResource("StyleBoxFlat_klglp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_klglp")
 text = "Retry"
@@ -108,21 +166,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -163.0
-offset_top = 19.0
+offset_top = 115.0
 offset_right = 164.0
-offset_bottom = 110.0
+offset_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("4_gvv85")
+theme_override_font_sizes/font_size = 115
 theme_override_styles/normal = SubResource("StyleBoxFlat_klglp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_klglp")
 text = "Main Menu"
 
 [node name="AnimatedButtonComponent" parent="UI/Button2" unique_id=1854783532 instance=ExtResource("3_ulv47")]
 layout_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=1859218590]
+libraries/ = SubResource("AnimationLibrary_822xk")
+autoplay = &"logo_loop"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Button" to="." method="_on_retry_pressed"]

@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cj0i1ejgy51v5" path="res://assets/images/ui/glitch_hand/glitch_hand_1.png" id="3_wa2qn"]
 [ext_resource type="Texture2D" uid="uid://u5v05iqnrwq8" path="res://assets/images/ui/glitch_hand/glitch_hand_2.png" id="4_cyfkl"]
 [ext_resource type="Shader" uid="uid://wv8u0mhqcgeu" path="res://assets/shaders/glitch_effect.gdshader" id="5_cyfkl"]
+[ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="6_nh6my"]
 [ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="6_xx0b3"]
+[ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="7_4tlw3"]
 
 [sub_resource type="Animation" id="Animation_xx0b3"]
 length = 0.001
@@ -210,7 +212,8 @@ offset_right = 272.0
 offset_bottom = -126.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 153
+theme_override_fonts/font = ExtResource("6_nh6my")
+theme_override_font_sizes/font_size = 216
 text = "GAME OVER"
 
 [node name="Button" type="Button" parent="UI" unique_id=455616038]
@@ -228,7 +231,8 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("7_4tlw3")
+theme_override_font_sizes/font_size = 116
 theme_override_styles/normal = SubResource("StyleBoxFlat_5i0af")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5i0af")
 text = "Retry"
@@ -251,7 +255,8 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.703125, 0.703125, 0.703125, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("7_4tlw3")
+theme_override_font_sizes/font_size = 116
 theme_override_styles/normal = SubResource("StyleBoxFlat_5i0af")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5i0af")
 text = "Main Menu"

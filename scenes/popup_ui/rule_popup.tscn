@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_438jn"]
 [ext_resource type="Texture2D" uid="uid://cfur35cue7s3g" path="res://assets/images/ui/rules_ui.png" id="2_aowue"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_yqmko"]
+[ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="4_5ysap"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysap"]
 content_margin_left = 20.0
@@ -76,7 +77,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="UI/TextureRect/PanelContainer/VBoxContainer" unique_id=960711056]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 33
+theme_override_fonts/font = ExtResource("4_5ysap")
+theme_override_font_sizes/font_size = 47
 text = "Rules"
 horizontal_alignment = 1
 

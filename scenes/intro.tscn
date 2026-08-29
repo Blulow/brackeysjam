@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://48d8b4tih6f6" path="res://scripts/intro.gd" id="1_yjqpq"]
 [ext_resource type="PackedScene" uid="uid://ccwqilakya26o" path="res://scenes/objects/phone.tscn" id="2_4bx60"]
+[ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="2_i2l1n"]
 
 [sub_resource type="Animation" id="Animation_yjqpq"]
 length = 0.001
@@ -57,11 +58,12 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="UI" unique_id=2037212830]
-offset_left = 1129.0
-offset_top = 730.0
-offset_right = 1587.0
-offset_bottom = 793.0
-theme_override_font_sizes/font_size = 45
+offset_left = 1109.0
+offset_top = 729.0
+offset_right = 1574.0
+offset_bottom = 792.0
+theme_override_fonts/font = ExtResource("2_i2l1n")
+theme_override_font_sizes/font_size = 49
 text = "Left Click to continue"
 
 [node name="PhoneLayer" type="CanvasLayer" parent="." unique_id=1215677118]

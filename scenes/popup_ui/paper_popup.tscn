@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_bl03r"]
 [ext_resource type="Script" uid="uid://dqyyx3iqqr7ko" path="res://scripts/popup_ui/ui/number_selector.gd" id="3_7en8x"]
 [ext_resource type="Texture2D" uid="uid://ip0dppoxpugv" path="res://assets/images/ui/paper_form/paper_form.png" id="3_rrwus"]
+[ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="4_21lk4"]
 [ext_resource type="Texture2D" uid="uid://dcs5weo0jqtxx" path="res://assets/images/ui/paper_form/arrows/arrow_left.png" id="5_rrwus"]
 [ext_resource type="Texture2D" uid="uid://bk1e5es34mjo7" path="res://assets/images/ui/paper_form/arrows/arrow_left_pressed.png" id="6_da1ou"]
 [ext_resource type="Texture2D" uid="uid://dtgo3ckus2wj" path="res://assets/images/ui/paper_form/arrows/arrow_left_hover.png" id="7_rrsrw"]
@@ -86,9 +87,9 @@ texture = ExtResource("3_rrwus")
 [node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer" unique_id=793368463]
 layout_mode = 2
 theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
+theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/MarginContainer" unique_id=583560515]
 layout_mode = 2
@@ -96,7 +97,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer" unique_id=1686001424]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 45
+theme_override_fonts/font = ExtResource("4_21lk4")
+theme_override_font_sizes/font_size = 49
 text = "ENTITY INTAKE FORM"
 horizontal_alignment = 1
 
@@ -111,7 +113,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_21lk4")
+theme_override_font_sizes/font_size = 33
 text = "NUMBER OF ENTITIES: "
 
 [node name="NumberSelector" type="HBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1980995043]
@@ -130,7 +133,8 @@ texture_hover = ExtResource("7_rrsrw")
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 29
+theme_override_fonts/font = ExtResource("4_21lk4")
+theme_override_font_sizes/font_size = 36
 horizontal_alignment = 1
 
 [node name="TextureButton2" type="TextureButton" parent="UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NumberSelector" unique_id=1225899652]

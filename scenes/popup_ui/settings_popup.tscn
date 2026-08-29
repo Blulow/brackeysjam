@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c58apiiws14f" path="res://assets/images/ui/heart_rate_panel.png" id="2_86ock"]
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="2_d3eop"]
 [ext_resource type="Texture2D" uid="uid://bt16pnfrlr3u0" path="res://assets/images/ui/grabber.png" id="3_mosn2"]
+[ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="4_5s5kt"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="4_nhri7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysap"]
@@ -102,7 +103,8 @@ alignment = 1
 [node name="Label" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer" unique_id=916492337]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("4_5s5kt")
+theme_override_font_sizes/font_size = 64
 text = "Music"
 
 [node name="HSlider" type="HSlider" parent="UI/PanelContainer/VBoxContainer/HBoxContainer" unique_id=103642380]
@@ -125,7 +127,8 @@ alignment = 1
 [node name="Label" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1864671132]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("4_5s5kt")
+theme_override_font_sizes/font_size = 64
 text = "SFX"
 
 [node name="HSlider" type="HSlider" parent="UI/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1293004868]
