@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c2r873t22f1hj" path="res://scripts/people/speech_text.gd" id="1_xfk38"]
 [ext_resource type="PackedScene" uid="uid://ccxw87oqfu1he" path="res://scenes/components/ui/animated_text_component.tscn" id="2_eb1x0"]
+[ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="2_oha5f"]
+[ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="3_mf74k"]
 
 [node name="SpeechText" type="Control" unique_id=1703869231]
 custom_minimum_size = Vector2(304, 0)
@@ -33,13 +35,21 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("2_oha5f")
+theme_override_fonts/bold_font = ExtResource("3_mf74k")
+theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/bold_font_size = 22
 bbcode_enabled = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/HBoxContainer" unique_id=1202440591]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.5
+size_flags_stretch_ratio = 2.3
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("2_oha5f")
+theme_override_fonts/bold_font = ExtResource("3_mf74k")
+theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/bold_font_size = 22
 bbcode_enabled = true
 
 [node name="AnimatedTextComponent" parent="MarginContainer/HBoxContainer/RichTextLabel2" unique_id=2094081059 instance=ExtResource("2_eb1x0")]

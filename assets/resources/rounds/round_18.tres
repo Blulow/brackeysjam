@@ -202,33 +202,26 @@ script = ExtResource("2_h2e0b")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_tyl5y"]
 script = ExtResource("9_5tr58")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#ff0]Catrap[/color]"
+text = "The feeling of getting drunk but not actually drunk because of tiredness is the reason why I can say so much nonsense."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_h8ywi"]
+[sub_resource type="Resource" id="Resource_gauku"]
 script = ExtResource("8_5o3c6")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_tyl5y")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_qsw57"]
+[sub_resource type="Resource" id="Resource_jsr0y"]
 script = ExtResource("9_5tr58")
+speaker = "[color=#00f]Cracken[/color]"
+text = "Are you a fried chicken? Cause I’m hungry."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_yro27"]
+[sub_resource type="Resource" id="Resource_5uw00"]
 script = ExtResource("8_5o3c6")
-value = SubResource("Resource_qsw57")
-metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
-
-[sub_resource type="Resource" id="Resource_aa44l"]
-script = ExtResource("9_5tr58")
-metadata/_custom_type_script = "uid://dw233t1fhdanu"
-
-[sub_resource type="Resource" id="Resource_m7c75"]
-script = ExtResource("8_5o3c6")
-value = SubResource("Resource_aa44l")
+value = SubResource("Resource_jsr0y")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_nntsa"]
@@ -271,6 +264,6 @@ views = Array[ExtResource("2_h2e0b")]([SubResource("Resource_4146f"), SubResourc
 shadows = Array[ExtResource("2_h2e0b")]([SubResource("Resource_3ho3p"), SubResource("Resource_xepii"), SubResource("Resource_ao4dh")])
 heart_rates = Array[ExtResource("3_r6s8y")]([SubResource("Resource_065vp"), SubResource("Resource_yofnx"), SubResource("Resource_hgdn3")])
 feet_views = Array[ExtResource("2_h2e0b")]([SubResource("Resource_h2e0b"), SubResource("Resource_r6s8y"), SubResource("Resource_l5pce")])
-speech_texts = Array[ExtResource("8_5o3c6")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27"), SubResource("Resource_m7c75")])
+speech_texts = Array[ExtResource("8_5o3c6")]([SubResource("Resource_gauku"), SubResource("Resource_gauku"), SubResource("Resource_5uw00")])
 dialogue = Array[String](["So, there are things called clones as well, which have the same exact attributes as anything next to it. They don’t count as an entity."])
 increment_rules = 1

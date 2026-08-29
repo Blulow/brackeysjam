@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_4yfbw"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_wjgxh"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_16hi7"]
-[ext_resource type="Texture2D" uid="uid://iajpa8kliojg" path="res://assets/images/people_sprites/people_sprite_8.png" id="11_1mouj"]
+[ext_resource type="Texture2D" uid="uid://by6c8bqibn7lr" path="res://assets/images/people_sprites/people_sprite_1.png" id="11_1mouj"]
 
 [sub_resource type="Resource" id="Resource_yjx66"]
 script = ExtResource("1_yjx66")
@@ -110,15 +110,15 @@ script = ExtResource("2_1mouj")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_16hi7"]
 script = ExtResource("9_wjgxh")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#00f]Tammy[/color]"
+text = "Callus’s special sussy calligraphical expense is spewed specially reminiscent of a raging shredder serializing a supercalifragilisticexpialidociously toe shielded consensus"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_rytn4"]
+[sub_resource type="Resource" id="Resource_882xy"]
 script = ExtResource("8_4yfbw")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_16hi7")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_qsw57"]
@@ -159,6 +159,6 @@ views = Array[ExtResource("2_1mouj")]([SubResource("Resource_4yfbw"), SubResourc
 shadows = Array[ExtResource("2_1mouj")]([SubResource("Resource_mv8ga"), SubResource("Resource_ygoro")])
 heart_rates = Array[ExtResource("3_seb6j")]([SubResource("Resource_c136a"), SubResource("Resource_4imh5")])
 feet_views = Array[ExtResource("2_1mouj")]([SubResource("Resource_wwcge"), SubResource("Resource_73jnk")])
-speech_texts = Array[ExtResource("8_4yfbw")]([SubResource("Resource_rytn4"), SubResource("Resource_oae0e")])
+speech_texts = Array[ExtResource("8_4yfbw")]([SubResource("Resource_882xy"), SubResource("Resource_oae0e")])
 dialogue = Array[String](["Hey, my colleague told me that twins always have different heart rates, so be really sure you know what to do. A pair of twins counts as two entities."])
 increment_rules = 1

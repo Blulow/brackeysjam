@@ -107,7 +107,9 @@ func set_people(config: PeopleConfig) -> void:
 
 func _on_round_stay() -> void:
 	for i in people.size():
-		if speech_texts[i].speaker == "" and speech_texts[i].text == "": return
+		if speech_texts[i].speaker == "" and speech_texts[i].text == "" or\
+		not people[i].view or\
+		not (people[i].identity.identity == PersonIdentity.Identity.ENTITY or people[i].identity.identity == PersonIdentity.Identity.TWIN or people[i].identity.identity == PersonIdentity.Identity.DOLL): break
 		var speech_text: Control = speech_text_scene.instantiate()
 		speech_container.add_child(speech_text)
 		speech_text.set_speaker(speech_texts[i].speaker)

@@ -120,24 +120,26 @@ script = ExtResource("2_cauov")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_8crkh"]
 script = ExtResource("9_1pivv")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#0f0]Ruggy[/color]"
+text = "I realised I was super hot when I pulled a fish out of water, I left it breathless."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_h8ywi"]
+[sub_resource type="Resource" id="Resource_eoukh"]
 script = ExtResource("8_m4a2n")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_8crkh")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_qsw57"]
+[sub_resource type="Resource" id="Resource_ivp0w"]
 script = ExtResource("9_1pivv")
+speaker = "[color=#0f0]Josh[/color]"
+text = "Trust me, I AM the original                  Josh"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_yro27"]
+[sub_resource type="Resource" id="Resource_hax41"]
 script = ExtResource("8_m4a2n")
-value = SubResource("Resource_qsw57")
+value = SubResource("Resource_ivp0w")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_m4a2n"]
@@ -169,4 +171,4 @@ views = Array[ExtResource("2_cauov")]([SubResource("Resource_rxoik"), SubResourc
 shadows = Array[ExtResource("2_cauov")]([SubResource("Resource_0qrna"), SubResource("Resource_ltd3k")])
 heart_rates = Array[ExtResource("3_qvie0")]([SubResource("Resource_m7eou"), SubResource("Resource_m1uqb")])
 feet_views = Array[ExtResource("2_cauov")]([SubResource("Resource_cauov"), SubResource("Resource_qvie0")])
-speech_texts = Array[ExtResource("8_m4a2n")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27")])
+speech_texts = Array[ExtResource("8_m4a2n")]([SubResource("Resource_eoukh"), SubResource("Resource_hax41")])

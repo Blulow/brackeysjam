@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_w06ui"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_gd0a7"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_mbcj2"]
-[ext_resource type="Texture2D" uid="uid://iajpa8kliojg" path="res://assets/images/people_sprites/people_sprite_8.png" id="11_cpo2y"]
+[ext_resource type="Texture2D" uid="uid://dntixaes6g08p" path="res://assets/images/people_sprites/people_sprite_7.png" id="11_cpo2y"]
 
 [sub_resource type="Resource" id="Resource_dqjrg"]
 script = ExtResource("1_dqjrg")
@@ -124,33 +124,37 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("2_cpo2y")
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_tuycb"]
 script = ExtResource("9_gd0a7")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#08f]Fedault[/color]"
+text = "Someone just lost his beloved dog, we call him Dougless now"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_h8ywi"]
+[sub_resource type="Resource" id="Resource_ivt3e"]
 script = ExtResource("8_w06ui")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_tuycb")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_qsw57"]
+[sub_resource type="Resource" id="Resource_s1n0w"]
 script = ExtResource("9_gd0a7")
+speaker = "[color=#08f]Forlorn[/color]"
+text = "A durian fell down on my canine. I was forlorn"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_yro27"]
+[sub_resource type="Resource" id="Resource_y17jq"]
 script = ExtResource("8_w06ui")
-value = SubResource("Resource_qsw57")
+value = SubResource("Resource_s1n0w")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_c0bx4"]
+[sub_resource type="Resource" id="Resource_m7f1a"]
 script = ExtResource("9_gd0a7")
+speaker = "[color=#08f]Dougless[/color]"
+text = "Name's Dougless. How can I help you?"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_2t7yj"]
+[sub_resource type="Resource" id="Resource_thedr"]
 script = ExtResource("8_w06ui")
-value = SubResource("Resource_c0bx4")
+value = SubResource("Resource_m7f1a")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_6yxyf"]
@@ -192,4 +196,4 @@ views = Array[ExtResource("2_cpo2y")]([SubResource("Resource_7mik2"), SubResourc
 shadows = Array[ExtResource("2_cpo2y")]([SubResource("Resource_i65n5"), SubResource("Resource_mxjlc"), SubResource("Resource_knb06")])
 heart_rates = Array[ExtResource("3_e0d3p")]([SubResource("Resource_sc1uk"), SubResource("Resource_w06ui"), SubResource("Resource_gd0a7")])
 feet_views = Array[ExtResource("2_cpo2y")]([SubResource("Resource_cpo2y"), SubResource("Resource_e0d3p"), SubResource("Resource_aw82d")])
-speech_texts = Array[ExtResource("8_w06ui")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27"), SubResource("Resource_2t7yj")])
+speech_texts = Array[ExtResource("8_w06ui")]([SubResource("Resource_ivt3e"), SubResource("Resource_y17jq"), SubResource("Resource_thedr")])

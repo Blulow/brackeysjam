@@ -111,15 +111,15 @@ script = ExtResource("2_uha8b")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_s0da7"]
 script = ExtResource("9_8opt0")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#0ff]Steve[/color]"
+text = "I would wanna feel a feeling that is 100x better than pooping a poop that I held while sleeping."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_baoov"]
+[sub_resource type="Resource" id="Resource_0wqe7"]
 script = ExtResource("8_83qvq")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_s0da7")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_qsw57"]
@@ -159,4 +159,4 @@ views = Array[ExtResource("2_uha8b")]([SubResource("Resource_hf1ya"), SubResourc
 shadows = Array[ExtResource("2_uha8b")]([SubResource("Resource_tad2f"), SubResource("Resource_wu421")])
 heart_rates = Array[ExtResource("3_a6ujj")]([SubResource("Resource_83qvq"), SubResource("Resource_s87st")])
 feet_views = Array[ExtResource("2_uha8b")]([SubResource("Resource_uha8b"), SubResource("Resource_a6ujj")])
-speech_texts = Array[ExtResource("8_83qvq")]([SubResource("Resource_baoov"), SubResource("Resource_emeym")])
+speech_texts = Array[ExtResource("8_83qvq")]([SubResource("Resource_0wqe7"), SubResource("Resource_emeym")])

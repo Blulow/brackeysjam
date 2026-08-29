@@ -153,15 +153,15 @@ script = ExtResource("2_enlof")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_4nra3"]
 script = ExtResource("9_1tyin")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#00f]Flora[/color]"
+text = "I just got rankrupt. I’m not gonna sleep tonight until I’m at least Rank -134 again…"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_h8ywi"]
+[sub_resource type="Resource" id="Resource_adut0"]
 script = ExtResource("8_u5ds2")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_4nra3")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_qsw57"]
@@ -182,7 +182,7 @@ script = ExtResource("8_u5ds2")
 value = SubResource("Resource_aa44l")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_4nra3"]
+[sub_resource type="Resource" id="Resource_ngepa"]
 script = ExtResource("10_mypf7")
 value = ExtResource("11_fbp2w")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
@@ -215,9 +215,9 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("7_26fbn")
 count = SubResource("Resource_hupld")
 identities = Array[ExtResource("5_ba58x")]([SubResource("Resource_e317f"), SubResource("Resource_lysxm"), SubResource("Resource_vr865")])
-sprites = Array[ExtResource("10_mypf7")]([SubResource("Resource_4nra3"), SubResource("Resource_df2ni"), SubResource("Resource_ytrdq")])
+sprites = Array[ExtResource("10_mypf7")]([SubResource("Resource_ngepa"), SubResource("Resource_df2ni"), SubResource("Resource_ytrdq")])
 views = Array[ExtResource("2_enlof")]([SubResource("Resource_o57r5"), SubResource("Resource_6p87a"), SubResource("Resource_pvoe2")])
 shadows = Array[ExtResource("2_enlof")]([SubResource("Resource_3ho3p"), SubResource("Resource_xepii"), SubResource("Resource_ao4dh")])
 heart_rates = Array[ExtResource("3_fbp2w")]([SubResource("Resource_u5ds2"), SubResource("Resource_nj1uc"), SubResource("Resource_aq3am")])
 feet_views = Array[ExtResource("2_enlof")]([SubResource("Resource_it6lp"), SubResource("Resource_enlof"), SubResource("Resource_fbp2w")])
-speech_texts = Array[ExtResource("8_u5ds2")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27"), SubResource("Resource_m7c75")])
+speech_texts = Array[ExtResource("8_u5ds2")]([SubResource("Resource_adut0"), SubResource("Resource_yro27"), SubResource("Resource_m7c75")])

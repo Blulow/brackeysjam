@@ -102,28 +102,21 @@ script = ExtResource("2_ulld1")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_jj5ue"]
-script = ExtResource("9_c1wc4")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
-metadata/_custom_type_script = "uid://dw233t1fhdanu"
-
 [sub_resource type="Resource" id="Resource_8vtt1"]
-script = ExtResource("8_61iru")
-value = SubResource("Resource_jj5ue")
-metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
-
-[sub_resource type="Resource" id="Resource_6m1pc"]
 script = ExtResource("9_c1wc4")
+speaker = "[color=#f80]Chayeem[/color]"
+text = "The disease right now is soo cool, I wanna marry it someday."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_dts4i"]
 script = ExtResource("8_61iru")
-value = SubResource("Resource_6m1pc")
+value = SubResource("Resource_8vtt1")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_3yapf"]
 script = ExtResource("9_c1wc4")
+speaker = "[color=#0ff]Sheade[/color]"
+text = "I got drunk last night, then got drewnk today, let's get dronke."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_aknkk"]
@@ -170,4 +163,4 @@ views = Array[ExtResource("2_ulld1")]([SubResource("Resource_kulx6"), SubResourc
 shadows = Array[ExtResource("2_ulld1")]([SubResource("Resource_8022p"), SubResource("Resource_sngiy"), SubResource("Resource_qypi3")])
 heart_rates = Array[ExtResource("3_xmri8")]([SubResource("Resource_lb1wq"), SubResource("Resource_61iru"), SubResource("Resource_scswa")])
 feet_views = Array[ExtResource("2_ulld1")]([SubResource("Resource_ulld1"), SubResource("Resource_xmri8"), SubResource("Resource_1gyga")])
-speech_texts = Array[ExtResource("8_61iru")]([SubResource("Resource_8vtt1"), SubResource("Resource_dts4i"), SubResource("Resource_aknkk")])
+speech_texts = Array[ExtResource("8_61iru")]([SubResource("Resource_dts4i"), SubResource("Resource_aknkk")])

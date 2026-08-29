@@ -144,24 +144,26 @@ script = ExtResource("2_s8t4c")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
-script = ExtResource("9_edvu6")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
-metadata/_custom_type_script = "uid://dw233t1fhdanu"
-
 [sub_resource type="Resource" id="Resource_baoov"]
-script = ExtResource("8_w4lld")
-value = SubResource("Resource_xx8ov")
-metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
-
-[sub_resource type="Resource" id="Resource_qsw57"]
 script = ExtResource("9_edvu6")
+speaker = "[color=#0f0]Banman[/color]"
+text = "Why are there no other “@” symbols than “a” in the middle? A “q” “@” symbol would be cute."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_hxg83"]
 script = ExtResource("8_w4lld")
-value = SubResource("Resource_qsw57")
+value = SubResource("Resource_baoov")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_ekgx4"]
+script = ExtResource("9_edvu6")
+speaker = "[color=#f00]Specty[/color]"
+text = "FYI, the reason why life exists is we are born."
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_kr8uo"]
+script = ExtResource("8_w4lld")
+value = SubResource("Resource_ekgx4")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_nlkbt"]
@@ -212,4 +214,4 @@ views = Array[ExtResource("2_s8t4c")]([SubResource("Resource_vl24m"), SubResourc
 shadows = Array[ExtResource("2_s8t4c")]([SubResource("Resource_4ij2d"), SubResource("Resource_qffoa"), SubResource("Resource_kofsm")])
 heart_rates = Array[ExtResource("3_b2n77")]([SubResource("Resource_edvu6"), SubResource("Resource_0mcdv"), SubResource("Resource_n66jr")])
 feet_views = Array[ExtResource("2_s8t4c")]([SubResource("Resource_s8t4c"), SubResource("Resource_b2n77"), SubResource("Resource_jpotr")])
-speech_texts = Array[ExtResource("8_w4lld")]([SubResource("Resource_baoov"), SubResource("Resource_hxg83"), SubResource("Resource_aw6gj")])
+speech_texts = Array[ExtResource("8_w4lld")]([SubResource("Resource_hxg83"), SubResource("Resource_kr8uo"), SubResource("Resource_aw6gj")])

@@ -138,15 +138,15 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("2_38wog")
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_hetns"]
 script = ExtResource("9_afium")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#808]Combeh[/color]"
+text = "We dive, we dove, we die."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_baoov"]
+[sub_resource type="Resource" id="Resource_pmq17"]
 script = ExtResource("8_lk3pi")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_hetns")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_qsw57"]
@@ -156,6 +156,15 @@ metadata/_custom_type_script = "uid://dw233t1fhdanu"
 [sub_resource type="Resource" id="Resource_emeym"]
 script = ExtResource("8_lk3pi")
 value = SubResource("Resource_qsw57")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_esyko"]
+script = ExtResource("9_afium")
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_j3p2m"]
+script = ExtResource("8_lk3pi")
+value = SubResource("Resource_esyko")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_yjvd8"]
@@ -197,4 +206,4 @@ views = Array[ExtResource("2_38wog")]([SubResource("Resource_hf1ya"), SubResourc
 shadows = Array[ExtResource("2_38wog")]([SubResource("Resource_tad2f"), SubResource("Resource_wu421"), SubResource("Resource_afium")])
 heart_rates = Array[ExtResource("3_68q4s")]([SubResource("Resource_0vedy"), SubResource("Resource_n4vws"), SubResource("Resource_4xq6s")])
 feet_views = Array[ExtResource("2_38wog")]([SubResource("Resource_uha8b"), SubResource("Resource_a6ujj"), SubResource("Resource_38wog")])
-speech_texts = Array[ExtResource("8_lk3pi")]([SubResource("Resource_baoov"), SubResource("Resource_emeym")])
+speech_texts = Array[ExtResource("8_lk3pi")]([SubResource("Resource_pmq17"), SubResource("Resource_emeym"), SubResource("Resource_j3p2m")])

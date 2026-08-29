@@ -84,8 +84,8 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_jj5ue"]
 script = ExtResource("9_phoqk")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#ff0]Barb[/color]"
+text = "I got almost no food today because there were a lot of beggars, luckily I managed to get some begging pass in the trash. Now I’m obese."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_g4lof"]

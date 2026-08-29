@@ -113,8 +113,8 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_xx8ov"]
 script = ExtResource("9_42r4c")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#f0f]Stoster[/color]"
+text = "Pew pew pissy puty is the greatest game ever made, change my mind."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_rytn4"]
@@ -131,14 +131,14 @@ script = ExtResource("8_c136a")
 value = SubResource("Resource_qsw57")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_rfm35"]
-script = ExtResource("10_4imh5")
-value = ExtResource("11_73jnk")
-metadata/_custom_type_script = "uid://q82q187cc1ki"
-
 [sub_resource type="Resource" id="Resource_ha4ex"]
 script = ExtResource("10_4imh5")
 value = ExtResource("12_sf7gd")
+metadata/_custom_type_script = "uid://q82q187cc1ki"
+
+[sub_resource type="Resource" id="Resource_rfm35"]
+script = ExtResource("10_4imh5")
+value = ExtResource("11_73jnk")
 metadata/_custom_type_script = "uid://q82q187cc1ki"
 
 [sub_resource type="Resource" id="Resource_ll7xm"]
@@ -155,7 +155,7 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("7_lidf8")
 count = SubResource("Resource_b0c8a")
 identities = Array[ExtResource("5_l6xc5")]([SubResource("Resource_hxtjb"), SubResource("Resource_1lkq8")])
-sprites = Array[ExtResource("10_4imh5")]([SubResource("Resource_rfm35"), SubResource("Resource_ha4ex")])
+sprites = Array[ExtResource("10_4imh5")]([SubResource("Resource_ha4ex"), SubResource("Resource_rfm35")])
 views = Array[ExtResource("2_wwcge")]([SubResource("Resource_ll7xm"), SubResource("Resource_u15ly")])
 shadows = Array[ExtResource("2_wwcge")]([SubResource("Resource_mv8ga"), SubResource("Resource_ygoro")])
 heart_rates = Array[ExtResource("3_73jnk")]([SubResource("Resource_c136a"), SubResource("Resource_4imh5")])

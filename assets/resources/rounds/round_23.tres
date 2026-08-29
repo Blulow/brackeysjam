@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bwj0gj57b0cf1" path="res://scripts/people_config_values/people_config_speech_value.gd" id="8_y1a0h"]
 [ext_resource type="Script" uid="uid://dw233t1fhdanu" path="res://scripts/people/speech.gd" id="9_0s8sy"]
 [ext_resource type="Script" uid="uid://q82q187cc1ki" path="res://scripts/people_config_values/people_config_sprite_value.gd" id="10_egy3j"]
-[ext_resource type="Texture2D" uid="uid://by6c8bqibn7lr" path="res://assets/images/people_sprites/people_sprite_1.png" id="11_01ekb"]
+[ext_resource type="Texture2D" uid="uid://iajpa8kliojg" path="res://assets/images/people_sprites/people_sprite_8.png" id="11_01ekb"]
 [ext_resource type="Texture2D" uid="uid://u8qkoowdj5lj" path="res://assets/images/people_sprites/people_sprite_2.png" id="12_3oy2e"]
 [ext_resource type="Texture2D" uid="uid://dxgtxvun4e7bt" path="res://assets/images/people_sprites/people_sprite_3.png" id="13_kowil"]
 
@@ -208,33 +208,37 @@ script = ExtResource("2_4hvb4")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_wbtnr"]
 script = ExtResource("9_0s8sy")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#808]Crallin[/color]"
+text = "I can kick my mom as a baby but not as a 30 year old man? That’s how the law gets you!"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_h8ywi"]
+[sub_resource type="Resource" id="Resource_tdgke"]
 script = ExtResource("8_y1a0h")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_wbtnr")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_qsw57"]
+[sub_resource type="Resource" id="Resource_rqcfc"]
 script = ExtResource("9_0s8sy")
+speaker = "[color=#f00]Winder[/color]"
+text = "Always remember that every night you look and admire the stars, they don't admire us back"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_yro27"]
+[sub_resource type="Resource" id="Resource_ukupd"]
 script = ExtResource("8_y1a0h")
-value = SubResource("Resource_qsw57")
+value = SubResource("Resource_rqcfc")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_aa44l"]
+[sub_resource type="Resource" id="Resource_7lnkn"]
 script = ExtResource("9_0s8sy")
+speaker = "[color=#00f]Nice[/color]"
+text = "Did you fall from heaven? Because your face looks all smooshed up from the fall."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_m7c75"]
+[sub_resource type="Resource" id="Resource_eehvw"]
 script = ExtResource("8_y1a0h")
-value = SubResource("Resource_aa44l")
+value = SubResource("Resource_7lnkn")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_472nr"]
@@ -278,4 +282,4 @@ views = Array[ExtResource("2_4hvb4")]([SubResource("Resource_qbd03"), SubResourc
 shadows = Array[ExtResource("2_4hvb4")]([SubResource("Resource_61lk0"), SubResource("Resource_r1o8i"), SubResource("Resource_ry138")])
 heart_rates = Array[ExtResource("3_fcsoo")]([SubResource("Resource_0s8sy"), SubResource("Resource_xtla2"), SubResource("Resource_ccdxg")])
 feet_views = Array[ExtResource("2_4hvb4")]([SubResource("Resource_4hvb4"), SubResource("Resource_fcsoo"), SubResource("Resource_01ekb")])
-speech_texts = Array[ExtResource("8_y1a0h")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27"), SubResource("Resource_m7c75")])
+speech_texts = Array[ExtResource("8_y1a0h")]([SubResource("Resource_tdgke"), SubResource("Resource_ukupd"), SubResource("Resource_eehvw")])

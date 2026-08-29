@@ -49,8 +49,8 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_6b8q3"]
 script = ExtResource("9_fbbl2")
-speaker = "[color=#ff0]John Doe[/color]"
-text = "Human, I remember [color=#f00]you're[/color] genocides"
+speaker = "[color=#00f]Noods[/color]"
+text = "I shaved with my toothpaste today. Don’t ask me why."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_jkfpe"]

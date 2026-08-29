@@ -121,24 +121,26 @@ script = ExtResource("2_2g637")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
-script = ExtResource("9_48u4u")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
-metadata/_custom_type_script = "uid://dw233t1fhdanu"
-
 [sub_resource type="Resource" id="Resource_h8ywi"]
-script = ExtResource("8_j2jfh")
-value = SubResource("Resource_xx8ov")
-metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
-
-[sub_resource type="Resource" id="Resource_qsw57"]
 script = ExtResource("9_48u4u")
+speaker = "[color=#f0f]Mascal[/color]"
+text = "Hey have you seen my phone? I was calling it a few seconds ago and I couldn’t find it."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_yro27"]
 script = ExtResource("8_j2jfh")
-value = SubResource("Resource_qsw57")
+value = SubResource("Resource_h8ywi")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_5g6b5"]
+script = ExtResource("9_48u4u")
+speaker = "[color=#f0f]Raw[/color]"
+text = "I’m excited for this, I can’t wait to go back in time!"
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_xtysg"]
+script = ExtResource("8_j2jfh")
+value = SubResource("Resource_5g6b5")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_4563y"]
@@ -170,4 +172,4 @@ views = Array[ExtResource("2_2g637")]([SubResource("Resource_rxoik"), SubResourc
 shadows = Array[ExtResource("2_2g637")]([SubResource("Resource_0qrna"), SubResource("Resource_ltd3k")])
 heart_rates = Array[ExtResource("3_j45p6")]([SubResource("Resource_j2jfh"), SubResource("Resource_ovycg")])
 feet_views = Array[ExtResource("2_2g637")]([SubResource("Resource_2g637"), SubResource("Resource_j45p6")])
-speech_texts = Array[ExtResource("8_j2jfh")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27")])
+speech_texts = Array[ExtResource("8_j2jfh")]([SubResource("Resource_yro27"), SubResource("Resource_xtysg")])

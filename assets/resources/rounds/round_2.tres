@@ -80,8 +80,8 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_58o7c"]
 script = ExtResource("9_8022p")
-speaker = "[color=#0f0]Jane Doe[/color]"
-text = "Up dawg"
+speaker = "[color=#f00]Djutch[/color]"
+text = "Man the sky is so sky today"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_8j006"]
@@ -91,8 +91,8 @@ metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_y56d1"]
 script = ExtResource("9_8022p")
-speaker = "[color=#00f]Cane Doe[/color]"
-text = "Man wat"
+speaker = "[color=#0f0]Mee[/color]"
+text = "I found out recently the sky is blue"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_ww4wq"]

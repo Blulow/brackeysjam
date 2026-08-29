@@ -142,13 +142,22 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_evsld"]
 script = ExtResource("9_e488u")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#08f]Muletail[/color]"
+text = "If you can make lemonade from lemons, why can’t you make orangeade from oranges?"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_t7310"]
 script = ExtResource("8_ewu4a")
 value = SubResource("Resource_evsld")
+metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
+
+[sub_resource type="Resource" id="Resource_3tjsf"]
+script = ExtResource("9_e488u")
+metadata/_custom_type_script = "uid://dw233t1fhdanu"
+
+[sub_resource type="Resource" id="Resource_eh736"]
+script = ExtResource("8_ewu4a")
+value = SubResource("Resource_3tjsf")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_w4e0y"]
@@ -198,4 +207,4 @@ views = Array[ExtResource("2_i6y2c")]([SubResource("Resource_ixm3q"), SubResourc
 shadows = Array[ExtResource("2_i6y2c")]([SubResource("Resource_7wmfm"), SubResource("Resource_8k264"), SubResource("Resource_honn5")])
 heart_rates = Array[ExtResource("3_txs8i")]([SubResource("Resource_e488u"), SubResource("Resource_7fsb8"), SubResource("Resource_qbenm")])
 feet_views = Array[ExtResource("2_i6y2c")]([SubResource("Resource_i6y2c"), SubResource("Resource_txs8i"), SubResource("Resource_rqb7u")])
-speech_texts = Array[ExtResource("8_ewu4a")]([SubResource("Resource_t7310"), SubResource("Resource_v04x2"), SubResource("Resource_v04x2")])
+speech_texts = Array[ExtResource("8_ewu4a")]([SubResource("Resource_t7310"), SubResource("Resource_eh736"), SubResource("Resource_v04x2")])

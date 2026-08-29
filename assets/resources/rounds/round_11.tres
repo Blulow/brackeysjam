@@ -218,15 +218,15 @@ script = ExtResource("2_sb5w3")
 value = true
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_wu23p"]
 script = ExtResource("9_d5vkq")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#ff0]Lacktoes Frimmilck[/color]"
+text = "My name is Lacktoes Frimmilck, I get high on cereal moo liquid."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_baoov"]
+[sub_resource type="Resource" id="Resource_bdspp"]
 script = ExtResource("8_vlfnw")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_wu23p")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_qsw57"]
@@ -238,13 +238,15 @@ script = ExtResource("8_vlfnw")
 value = SubResource("Resource_qsw57")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
-[sub_resource type="Resource" id="Resource_wu23p"]
+[sub_resource type="Resource" id="Resource_6fero"]
 script = ExtResource("9_d5vkq")
+speaker = "[color=#f80]Comictopper[/color]"
+text = "It would be fun to put supercalifragilisticexpialidocious into a tongue twister."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_bdspp"]
+[sub_resource type="Resource" id="Resource_76ajv"]
 script = ExtResource("8_vlfnw")
-value = SubResource("Resource_wu23p")
+value = SubResource("Resource_6fero")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_7pa4d"]
@@ -306,4 +308,4 @@ views = Array[ExtResource("2_sb5w3")]([SubResource("Resource_37ddc"), SubResourc
 shadows = Array[ExtResource("2_sb5w3")]([SubResource("Resource_l8fis"), SubResource("Resource_7pdwn"), SubResource("Resource_pmth3"), SubResource("Resource_y84hn")])
 heart_rates = Array[ExtResource("3_scyhi")]([SubResource("Resource_1087c"), SubResource("Resource_5vjon"), SubResource("Resource_22tqy"), SubResource("Resource_xug74")])
 feet_views = Array[ExtResource("2_sb5w3")]([SubResource("Resource_sb5w3"), SubResource("Resource_scyhi"), SubResource("Resource_w3goe"), SubResource("Resource_1i2km")])
-speech_texts = Array[ExtResource("8_vlfnw")]([SubResource("Resource_baoov"), SubResource("Resource_emeym"), SubResource("Resource_bdspp"), SubResource("Resource_7pjlq")])
+speech_texts = Array[ExtResource("8_vlfnw")]([SubResource("Resource_bdspp"), SubResource("Resource_emeym"), SubResource("Resource_76ajv"), SubResource("Resource_7pjlq")])

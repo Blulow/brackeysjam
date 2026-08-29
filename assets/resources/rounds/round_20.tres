@@ -117,15 +117,15 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("2_8tqca")
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_vcs30"]
 script = ExtResource("9_ooifb")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#f80]Mankie[/color]"
+text = "I think I’m really good at “anger-tempting” people, because I know that you are laughing right now, even if it’s internally."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_h8ywi"]
+[sub_resource type="Resource" id="Resource_3bbsd"]
 script = ExtResource("8_nhsbc")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_vcs30")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_qsw57"]
@@ -185,4 +185,4 @@ views = Array[ExtResource("2_8tqca")]([SubResource("Resource_b6x81"), SubResourc
 shadows = Array[ExtResource("2_8tqca")]([SubResource("Resource_nl0en"), SubResource("Resource_st4pu"), SubResource("Resource_ello0")])
 heart_rates = Array[ExtResource("3_of8qe")]([SubResource("Resource_27813"), SubResource("Resource_27813"), SubResource("Resource_e8iix")])
 feet_views = Array[ExtResource("2_8tqca")]([SubResource("Resource_8tqca"), SubResource("Resource_of8qe"), SubResource("Resource_nsi33")])
-speech_texts = Array[ExtResource("8_nhsbc")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27"), SubResource("Resource_2t7yj")])
+speech_texts = Array[ExtResource("8_nhsbc")]([SubResource("Resource_3bbsd"), SubResource("Resource_yro27"), SubResource("Resource_2t7yj")])

@@ -78,8 +78,8 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
 [sub_resource type="Resource" id="Resource_q6hkm"]
 script = ExtResource("9_ocy2t")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#808]Holse[/color]"
+text = "Pancakes vs tabletop throw-bowling flip edition, why do people even ask this question? It’s not even a fair comparison."
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
 [sub_resource type="Resource" id="Resource_507qs"]

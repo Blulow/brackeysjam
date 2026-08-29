@@ -63,15 +63,15 @@ metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 script = ExtResource("2_722vv")
 metadata/_custom_type_script = "uid://b6eev2o4gsb7v"
 
-[sub_resource type="Resource" id="Resource_xx8ov"]
+[sub_resource type="Resource" id="Resource_h3l06"]
 script = ExtResource("9_f3edr")
-speaker = "[color=#0f0]Zane Doe[/color]"
-text = "Sit bro"
+speaker = "[color=#0f0]Tinker Tinker[/color]"
+text = "Tinker Tinker Lit The Tar, How Why Won The Wachoo W.ar"
 metadata/_custom_type_script = "uid://dw233t1fhdanu"
 
-[sub_resource type="Resource" id="Resource_h8ywi"]
+[sub_resource type="Resource" id="Resource_f3tnd"]
 script = ExtResource("8_1j4tv")
-value = SubResource("Resource_xx8ov")
+value = SubResource("Resource_h3l06")
 metadata/_custom_type_script = "uid://bwj0gj57b0cf1"
 
 [sub_resource type="Resource" id="Resource_qsw57"]
@@ -112,4 +112,4 @@ views = Array[ExtResource("2_722vv")]([SubResource("Resource_rahdl"), SubResourc
 shadows = Array[ExtResource("2_722vv")]([SubResource("Resource_1j4tv"), SubResource("Resource_f3edr")])
 heart_rates = Array[ExtResource("3_qmc3c")]([SubResource("Resource_riibs"), SubResource("Resource_riibs")])
 feet_views = Array[ExtResource("2_722vv")]([SubResource("Resource_722vv"), SubResource("Resource_qmc3c")])
-speech_texts = Array[ExtResource("8_1j4tv")]([SubResource("Resource_h8ywi"), SubResource("Resource_yro27")])
+speech_texts = Array[ExtResource("8_1j4tv")]([SubResource("Resource_f3tnd"), SubResource("Resource_yro27")])
