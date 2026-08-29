@@ -18,13 +18,14 @@ dof_blur_near_distance = 39.32
 sky_top_color = Color(0.056003094, 0.015106201, 0.12890625, 1)
 ground_bottom_color = Color(0.07421875, 0.012176514, 0.025263548, 1)
 
-[sub_resource type="Sky" id="Sky_fp0dp"]
+[sub_resource type="Sky" id="Sky_u0rn1"]
 sky_material = SubResource("ProceduralSkyMaterial_0we6e")
 
 [sub_resource type="Environment" id="Environment_wbbhj"]
 background_mode = 2
-sky = SubResource("Sky_fp0dp")
+sky = SubResource("Sky_u0rn1")
 ambient_light_color = Color(0.41015625, 0.33305168, 0.18585205, 1)
+fog_enabled = true
 fog_light_color = Color(0.17880249, 0.19487, 0.2109375, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2yef"]

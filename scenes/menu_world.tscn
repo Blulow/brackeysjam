@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://bwwco5tevm2u1"]
+
+[ext_resource type="Script" uid="uid://c7otg4car8ihh" path="res://scripts/menu_world.gd" id="1_62k8e"]
+[ext_resource type="PackedScene" uid="uid://u0hh4u4s228j" path="res://assets/models/ground.glb" id="1_dfeuw"]
+[ext_resource type="PackedScene" uid="uid://bovjqqu2deiap" path="res://assets/models/station.glb" id="2_b2oix"]
+[ext_resource type="PackedScene" uid="uid://cuuh66vd1p7jp" path="res://assets/models/cam_people/cam_people.glb" id="3_qr5sr"]
+[ext_resource type="PackedScene" uid="uid://2fu6r13qsrg2" path="res://assets/models/cam_people/cam_people_2.glb" id="4_62k8e"]
+[ext_resource type="PackedScene" uid="uid://bdbjb7scd71g" path="res://assets/models/cam_people/cam_people_3.glb" id="5_tg775"]
+[ext_resource type="PackedScene" uid="uid://bbrx7qqeh1y4a" path="res://assets/models/cam_people/cam_people_4.glb" id="6_pg0ms"]
+[ext_resource type="PackedScene" uid="uid://dvb6qpkrquwo0" path="res://assets/models/cam_people/cam_people_5.glb" id="7_j3pra"]
+[ext_resource type="PackedScene" uid="uid://2lmq3alcnqnf" path="res://assets/models/cam_people/cam_people_6.glb" id="8_mcn15"]
+[ext_resource type="PackedScene" uid="uid://tb61oqep4d0j" path="res://assets/models/cam_people/cam_people_7.glb" id="9_oo51v"]
+[ext_resource type="PackedScene" uid="uid://dobm53qvo8p1i" path="res://assets/models/cam_people/cam_people_8.glb" id="10_fccfl"]
+[ext_resource type="PackedScene" uid="uid://c7lbhh8otia5d" path="res://assets/models/cam_people/cam_people_9.glb" id="11_2878v"]
+[ext_resource type="PackedScene" uid="uid://fq3woogfb1h" path="res://assets/models/cam_people/cam_people_39.glb" id="12_v7u17"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_62k8e"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 13.62
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dfeuw"]
+sky_top_color = Color(0.056003094, 0.015106201, 0.12890625, 1)
+ground_bottom_color = Color(0.07421875, 0.012176514, 0.025263548, 1)
+
+[sub_resource type="Sky" id="Sky_fp0dp"]
+sky_material = SubResource("ProceduralSkyMaterial_dfeuw")
+
+[sub_resource type="Environment" id="Environment_b2oix"]
+background_mode = 2
+sky = SubResource("Sky_fp0dp")
+ambient_light_color = Color(0.41015625, 0.33305168, 0.18585205, 1)
+fog_enabled = true
+fog_light_color = Color(0.17880249, 0.19487, 0.2109375, 1)
+
+[node name="MenuWorld" type="Node3D" unique_id=873449680]
+script = ExtResource("1_62k8e")
+
+[node name="World" type="Node3D" parent="." unique_id=1802014916]
+
+[node name="ground" parent="World" unique_id=837588533 instance=ExtResource("1_dfeuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.545417, 0, -4.851)
+
+[node name="station" parent="World" unique_id=1608497963 instance=ExtResource("2_b2oix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.712588, 0, -0.21570301)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="World" unique_id=1829427507]
+transform = Transform3D(-0.22827195, 0.9648292, 0.13037032, 0.11752551, -0.10561946, 0.98743725, 0.96647793, 0.24072601, -0.089282095, 1.6678276, 4.100061, -2.6155872)
+light_energy = 6.44
+shadow_enabled = true
+spot_angle = 50.05
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="World" unique_id=742624562]
+transform = Transform3D(0.72018, -0.6869742, 0.09699091, -0.09218099, 0.043811776, 0.99477816, -0.68763626, -0.7253599, -0.03177359, 1.6864152, 4.1000614, 2.6488962)
+light_energy = 6.44
+shadow_enabled = true
+spot_angle = 50.05
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="World" unique_id=1951200733]
+transform = Transform3D(0.5296268, -0.53105545, 0.66141933, -0.4966405, 0.43798774, 0.7493429, -0.6876363, -0.7253598, -0.03177359, 3.3470213, 3.7454152, 0.40438485)
+light_energy = 9.16
+shadow_enabled = true
+spot_range = 5.434
+spot_angle = 61.2
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="World" unique_id=1933423384]
+transform = Transform3D(0.08943237, -0.993624, -0.06865315, -0.017900951, -0.070521764, 0.9973496, -0.9958321, -0.08796638, -0.024093743, -14.105438, 4.438356, 5.7210474)
+light_energy = 9.16
+shadow_enabled = true
+spot_range = 5.434
+spot_angle = 61.2
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="World" unique_id=632701761]
+transform = Transform3D(0.08943237, -0.993624, -0.06865315, -0.017900951, -0.070521764, 0.9973496, -0.9958321, -0.08796638, -0.024093743, -16.55187, 4.438356, -10.288428)
+light_energy = 9.16
+shadow_enabled = true
+spot_range = 5.434
+spot_angle = 61.2
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="World" unique_id=1833312439]
+transform = Transform3D(0.08421046, -0.7853228, -0.6133325, 0.035031278, -0.6128051, 0.78945726, -0.995832, -0.08796638, -0.024093743, 1.5853434, 7.6404247, -2.9868011)
+light_energy = 9.16
+shadow_enabled = true
+spot_range = 5.434
+spot_angle = 61.2
+
+[node name="People" type="Node3D" parent="World" unique_id=169438409]
+
+[node name="cam_people" parent="World/People" unique_id=1927799930 instance=ExtResource("3_qr5sr")]
+transform = Transform3D(0.083417006, 0, -0.99651474, 0, 1, 0, 0.99651474, 0, 0.083417006, -13.943, 1, 8.399)
+
+[node name="cam_people_2" parent="World/People" unique_id=1541268553 instance=ExtResource("4_62k8e")]
+transform = Transform3D(0.5905071, 0, 0.80703247, 0, 1, 0, -0.80703247, 0, 0.5905071, -13.835251, 0.9999995, -13.781457)
+
+[node name="cam_people_3" parent="World/People" unique_id=1459373313 instance=ExtResource("5_tg775")]
+transform = Transform3D(0.7530813, 0, 0.65792745, 0, 1, 0, -0.65792745, 0, 0.7530813, -16.268963, 0.9999995, -12.204081)
+
+[node name="cam_people_4" parent="World/People" unique_id=1681038607 instance=ExtResource("6_pg0ms")]
+transform = Transform3D(0.2911864, 0, 0.95666635, 0, 1, 0, -0.95666635, 0, 0.2911864, -18.060986, 0.9999995, -12.22896)
+
+[node name="cam_people_5" parent="World/People" unique_id=155661496 instance=ExtResource("7_j3pra")]
+transform = Transform3D(0.81840056, 0, 0.5746482, 0, 1, 0, -0.5746482, 0, 0.81840056, -15.687287, 0.9999995, -13.873007)
+
+[node name="cam_people_6" parent="World/People" unique_id=904336298 instance=ExtResource("8_mcn15")]
+transform = Transform3D(-0.10376474, 0, 0.99460185, 0, 1, 0, -0.99460185, 0, -0.10376474, -16.02675, 0.99999964, -9.9254055)
+
+[node name="cam_people_7" parent="World/People" unique_id=1931607159 instance=ExtResource("9_oo51v")]
+transform = Transform3D(0.3769842, 0, 0.9262197, 0, 1, 0, -0.9262197, 0, 0.3769842, -18.386444, 0.9999995, -8.990817)
+
+[node name="cam_people_8" parent="World/People" unique_id=1007270040 instance=ExtResource("10_fccfl")]
+transform = Transform3D(0.4983364, 0, 0.8669838, 0, 1, 0, -0.8669838, 0, 0.4983364, -14.716286, 0.9935534, -12.191088)
+
+[node name="cam_people_9" parent="World/People" unique_id=1983038877 instance=ExtResource("11_2878v")]
+transform = Transform3D(0.45311943, 0, 0.8914498, 0, 1, 0, -0.8914498, 0, 0.45311943, -19.815979, 0.9999995, -9.877532)
+
+[node name="cam_people_39" parent="World/People" unique_id=1129430763 instance=ExtResource("12_v7u17")]
+transform = Transform3D(0.706897, 3.1499965e-08, 0.7073165, 0.69924897, 0.15060525, -0.69883424, -0.10652557, 0.9885942, 0.10646234, 4.313, 5.3354535, -3.285)
+
+[node name="Cams" type="Node3D" parent="World" unique_id=813632968]
+
+[node name="Camera3D" type="Camera3D" parent="World/Cams" unique_id=1742440405]
+transform = Transform3D(0.9335742, 0, -0.35838422, 0.058971543, 0.986369, 0.15361813, 0.35349908, -0.16454838, 0.92084867, -14.297141, 1.8807774, 10.782598)
+
+[node name="Camera3D2" type="Camera3D" parent="World/Cams" unique_id=1657971921]
+transform = Transform3D(-0.94949454, -0.14888299, 0.2762136, -0.0046530394, 0.8868517, 0.46203068, -0.31374893, 0.4374104, -0.84275365, -14.327013, 2.9519262, -16.58282)
+
+[node name="Camera3D3" type="Camera3D" parent="World/Cams" unique_id=1045701225]
+transform = Transform3D(0.18351573, -0.43001285, 0.8839745, -0.009466548, 0.8984319, 0.43901095, -0.9829712, -0.0889336, 0.16080563, 6.442944, 6.9625983, -3.580833)
+
+[node name="Camera3D4" type="Camera3D" parent="World/Cams" unique_id=1282208047]
+transform = Transform3D(0.9993653, 0.0031128228, 0.035486627, -0.013038162, 0.9590154, 0.28305444, -0.033151116, -0.28333744, 0.9584472, -4.6374774, 1.9384775, 17.981003)
+
+[node name="MasterCam" type="Camera3D" parent="World/Cams" unique_id=267261442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3639393, 7.267131, 0)
+attributes = SubResource("CameraAttributesPractical_62k8e")
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=753364131]
+environment = SubResource("Environment_b2oix")
