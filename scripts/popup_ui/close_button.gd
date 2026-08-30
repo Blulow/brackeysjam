@@ -8,4 +8,4 @@ func _on_clicked() -> void:
 			break
 		parent = parent.get_parent()
 	
-	parent.queue_free()
+	parent.get_node("PopupComponent").close_ui()

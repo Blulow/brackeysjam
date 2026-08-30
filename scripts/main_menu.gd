@@ -16,12 +16,15 @@ func _on_button_3_pressed() -> void:
 
 func _on_button_mouse_entered() -> void:
 	menu_world.switch_to_camera(1)
+	$AudioStreamPlayer2D.play()
 
 func _on_button_2_mouse_entered() -> void:
 	menu_world.switch_to_camera(2)
+	$AudioStreamPlayer2D.play()
 
 func _on_button_3_mouse_entered() -> void:
 	menu_world.switch_to_camera(3)
+	$AudioStreamPlayer2D.play()
 
 func _on_texture_rect_mouse_entered() -> void:
 	menu_world.switch_to_camera(4)
@@ -29,3 +32,9 @@ func _on_texture_rect_mouse_entered() -> void:
 func _on_button_4_pressed() -> void:
 	GameManager.load_round($NumberSelector.number)
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+func _on_texture_button_mouse_entered() -> void:
+	$AudioStreamPlayer2D.play()
+
+func _on_texture_button_2_mouse_entered() -> void:
+	$AudioStreamPlayer2D.play()
