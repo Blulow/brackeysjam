@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfyitx5okx0lm" path="res://scripts/popup_ui/tv_display.gd" id="1_5qc8h"]
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_rtmft"]
+[ext_resource type="PackedScene" uid="uid://bqs6tmixwvdmi" path="res://scenes/components/ui/popup_component.tscn" id="2_7xumo"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_eptdl"]
 [ext_resource type="PackedScene" uid="uid://cabn6k3mebemq" path="res://scenes/popup_ui/ui/security_camera.tscn" id="2_kb2g4"]
 [ext_resource type="Texture2D" uid="uid://sfxjvyq8qdmn" path="res://assets/images/ui/tv_arrows/left_btn.png" id="3_8k7v7"]
@@ -48,6 +49,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5qc8h")
+
+[node name="PopupComponent" parent="." unique_id=1394363894 instance=ExtResource("2_7xumo")]
+layout_mode = 0
 
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("1_rtmft")]
 layout_mode = 0

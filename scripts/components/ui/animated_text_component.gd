@@ -10,10 +10,14 @@ class_name AnimatedTextComponent
 	"?": 0.3,
 	"!": 0.3
 }
+@export var sfx: AudioStream
 
 var pending_skip: bool = false
 
 signal animated
+
+func _ready() -> void:
+	if sfx: $AudioStreamPlayer.stream = sfx
 
 func show_text(text: String, idx: int) -> void:
 	label.text = text.substr(0, idx)
@@ -27,7 +31,6 @@ func animate(text: String) -> void:
 			pending_skip = false
 			animated.emit()
 			break
-			
 		
 		var regex = RegEx.new()
 		regex.compile(r"\[[^\]]+\]")
@@ -40,12 +43,16 @@ func animate(text: String) -> void:
 				richtext_idxs.append(i)
 		
 		label.text = text.substr(0, i + 1)
+		if sfx: $AudioStreamPlayer.play(randf_range(0, sfx.get_length()))
+		
 		if not i in richtext_idxs:
 			await get_tree().create_timer(pauses[""]).timeout
 		
 		var current_char = text[i]
 		if current_char in pauses:
 			await get_tree().create_timer(pauses[current_char]).timeout
+		
+		if sfx: $AudioStreamPlayer.stop()
 		
 		if i >= char_count - 1:
 			animated.emit()

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_0yn1p"]
 [ext_resource type="Script" uid="uid://ds88kycgi2chh" path="res://scripts/popup_ui/phone_popup.gd" id="1_w4sjb"]
+[ext_resource type="PackedScene" uid="uid://bqs6tmixwvdmi" path="res://scenes/components/ui/popup_component.tscn" id="2_fjrii"]
 [ext_resource type="PackedScene" uid="uid://co642745b7vsm" path="res://scenes/components/ui/animated_texture_rect.tscn" id="3_80ewv"]
 [ext_resource type="Texture2D" uid="uid://4jvvv7su7qd7" path="res://assets/images/ui/speech_text_bubble.png" id="4_sgcqt"]
 [ext_resource type="Texture2D" uid="uid://b4ykwgcimv6kn" path="res://assets/images/ui/decrement_btn.png" id="5_e71jm"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://csp5qp5mkcowf" path="res://assets/images/ui/increment_btn.png" id="6_6c4dt"]
 [ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="7_e71jm"]
 [ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="8_6c4dt"]
+[ext_resource type="AudioStream" uid="uid://kueq0rx8c1g7" path="res://assets/sounds/sfx/phone_call.wav" id="11_3ipym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e71jm"]
 atlas = ExtResource("4_sgcqt")
@@ -95,6 +97,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w4sjb")
 
+[node name="PopupComponent" parent="." unique_id=1394363894 instance=ExtResource("2_fjrii")]
+layout_mode = 0
+
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("1_0yn1p")]
 layout_mode = 0
 anchors_preset = 0
@@ -154,6 +159,7 @@ bbcode_enabled = true
 
 [node name="AnimatedTextComponent" parent="UI/AnimatedTextureRect/RichTextLabel" unique_id=2094081059 instance=ExtResource("5_sgcqt")]
 layout_mode = 0
+sfx = ExtResource("11_3ipym")
 
 [node name="LastSolution" type="RichTextLabel" parent="UI" unique_id=1956487968]
 layout_mode = 0

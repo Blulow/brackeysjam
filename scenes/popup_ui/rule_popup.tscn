@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://i1ra5djk6m0v" path="res://scripts/popup_ui/rule_popup.gd" id="1_5ysap"]
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_438jn"]
 [ext_resource type="Texture2D" uid="uid://cfur35cue7s3g" path="res://assets/images/ui/rules_ui.png" id="2_aowue"]
+[ext_resource type="PackedScene" uid="uid://bqs6tmixwvdmi" path="res://scenes/components/ui/popup_component.tscn" id="2_eapsw"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_yqmko"]
 [ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="4_5ysap"]
 
@@ -22,6 +23,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ysap")
 rules = Array[String](["Only accept encounters with more than 2 entities.", "Entities can be out of sight, check the devices.", "Reflections are not an entity, no body, no heartbeat.", "Dolls are not an entity, they have a body, but no heartbeat, and are not heavy.", "Twins count as 2 entities, they always have different heartbeats.", "Clones are not an entity, which copies every detail exactly of anything next to it."])
+
+[node name="PopupComponent" parent="." unique_id=1394363894 instance=ExtResource("2_eapsw")]
+layout_mode = 0
 
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("1_438jn")]
 layout_mode = 0

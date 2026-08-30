@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bul24ekiahunx" path="res://scenes/popup_ui/ui/popup_overlay.tscn" id="1_1o16k"]
 [ext_resource type="Script" uid="uid://cxvoga8trt63q" path="res://scripts/popup_ui/entity_intake_form.gd" id="1_bl03r"]
+[ext_resource type="PackedScene" uid="uid://bqs6tmixwvdmi" path="res://scenes/components/ui/popup_component.tscn" id="2_bcuao"]
 [ext_resource type="PackedScene" uid="uid://dqp20ijshb2ac" path="res://scenes/popup_ui/ui/close_button.tscn" id="2_bl03r"]
 [ext_resource type="Script" uid="uid://dqyyx3iqqr7ko" path="res://scripts/popup_ui/ui/number_selector.gd" id="3_7en8x"]
 [ext_resource type="Texture2D" uid="uid://ip0dppoxpugv" path="res://assets/images/ui/paper_form/paper_form.png" id="3_rrwus"]
@@ -33,6 +34,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bl03r")
+
+[node name="PopupComponent" parent="." unique_id=1394363894 instance=ExtResource("2_bcuao")]
+layout_mode = 0
 
 [node name="PopupOverlay" parent="." unique_id=1070462315 instance=ExtResource("1_1o16k")]
 layout_mode = 0

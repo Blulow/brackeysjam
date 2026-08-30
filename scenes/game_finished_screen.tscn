@@ -187,6 +187,10 @@ layout_mode = 0
 libraries/ = SubResource("AnimationLibrary_822xk")
 autoplay = &"logo_loop"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=909701299]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="UI/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="UI/Button" to="." method="_on_retry_pressed"]
+[connection signal="mouse_entered" from="UI/Button2" to="." method="_on_button_2_mouse_entered"]
 [connection signal="pressed" from="UI/Button2" to="." method="_on_main_menu_pressed"]

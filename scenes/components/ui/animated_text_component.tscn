@@ -8,3 +8,5 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_5bj3j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1044156622]

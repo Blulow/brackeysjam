@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ccxw87oqfu1he" path="res://scenes/components/ui/animated_text_component.tscn" id="2_eb1x0"]
 [ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="2_oha5f"]
 [ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="3_mf74k"]
+[ext_resource type="AudioStream" uid="uid://dg6mwoqdrquk7" path="res://assets/sounds/sfx/people_sounds/people_2.wav" id="3_y7gfg"]
+[ext_resource type="AudioStream" uid="uid://cbfjsfq44508k" path="res://assets/sounds/sfx/people_sounds/people_3.wav" id="4_tonp0"]
+[ext_resource type="AudioStream" uid="uid://cipqfv1ibnmmr" path="res://assets/sounds/sfx/people_sounds/people_4.wav" id="5_kb05d"]
+[ext_resource type="AudioStream" uid="uid://c0gm3eo6d56gk" path="res://assets/sounds/sfx/people_sounds/people_1.wav" id="5_mf74k"]
 
 [node name="SpeechText" type="Control" unique_id=1703869231]
 custom_minimum_size = Vector2(304, 0)
@@ -16,6 +20,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 mouse_filter = 1
 script = ExtResource("1_xfk38")
+sfxs = Array[AudioStream]([ExtResource("5_mf74k"), ExtResource("3_y7gfg"), ExtResource("4_tonp0"), ExtResource("5_kb05d")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=87928601]
 custom_minimum_size = Vector2(304, 0)
@@ -54,3 +59,4 @@ bbcode_enabled = true
 
 [node name="AnimatedTextComponent" parent="MarginContainer/HBoxContainer/RichTextLabel2" unique_id=2094081059 instance=ExtResource("2_eb1x0")]
 layout_mode = 0
+sfx = ExtResource("5_mf74k")

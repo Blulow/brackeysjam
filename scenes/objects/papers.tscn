@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bqar7suywe2ee" path="res://scripts/objects/papers.gd" id="1_hjutv"]
 [ext_resource type="PackedScene" uid="uid://hc02c5uwjpoi" path="res://scenes/components/selectable_component.tscn" id="2_yf0b7"]
 [ext_resource type="Texture2D" uid="uid://dh8yfl2cnihat" path="res://assets/images/objects/papers.png" id="3_iqrbv"]
+[ext_resource type="AudioStream" uid="uid://cx6qkk5v1rvw8" path="res://assets/sounds/sfx/open_popup2.wav" id="5_kqudh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_535wn")
@@ -28,5 +29,8 @@ sprite = NodePath("../Sprite2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SelectableComponent" unique_id=127264973]
 polygon = PackedVector2Array(-250, -130, 32, -130, 250, 34, 250, 131, -62, 130, -250, -42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1100635599]
+stream = ExtResource("5_kqudh")
 
 [connection signal="clicked" from="SelectableComponent" to="." method="_on_clicked"]

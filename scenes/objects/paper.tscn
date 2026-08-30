@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://ci2cqbasedysu" path="res://assets/images/objects/paper_btn/give.png" id="9_0khs3"]
 [ext_resource type="Texture2D" uid="uid://7pa0yx1dpq0g" path="res://assets/images/objects/paper_btn/give_hover.png" id="10_m81iq"]
 [ext_resource type="Texture2D" uid="uid://jph1x1jnrog5" path="res://assets/images/objects/paper_btn/give_disabled.png" id="11_ghtyu"]
+[ext_resource type="PackedScene" uid="uid://dvl8em36xyxxb" path="res://scenes/audioplayer/popup_player.tscn" id="12_0khs3"]
+[ext_resource type="AudioStream" uid="uid://cx6qkk5v1rvw8" path="res://assets/sounds/sfx/open_popup2.wav" id="13_6a4cf"]
+[ext_resource type="AudioStream" uid="uid://ydn2woxurv3k" path="res://assets/sounds/sfx/close_popup2.wav" id="14_lr1dc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_45wan")
@@ -73,6 +76,10 @@ layout_mode = 2
 texture_normal = ExtResource("9_0khs3")
 texture_hover = ExtResource("10_m81iq")
 texture_disabled = ExtResource("11_ghtyu")
+
+[node name="OpenPopupPlayer" parent="." unique_id=173891451 instance=ExtResource("12_0khs3")]
+open = ExtResource("13_6a4cf")
+close = ExtResource("14_lr1dc")
 
 [connection signal="clicked" from="SelectableComponent" to="." method="_on_clicked"]
 [connection signal="input_event" from="SelectableComponent" to="." method="_on_selectable_component_input_event"]

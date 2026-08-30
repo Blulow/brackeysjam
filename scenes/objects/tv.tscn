@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://de0krbf0p6jmi" path="res://scenes/popup_ui/tv_popup.tscn" id="4_l6lbw"]
 [ext_resource type="PackedScene" uid="uid://bmjjkm0ml1gmd" path="res://scenes/components/ui/popup_ui_component.tscn" id="4_qu8cf"]
 [ext_resource type="PackedScene" uid="uid://pgwfcdoksmc5" path="res://scenes/components/selectable_popup_component.tscn" id="6_hukxn"]
+[ext_resource type="PackedScene" uid="uid://dvl8em36xyxxb" path="res://scenes/audioplayer/popup_player.tscn" id="7_25sd2"]
+[ext_resource type="AudioStream" uid="uid://dyairkponfut1" path="res://assets/sounds/sfx/open_popup.wav" id="8_qu8cf"]
+[ext_resource type="AudioStream" uid="uid://c1ff3vg0l3wjj" path="res://assets/sounds/sfx/close_popup.wav" id="9_uea3i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_nlo56")
@@ -34,5 +37,9 @@ polygon = PackedVector2Array(-104, -202, 104, -202, 104, 202, -104, 202)
 ui = ExtResource("4_l6lbw")
 
 [node name="SelectablePopupComponent" parent="." unique_id=1963949682 instance=ExtResource("6_hukxn")]
+
+[node name="OpenPopupPlayer" parent="." unique_id=173891451 instance=ExtResource("7_25sd2")]
+open = ExtResource("8_qu8cf")
+close = ExtResource("9_uea3i")
 
 [connection signal="input_event" from="SelectableComponent" to="." method="_on_selectable_component_input_event"]

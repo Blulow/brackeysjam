@@ -11,3 +11,4 @@ func spawn_paper() -> void:
 	world.add_child(paper)
 	
 	paper.global_position = Vector2(-21.0, 314.0)
+	$AudioStreamPlayer2D.play()

@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dkci24k8wqfap" path="res://assets/fonts/Ruler 9.ttf" id="6_nh6my"]
 [ext_resource type="PackedScene" uid="uid://bf6f0ro2m656y" path="res://scenes/components/ui/animated_button_component.tscn" id="6_xx0b3"]
 [ext_resource type="FontFile" uid="uid://nyc5d5qxgobk" path="res://assets/fonts/PixelizedHandwritingRegular-8jz2.ttf" id="7_4tlw3"]
+[ext_resource type="AudioStream" uid="uid://bm3iwaw8b5di5" path="res://assets/sounds/sfx/ui_select.wav" id="9_4tlw3"]
 
 [sub_resource type="Animation" id="Animation_xx0b3"]
 length = 0.001
@@ -273,5 +274,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=344809464]
+stream = ExtResource("9_4tlw3")
+
+[connection signal="mouse_entered" from="UI/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="UI/Button" to="." method="_on_retry_pressed"]
+[connection signal="mouse_entered" from="UI/Button2" to="." method="_on_button_2_mouse_entered"]
 [connection signal="pressed" from="UI/Button2" to="." method="_on_main_menu_pressed"]

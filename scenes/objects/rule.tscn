@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://qlgh5flxcovm" path="res://scenes/popup_ui/rule_popup.tscn" id="4_ouf7d"]
 [ext_resource type="PackedScene" uid="uid://pgwfcdoksmc5" path="res://scenes/components/selectable_popup_component.tscn" id="5_j7dvy"]
 [ext_resource type="Texture2D" uid="uid://8m2vq526houy" path="res://assets/images/objects/alert.png" id="8_xn3jo"]
+[ext_resource type="PackedScene" uid="uid://dvl8em36xyxxb" path="res://scenes/audioplayer/popup_player.tscn" id="9_j7dvy"]
+[ext_resource type="AudioStream" uid="uid://cx6qkk5v1rvw8" path="res://assets/sounds/sfx/open_popup2.wav" id="10_pr7ml"]
+[ext_resource type="AudioStream" uid="uid://ydn2woxurv3k" path="res://assets/sounds/sfx/close_popup2.wav" id="11_a0kgb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puc5w"]
 shader = ExtResource("1_ouf7d")
@@ -64,6 +67,11 @@ ui = ExtResource("4_ouf7d")
 position = Vector2(-161, -164)
 sprite_frames = SubResource("SpriteFrames_pr7ml")
 autoplay = "default"
+
+[node name="OpenPopupPlayer" parent="." unique_id=173891451 instance=ExtResource("9_j7dvy")]
+stream = ExtResource("10_pr7ml")
+open = ExtResource("10_pr7ml")
+close = ExtResource("11_a0kgb")
 
 [connection signal="clicked" from="SelectableComponent" to="." method="_on_clicked"]
 [connection signal="input_event" from="SelectableComponent" to="." method="_on_selectable_component_input_event"]

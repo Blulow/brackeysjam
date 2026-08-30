@@ -2,12 +2,16 @@ extends Node
 
 var round_manager: RoundManager
 var settings: Dictionary = {
-	"music": 0.5,
-	"sfx": 0.5
+	"music": 0.4,
+	"sfx": 1
 }
 
 var pending_load_round: bool = false
 var round_to_load: int = -1
+
+func _ready() -> void:
+	change_sound_settings("music", settings.music)
+	change_sound_settings("sfx", settings.sfx)
 
 func change_sound_settings(channel: String, amount: float) -> void:
 	match channel:
