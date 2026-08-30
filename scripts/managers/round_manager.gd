@@ -84,6 +84,7 @@ func end_current_round() -> void:
 		start_round(current_round)
 	else:
 		if people.pending_game_over:
+			await get_tree().process_frame
 			$"../FXLayer/PenaltyEnding".visible = true
 			$"../../../../../PhoneLayer".layer = 3
 			$"../../../../../PopupUILayer".layer = 2
@@ -101,10 +102,14 @@ func end_current_round() -> void:
 		$"../AudioStreamPlayer".stop()
 		$"../AudioStreamPlayer".stream = load("res://assets/sounds/music/beforethestation.ogg")
 		$"../AudioStreamPlayer".play()
-		$"../PhoneLayer/Phone".show_dialogue(ending_dialogue[0])
+		var d1: Array[String]
+		d1.assign(ending_dialogue[0])
+		$"../PhoneLayer/Phone".show_dialogue(d1)
 		await dialogue_finish
 		await get_tree().process_frame
-		$"../PhoneLayer/Phone".show_dialogue(ending_dialogue[1])
+		var d2: Array[String]
+		d2.assign(ending_dialogue[1])
+		$"../PhoneLayer/Phone".show_dialogue(d2)
 		$"../FXLayer/VictoryEnding".visible = true
 		$"../FXLayer/GlitchEffect".visible = true
 		anim_player.play("victory_ending")

@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="brackeysjam"
+config/name="singularity"
+config/description="A disease is taking over the world - Singularity, where people alone, would be CORRUPTED. As the doorman of a refuge facility, you have to trust no \"one\". You have to identify if encounters are in groups, or alone; accept only people in groups, or else, out. But what you see in front might not be what lies underneath..."
 run/main_scene="uid://bpr7ol0gocjdd"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/image="uid://de12cv6eshy06"
 config/icon="res://icon.svg"
 
 [audio]
@@ -47,3 +49,4 @@ quit_popup_ui={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

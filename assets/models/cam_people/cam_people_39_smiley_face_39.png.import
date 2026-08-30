@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5vggfa542bjk"
 path.s3tc="res://.godot/imported/cam_people_39_smiley_face_39.png-30eda58b590ddb8dbbf67096918c8cee.s3tc.ctex"
+path.etc2="res://.godot/imported/cam_people_39_smiley_face_39.png-30eda58b590ddb8dbbf67096918c8cee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/cam_people/cam_people_39_smiley_face_39.png"
-dest_files=["res://.godot/imported/cam_people_39_smiley_face_39.png-30eda58b590ddb8dbbf67096918c8cee.s3tc.ctex"]
+dest_files=["res://.godot/imported/cam_people_39_smiley_face_39.png-30eda58b590ddb8dbbf67096918c8cee.s3tc.ctex", "res://.godot/imported/cam_people_39_smiley_face_39.png-30eda58b590ddb8dbbf67096918c8cee.etc2.ctex"]
 
 [params]
 
