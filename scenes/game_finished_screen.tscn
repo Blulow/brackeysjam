@@ -154,7 +154,7 @@ theme_override_fonts/font = ExtResource("4_gvv85")
 theme_override_font_sizes/font_size = 115
 theme_override_styles/normal = SubResource("StyleBoxFlat_klglp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_klglp")
-text = "Retry"
+text = "Play Again"
 
 [node name="AnimatedButtonComponent" parent="UI/Button" unique_id=231881551 instance=ExtResource("3_ulv47")]
 layout_mode = 0

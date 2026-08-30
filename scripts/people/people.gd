@@ -141,6 +141,9 @@ func _on_round_start() -> void:
 	pending_penalization = false
 	last_identities = identities
 	last_singular = singular
+	if GameManager.round_manager.current_round > 0:
+		$"../../../../../PhoneLayer".layer = 1
+		$"../../../../../PopupUILayer".layer = 2
 
 func _on_penalized() -> void:
 	pending_penalization = true

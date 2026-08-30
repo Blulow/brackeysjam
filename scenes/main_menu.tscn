@@ -65,7 +65,7 @@ theme_override_fonts/font = ExtResource("4_tbmy8")
 theme_override_font_sizes/font_size = 106
 theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
-text = "Play"
+text = "Play From Start"
 
 [node name="AnimatedButtonComponent" parent="Button" unique_id=231881551 instance=ExtResource("1_l6cm7")]
 layout_mode = 0
@@ -140,17 +140,28 @@ theme_override_fonts/font = ExtResource("4_tbmy8")
 theme_override_font_sizes/font_size = 106
 theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
-text = "Play Level"
+text = "Play From Level"
 
 [node name="AnimatedButtonComponent" parent="Button4" unique_id=2144126981 instance=ExtResource("1_l6cm7")]
 layout_mode = 0
 
+[node name="Label" type="Label" parent="." unique_id=667461646]
+layout_mode = 0
+offset_left = 1407.0
+offset_top = 710.0
+offset_right = 1768.0
+offset_bottom = 791.0
+theme_override_colors/font_color = Color(0.94921875, 0.84539795, 0.84539795, 1)
+theme_override_fonts/font = ExtResource("4_tbmy8")
+theme_override_font_sizes/font_size = 106
+text = "Select Level:"
+
 [node name="NumberSelector" type="HBoxContainer" parent="." unique_id=875669855]
 layout_mode = 0
 offset_left = 1443.0
-offset_top = 604.0
+offset_top = 795.0
 offset_right = 1715.0
-offset_bottom = 684.0
+offset_bottom = 875.0
 size_flags_vertical = 4
 alignment = 1
 script = ExtResource("6_5pajh")
